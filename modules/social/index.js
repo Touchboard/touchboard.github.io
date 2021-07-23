@@ -22,13 +22,13 @@ Main.add_module({
 			cursor: pointer;
 		}
 
-		@media screen and (max-width: 1126px) {
+		@media screen and (max-width: 815px) {
 			.social .buttons,
 			.social form * {
 				margin: var(--space-02);
 			}
 		}
-		@media screen and (min-width: 1126px) {
+		@media screen and (min-width: 815px) {
 			.social .buttons,
 			.social form * {
 				margin: var(--space-01);

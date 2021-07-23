@@ -39,7 +39,7 @@ Main.add_module({
 			max-width: 340px;
 		}
 
-		@media screen and (max-width: 1126px) {
+		@media screen and (max-width: 815px) {
 			.team .photo img {
 				height: 140vw;
 			}
@@ -50,7 +50,7 @@ Main.add_module({
 				max-width: 40ch;
 			}
 		}
-		@media screen and (min-width: 1126px) {
+		@media screen and (min-width: 815px) {
 			.team .photo img {
 				height: 100vh;
 			}

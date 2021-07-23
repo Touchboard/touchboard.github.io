@@ -55,7 +55,7 @@ Main.add_module({
 			grid-area: prod;
 		}
 
-		@media screen and (max-width: 1126px) {
+		@media screen and (max-width: 815px) {
 			.product .product_name {
 				margin-bottom: var(--space-00);
 			}
@@ -74,7 +74,7 @@ Main.add_module({
 				margin: -70px 0;
 			}
 		}
-		@media screen and (min-width: 1126px) {
+		@media screen and (min-width: 815px) {
 			.product .product_name {
 				margin-bottom: var(--space-10);
 			}

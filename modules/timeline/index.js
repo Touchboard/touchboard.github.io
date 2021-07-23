@@ -39,7 +39,7 @@ Main.add_module({
 		.timeline .container:last-child .arrow {
 			display: none;
 		}
-		@media screen and (max-width: 1126px) {
+		@media screen and (max-width: 815px) {
 			.timeline {
 				grid-template-columns: repeat(auto-fit, minmax(110px, max-content));
 			}
@@ -53,7 +53,7 @@ Main.add_module({
 				margin-top: var(--space-01);
 			}
 		}
-		@media screen and (min-width: 1126px) {
+		@media screen and (min-width: 815px) {
 			.timeline {
 				grid-template-columns: repeat(auto-fit, minmax(190px, max-content));
 			}
