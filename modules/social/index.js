@@ -51,8 +51,10 @@ Main.add_module({
 			<div class="social responsive">
 				<div
 					class="typo_00"
-					style="display: inline-block;
-					width: 40ch;"
+					style="
+						display: inline-block;
+						max-width: 40ch;
+					"
 				>
 					${message}
 				</div>
