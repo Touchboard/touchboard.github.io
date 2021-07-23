@@ -6,7 +6,7 @@ const Model = {
 				{
 					graphic: `text`,
 					title: `Textinput, whenever you need`,
-					description: `Touchboard recognizes textfields and changes it's layout to your favorite language`,
+					description: `Touchboard recognizes text fields and changes it's layout to your favorite language`,
 				},
 				{
 					graphic: `graphic`,
