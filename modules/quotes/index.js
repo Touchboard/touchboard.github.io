@@ -43,10 +43,10 @@ Main.add_module({
 			align-self: center;
 		}
 
-		@media screen and (max-width: 815px) {
+		@media screen and (max-width: 1126px) {
 
 		}
-		@media screen and (min-width: 815px) {
+		@media screen and (min-width: 1126px) {
 
 		}
 	`,

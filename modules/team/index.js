@@ -39,9 +39,9 @@ Main.add_module({
 			max-width: 340px;
 		}
 
-		@media screen and (max-width: 815px) {
+		@media screen and (max-width: 1126px) {
 			.team .photo img {
-				height: 80vh;
+				height: 140vw;
 			}
 			.team .sentence {
 				padding: var(--space-00);
@@ -50,7 +50,7 @@ Main.add_module({
 				max-width: 50ch;
 			}
 		}
-		@media screen and (min-width: 815px) {
+		@media screen and (min-width: 1126px) {
 			.team .photo img {
 				height: 100vh;
 			}

@@ -2,12 +2,12 @@ Main.add_module({
 	type: 'logo',
 
 	style: `
-		@media screen and (max-width: 815px) {
+		@media screen and (max-width: 1126px) {
 			body {
 				padding-top: var(--space-20);
 			}
 		}
-		@media screen and (min-width: 815px) {
+		@media screen and (min-width: 1126px) {
 			body {
 				padding-top: var(--space-10);
 			}

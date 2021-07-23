@@ -12,12 +12,12 @@ Main.add_module({
 			text-align: left;
 			max-width: 250px;
 		}
-		@media screen and (max-width: 815px) {
+		@media screen and (max-width: 1126px) {
 			.text p {
 				max-width: 50ch;
 			}
 		}
-		@media screen and (min-width: 815px) {
+		@media screen and (min-width: 1126px) {
 			.text p {
 				max-width: 50ch;
 			}
