@@ -44,7 +44,7 @@ Main.add_module({
 				height: 140vw;
 			}
 			.team .sentence {
-				padding: var(--space-00);
+				padding: var(--space-10);
 			}
 			.team .sentence p {
 				max-width: 50ch;
