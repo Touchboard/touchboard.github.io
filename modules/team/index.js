@@ -16,7 +16,7 @@ Main.add_module({
 		.team .sentence {
 			text-align: center;
 			position: absolute;
-			bottom: 0;
+			bottom: 10%;
 			left: 0;
 			right: 0;
 		}
@@ -44,10 +44,10 @@ Main.add_module({
 				height: 140vw;
 			}
 			.team .sentence {
-				padding: var(--space-10);
+				padding: 0 var(--space-10);
 			}
 			.team .sentence p {
-				max-width: 50ch;
+				max-width: 40ch;
 			}
 		}
 		@media screen and (min-width: 1126px) {

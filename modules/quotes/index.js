@@ -20,7 +20,6 @@ Main.add_module({
 			background-color: var(--surface-area);
 			border-radius : var(--space-00);
 			padding : var(--space-10);
-			max-width: 300px;
 		}
 
 		.quotes .img {
