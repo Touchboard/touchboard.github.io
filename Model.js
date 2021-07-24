@@ -5,26 +5,31 @@ const Model = {
 			list: [
 				{
 					graphic: `text`,
-					title: `Textinput, whenever you need`,
-					description: `Touchboard recognizes text fields and changes it's layout to your favorite language`,
+					title: `Text input however you want`,
+					description: `Touchboard recognizes text fields and changes its layout to your favorite language`,
 				},
 				{
 					graphic: `graphic`,
 					title: `Intuitive sliders and other controls`,
-					description: `In Photoshop relevant control elements let you intuitively navigate through your settings like saturation, hue, or opacity`,
+					description: `Relevant control elements let you intuitively navigate through your favorite graphics editor  like Photoshop, Gimp, or Figma.`,
 				},
 				{
 					graphic: `music`,
 					title: `Pressure senstitive gestures`,
-					description: `Use it like a MIDI controller and make music. Touchboard supports various interactions. Even drumming.`,
+					description: `Make music with Touchboard. Use it as a MIDI controller that supports various interactions, like drumming.`,
 				},
 				{
 					graphic: `cursor`,
 					title: `A trackpad at your fingertips`,
-					description: `Move the cursor. Click. Zoom. And navigate in 3D.`,
+					description: `Move the cursor, click, zoom, and navigate in 3D.`,
+				},
+				{
+					graphic: `More`,
+					title: `...And so much more`,
+					description: `The Touchboard has endless functions and applications. Schedule a live demo today to try it out yourself!`,
 				},
 			],
-			about: `The highly adaptable human input device. Comfortable and intuitive for any workflow.`,
+			about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
 		},
 		{
 			module: `social`,
@@ -52,35 +57,35 @@ const Model = {
 			module: `text`,
 			type: `wide`,
 			body: `
-				There are plenty of input devices, like orthogonal keyboards, MIDI instruments or even Apple's touchbar. But they can only solve some of the many interaction problems of the modern desktop workflows.
+				There are plenty of input devices, like orthogonal keyboards, MIDI instruments or even Apple's touchbar, but these only solve some of the many interaction problems of the modern desktop workflows.
 				<br/>
 				<br/>
-				We <span class="accent">combined</span> all the best ideas and cutting edge technologies in just one single device, that follows a simple philosophy: Accesability to all relevant controls of your frontmost desktop application directly under your favorite fingers.
+				We <span class="accent">combined</span> all the best ideas and cutting edge technologies in just one single device (patent pending) that follows a simple philosophy: accessibility to all relevant controls of your frontmost desktop application at your fingertips.
 				<br/>
 				<br/>
-				Besides typing, executing shortcuts or controlling the cursor, our interface also allows novel interactions the world has never seen before. And all this without the need to move within or between devices.
+				Besides typing, executing shortcuts and controlling the cursor, our interface also allows novel interactions the world has never seen before. All of this without the need to move within or between devices.
 			`,
 		},
 		{
 			module: `quotes`,
 			list: [
 				{
-					person: `Hong Nhung Ngo`,
+					person: `Nhung`,
 					says: `AutoCAD has way too many functions and options. Touchboard would make it so much easier for me to navigate through my daily workflow.`,
 					position: `Student of architecture`,
 				},
 				{
-					person: `Patrick Westermann`,
+					person: `Patrick`,
 					says: `Impressive. I have never experienced anything like the Touchboard before.`,
 					position: `Entrepreneur`,
 				},
 				{
-					person: `Cindy Schluck`,
+					person: `Cindy`,
 					says: `It's amazing. I can adapt and arrange Touchboard to all my tasks no matter which app I am using.`,
 					position: `Grafic Designer`,
 				},
 				{
-					person: `Alena Klueva`,
+					person: `Alena`,
 					says: `I'm not a computer person at all. The Touchboard however is very visual and clear, that I'd be able to operate Excel Sheets like a pro without knowing a single shortcut.`,
 					position: `Enterpreneur`,
 				},
