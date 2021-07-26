@@ -72,7 +72,7 @@ const Model = {
 				{
 					person: `Nhung`,
 					says: `AutoCAD has way too many functions and options. Touchboard would make it so much easier for me to navigate through my daily workflow.`,
-					position: `Student of architecture`,
+					position: `Student of Architecture`,
 				},
 				{
 					person: `Patrick`,
@@ -87,12 +87,25 @@ const Model = {
 				{
 					person: `Alena`,
 					says: `I'm not a computer person at all. The Touchboard however is very visual and clear, that I'd be able to operate Excel Sheets like a pro without knowing a single shortcut.`,
-					position: `Enterpreneur`,
+					position: `Entrepreneur`,
 				},
 				// {
-				// 	person: `Philipp Matschke`,
+				// 	person: `Philipp`,
 				// 	says: `It is going to revolutionize the interaction with the computer. Ill definetely buy it for my son`,
 				// 	position: `Media Creator`,
+				// },
+				// {
+				// 	person: `Tobias`,
+				// 	says: `Touchboard is not just for media creators like mzself. It is going to be an input device for everz aspect of the PC.`,
+				// 	position: `Entrepreneur`,
+				// },
+				// 	person: `Alexandra`,
+				// 	says: `Wow. This'll make you rich`,
+				// 	position: 'UX Designer'`,
+				// },
+				// 	person: `Justus`,
+				// 	says: `Even as a patent lawyer I don't see such revolutionary technologies often.`,
+				// 	position: 'Patent lawyer'`,
 				// },
 			],
 		},
