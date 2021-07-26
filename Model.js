@@ -23,11 +23,11 @@ const Model = {
 					title: `A trackpad at your fingertips`,
 					description: `Move the cursor, click, zoom, and navigate in 3D.`,
 				},
-				// {
-				// 	graphic: `More`,
-				// 	title: `...And so much more`,
-				// 	description: `The Touchboard has endless functions and applications. Schedule a live demo today to try it out yourself!`,
-				// },
+				{
+					graphic: `more`,
+					title: `...And so much more`,
+					description: `The Touchboard has endless functions and applications. Schedule a live demo today to try it out yourself!`,
+				},
 			],
 			about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
 		},
