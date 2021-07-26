@@ -57,10 +57,10 @@ const Model = {
 			module: `text`,
 			type: `wide`,
 			body: `
-				There are plenty of input devices, like orthogonal keyboards, MIDI instruments or even Apple's touchbar, but these only solve some of the many interaction problems of the modern desktop workflows.
+				There are plenty of input devices, like orthogonal keyboards, MIDI instruments or even Apple's touch bar, but these only solve some of the many interaction problems of the modern desktop workflows.
 				<br/>
 				<br/>
-				We <span class="accent">combined</span> all the best ideas and cutting edge technologies in just one single device (patent pending) that follows a simple philosophy: accessibility to all relevant controls of your frontmost desktop application at your fingertips.
+				We <span class="accent">combined</span> all the best ideas and cutting-edge technologies in just one single device (patent pending) that follows a simple philosophy: accessibility to all relevant controls of your frontmost desktop application at your fingertips.
 				<br/>
 				<br/>
 				Besides typing, executing shortcuts and controlling the cursor, our interface also allows novel interactions the world has never seen before. All of this without the need to move within or between devices.
@@ -82,7 +82,7 @@ const Model = {
 				{
 					person: `Cindy`,
 					says: `It's amazing. I can adapt and arrange Touchboard to all my tasks no matter which app I am using.`,
-					position: `Grafic Designer`,
+					position: `Graphic Designer`,
 				},
 				{
 					person: `Alena`,
@@ -98,13 +98,13 @@ const Model = {
 		},
 		{
 			module: `team`,
-			about: `We are a <span class="accent">multidisciplinary</span> team, focused on maximising customer value in a resource limited environment with our state of the art technology.`,
+			about: `We are a <span class="accent">multidisciplinary</span> team, focused on maximizing customer value in a resource-limited environment with our state-of-the-art technology.`,
 			list: [
 				{
 					name: `Sergej Nejman`,
 					position: `Manufacturing, R&D`,
 					about: `Years of professional experience in various companies as a freelance industrial designer. Bachelor in Industrial Design.`,
-					quote: `give me that puzzle`,
+					quote: `Give me that puzzle`,
 				},
 				{
 					name: `Anton Brams`,
