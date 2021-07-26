@@ -2,6 +2,8 @@ const Model = {
 	landing: [
 		{
 			module: `product`,
+			about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
+			disclamer: `<sup>*</sup>not actual design, patent pending`,
 			list: [
 				{
 					graphic: `text`,
@@ -29,7 +31,6 @@ const Model = {
 					description: `The Touchboard has endless functions and applications. Schedule a live demo today to try it out yourself!`,
 				},
 			],
-			about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
 		},
 		{
 			module: `social`,
