@@ -127,6 +127,7 @@ Main.add_module({
 			}
 			.product .box {
 				height: 50vh;
+				min-height: 440px;
 			}
 			.product .slide {
 				height: calc(50vh + 200px);
