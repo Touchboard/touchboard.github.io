@@ -3,7 +3,6 @@ const Model = {
 		{
 			module: `product`,
 			about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
-			disclamer: `<sup>*</sup>not actual design, patent pending`,
 			list: [
 				{
 					graphic: `text`,

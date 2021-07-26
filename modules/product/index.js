@@ -57,7 +57,7 @@ Main.add_module({
 			cursor: pointer;
 			width: var(--space-00);
 			height: var(--space-00);
-			background-color: var(--middle-area);
+			background-color: var(--surface-line);
 			border-radius: 9999px;
 		}
 
