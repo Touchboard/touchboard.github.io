@@ -25,7 +25,7 @@ const Model = {
 				},
 				{
 					graphic: `more`,
-					title: `...And so much more`,
+					title: `...and so much more`,
 					description: `The Touchboard has endless functions and applications. Schedule a live demo today to try it out yourself!`,
 				},
 			],

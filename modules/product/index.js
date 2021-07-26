@@ -90,7 +90,7 @@ Main.add_module({
 			}
 			.product .slide {
 				height: calc(50vh + 200px);
-				margin: -100px 0 -200px;
+				margin: -120px 0 -200px;
 			}
 		}
 
