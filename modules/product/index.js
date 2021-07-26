@@ -30,7 +30,7 @@ Main.add_module({
 			left: 0; right: 0;
 			top: 0; bottom: 0;
 			opacity: 0;
-			transition: 1s opacity;
+			transition: .5s opacity, .5s visibility;
 			visibility: hidden;
 		}
 		.product .container.show {
