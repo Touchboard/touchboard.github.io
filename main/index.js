@@ -48,7 +48,7 @@ const Main = {
 	},
 
 	load() {
-		this.add_keyboard_listener()
+		// this.add_keyboard_listener()
 		const module_unique = []
 		for (let i in Model) {
 			for (let n in Model[i]) {
