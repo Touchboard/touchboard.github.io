@@ -3,87 +3,92 @@ Main.add_module({
 
 	style: `
 		.timeline {
-			text-align: center;
 			display: grid;
-			grid-auto-columns: min-content;
+			grid-gap : var(--space-00);
 			justify-content: center;
+			grid-auto-flow: dense;
 		}
 		.timeline .container {
-			position: relative;
+			display: grid;
+			grid-template-rows: auto min-content;
 			text-align: center;
-			padding: var(--space-01) var(--space-00);
-			align-self: end;
+			background-color: var(--surface-area);
+			border-radius: var(--space-00);
+			justify-items: center;
+			align-items: center;
+		}
+		.timeline .container.marked {
+			background: linear-gradient(to right bottom, #BA4AFF, #FF6B57);
+			color: white;
 		}
 
 		.timeline .container img {
-			height: 20px;
+			height: 70px;
+			width: 90%;
 			object-fit: contain;
 		}
-		.timeline .container .note {
-			display: inline-block;
-			font-weight: bold;
+		.timeline .container.big img {
+			height: 300px;
 		}
-		.timeline .container .arrow {
-			position: absolute;
-			right: 0;
-			bottom: 10px;
-			transform: translate(50%, -50%);
-			width: 10px;
-			height: 30px;
-			background-image: url('./modules/timeline/arrow.png');
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center;
-			opacity: .1;
-		}
-		.timeline .container:last-child .arrow {
-			display: none;
-		}
+
 		@media screen and (max-width: 815px) {
 			.timeline {
-				grid-template-columns: repeat(auto-fit, minmax(110px, max-content));
+				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 			}
 			.timeline .container {
-				width: 90px;
+				padding: var(--space-01);
+				grid-gap: var(--space-00);
 			}
-			.timeline .container img {
-				height: 20px;
-			}
-			.timeline .typo_01 {
-				margin-top: var(--space-01);
+			.timeline .container.big {
+				grid-area: span 2 / span 2;
 			}
 		}
 		@media screen and (min-width: 815px) {
 			.timeline {
-				grid-template-columns: repeat(auto-fit, minmax(190px, max-content));
+				grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+				grid-auto-rows: 250px;
 			}
 			.timeline .container {
-				width: 170px;
+				padding: var(--space-10);
+				grid-gap: var(--space-10);
 			}
-			.timeline .container img {
-				height: 40px;
-			}
-			.timeline .typo_01 {
-				margin-top: var(--space-00);
+			.timeline .container.big {
+				grid-area: span 2 / span 2;
 			}
 		}
 	`,
 
 	html({list}) {
 		const url = url => `./modules/timeline/graphic/${url}.png`
-		const container = ({date, img, note, onclick}) => `
+		const container = props => `
 			<div
-				class="container"
-				${Main.router(onclick)}
+				class="
+					container
+					${props.big ? 'big' : ''}
+					${props.marked ? 'marked' : ''}
+				"
+				${Main.router(props.onclick)}
 			>
 				${
-					img
-						? `<img src="${url(img)}" class="dark">`
-						: `<span class="note typo_00">${note}</span>`
+					props.img
+						? `<img src="${url(props.img)}" class="dark">`
+						: `
+							<div class="typo_00" style="max-width: 25ch;">
+								${props.note}
+							</div>
+						`
 				}
-				<br/>
-				<div class="typo_01">${date.split(' ').join('<br/>')}</div>
-				<div class="arrow dark">&nbsp;</div>
+				<div style="max-width: 40ch;">
+					${
+						props.description
+							? `
+								<div class="typo_01" style="margin-bottom: var(--space-01);">
+									${props.description}
+								</div>`
+							: ''
+					}
+					<div class="typo_01"><b>${props.date}</b></div>
+				</div>
 			</div>
 		`
 		return `<div class="timeline responsive">
@@ -91,3 +96,5 @@ Main.add_module({
 		</div>`
 	},
 })
+
+// style="background-color: hsl(${Math.random() * 360}, 50%, 80%);"

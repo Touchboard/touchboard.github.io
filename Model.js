@@ -36,6 +36,10 @@ const Model = {
 			message: `Want to find out more about Touchboard and support us? Get in touch!`,
 			list: [
 				{
+					icon: `mail`,
+					url: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+				},
+				{
 					icon: `instagram`,
 					url: `https://www.instagram.com/butterfly.touchboard/`,
 				},
@@ -46,10 +50,6 @@ const Model = {
 				{
 					icon: `youtube`,
 					url: `https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
-				},
-				{
-					icon: `mail`,
-					url: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
 				},
 			],
 		},
@@ -72,7 +72,7 @@ const Model = {
 				{
 					person: `Nhung`,
 					says: `AutoCAD has way too many functions and options. Touchboard would make it so much easier for me to navigate through my daily workflow.`,
-					position: `Student of Architecture`,
+					position: `Architecture student`,
 				},
 				{
 					person: `Patrick`,
@@ -122,12 +122,12 @@ const Model = {
 				{
 					name: `Anton Brams`,
 					position: `Vision, R&D`,
-					about: `Software, hardware, graphic, motion, sound, industrial and experience Designer. Master in Human-Computer Interaction and Bachelor in Industrial Design.`,
+					about: `Software, hardware, graphic, motion, sound, industrial and experience designer. Master in Human-Computer Interaction and Bachelor in Industrial Design.`,
 					quote: `Experience design down to zeros and ones`,
 				},
 				{
 					name: `Philip Mewes`,
-					position: `Marketing, Operational`,
+					position: `Marketing, Operations`,
 					about: `International work experience with Magna Europe and Daimler in Tokyo. Master in Media Management and Bachelor in International Business.`,
 					quote: `Let me make a spreadsheet for that`,
 				},
@@ -137,32 +137,45 @@ const Model = {
 			module: `timeline`,
 			list: [
 				{
-					date: `Aug 2016`,
+					date: `2016`,
 					img: `butterfly`,
+					description: `Birth of the original idea followed by years of research of different interaction concepts`,
 				},
 				{
 					date: `Jun 2019`,
 					img: `neudeli`,
 					onclick: `https://www.uni-weimar.de/de/medien/institute/neudeli/`,
+					description: `Startupo incubator of the Bauhaus-Universität Weimar. Development of first proof of concept.`,
 				},
 				{
-					date: `Jun 2019`,
+					date: `Nov 2019`,
 					img: `trip`,
 					onclick: `https://trip.community`,
+					description: `Thuringian Regional Innovation Program (TRIP) startup accelerator`,
 				},
 				{
+					date: `Oct 2019`,
+					img: `bauhaus`,
+					description: `First extensive usability tests in Anton Brams' Masterthesis`,
+				},
+				{
+					big: true,
 					date: `Sep 2020`,
 					img: `exist`,
 					onclick: `https://www.exist.de/EN/Home/home_node.html`,
+					description: `One year startup program by the German Federal Ministry for Economic Affairs and Energy. Completion of a full working prototype and conduction of user tests.`,
 				},
 				{
 					date: `Jan 2021`,
 					img: `International Startup Campus`,
 					onclick: `https://internationalstartupcampus.com/`,
+					description: `Startup program for startup internationalization. Focus on expansion to the Asian market for manufacturing and sales.`,
 				},
 				{
-					date: `<b>now</b> 2021`,
-					note: `<div class="accent">Looking for Investors</div>`,
+					date: `now`,
+					marked: true,
+					note: `<b>Looking for Investors! </br> Click here to write us!</b>`,
+					onclick: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
 				},
 			],
 		},

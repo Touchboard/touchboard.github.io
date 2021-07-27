@@ -78,18 +78,18 @@ const Main = {
 			this.modules[module.type] = module
 	},
 
-	router(url) {
+	router(url, style) {
 		if (url) {
 			let go = ''
 			if (url[0] == '/') {
 				const link = `index.html?route=${url.substring(1)}`
 				go = `window.location.href='${link}';`
-			} else {
-				go = `window.open('${url}');`
-			}
+			} else if (url.indexOf('mailto') > -1)
+				go = `window.location='${url}';`
+			else go = `window.open('${url}');`
 			return `
 				onclick="${go}"
-				style="cursor: pointer;"
+				style="cursor: pointer; ${style}"
 			`
 		} else return ''
 	},

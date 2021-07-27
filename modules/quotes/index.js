@@ -23,14 +23,12 @@ Main.add_module({
 		}
 
 		.quotes .img {
-			--size: 80px;
 			width: var(--size);
 			height : var(--size);
 			grid-area: img;
 			background-size: cover;
 			background-repeat: no-repeat;
 			border-radius: 9999px;
-			// border: 4px var(--surface-line) solid;
 		}
 
 		.quotes .says {
@@ -43,10 +41,20 @@ Main.add_module({
 		}
 
 		@media screen and (max-width: 815px) {
-
+			.quotes .container {
+				padding : var(--space-00);
+			}
+			.quotes .img {
+				--size: 40px;
+			}
 		}
 		@media screen and (min-width: 815px) {
-
+			.quotes .container {
+				padding : var(--space-10);
+			}
+			.quotes .img {
+				--size: 80px;
+			}
 		}
 	`,
 
