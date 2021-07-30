@@ -12,11 +12,11 @@ const Model = {
 				{
 					graphic: `graphic`,
 					title: `Intuitive sliders and other controls`,
-					description: `Relevant control elements let you intuitively navigate through your favorite graphics editor  like Photoshop, Gimp, or Figma.`,
+					description: `Relevant control elements let you intuitively navigate through your favorite graphics editor  like Photoshop, Sketch, or Figma.`,
 				},
 				{
 					graphic: `music`,
-					title: `Pressure senstitive gestures`,
+					title: `Pressure sensitive gestures`,
 					description: `Make music with Touchboard. Use it as a MIDI controller that supports various interactions, like drumming.`,
 				},
 				{
