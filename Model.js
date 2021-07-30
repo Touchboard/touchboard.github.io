@@ -207,7 +207,7 @@ const Model = {
 				{body: `impressum`, onclick: `/impressum`},
 				{body: `made by`, onclick: `http://antonbrams.io`},
 				{
-					body: `Copyright © 2021 Buttefly Company GbR. All rights reserved`,
+					body: `Copyright © 2021 Butterfly Company GbR. All rights reserved`,
 				},
 			],
 		},
