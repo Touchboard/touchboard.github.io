@@ -2,16 +2,16 @@ Main.add_module({
 	type: 'logo',
 
 	style: `
-		@media screen and (max-width: 815px) {
-			body {
-				padding-top: var(--space-20);
-			}
-		}
-		@media screen and (min-width: 815px) {
-			body {
-				padding-top: var(--space-10);
-			}
-		}
+		// @media screen and (max-width: 815px) {
+		// 	body {
+		// 		padding-top: var(--space-20);
+		// 	}
+		// }
+		// @media screen and (min-width: 815px) {
+		// 	body {
+		// 		padding-top: var(--space-10);
+		// 	}
+		// }
 		.logo {
 			position: fixed;
 			left: 50%;

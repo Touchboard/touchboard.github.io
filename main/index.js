@@ -47,8 +47,41 @@ const Main = {
 		})
 	},
 
+	add_full_listener() {
+		window.addEventListener('scroll', e => {
+			document
+				.querySelectorAll('.source_full')
+				.forEach((source, i) => {
+					const id = source.getAttribute('data-target')
+					const target = document.querySelector(`#${id}`)
+					const rect = source.getBoundingClientRect()
+					const top = rect.top + rect.height * 0.2
+					const bottom = rect.bottom - rect.height * 0.2
+					const middle = document.body.offsetHeight / 2
+					const a = helpers.map(
+						middle,
+						rect.top,
+						top,
+						0,
+						1,
+						true
+					)
+					const b = helpers.map(
+						middle,
+						bottom,
+						rect.bottom,
+						1,
+						0,
+						true
+					)
+					target.style.opacity = a * b
+				})
+		})
+	},
+
 	load() {
-		// this.add_keyboard_listener()
+		this.add_keyboard_listener()
+		this.add_full_listener()
 		const module_unique = []
 		for (let i in Model) {
 			for (let n in Model[i]) {

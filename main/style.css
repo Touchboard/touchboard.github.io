@@ -102,6 +102,20 @@ a {
 .responsive {
 	max-width: 1680px;
 	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.full {
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-color: gray;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 815px) {
@@ -111,6 +125,8 @@ a {
 	.responsive.no {
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.full {
 	}
 	/* TYPO */
 	.typo_20 {
@@ -139,6 +155,8 @@ a {
 		padding-left: 0;
 		padding-right: 0;
 	}
+	.full {
+	}
 	/* TYPO */
 	.typo_20 {
 		font-size: 48px;
@@ -158,9 +176,16 @@ a {
 	}
 }
 
+@media screen and (min-width: 1681px) {
+	.full {
+		width: 1681px;
+		height: calc(100% - var(--space-00));
+		border-radius: var(--space-00);
+	}
+}
+
 input,
 button {
-	padding: var(--space-01) var(--space-00);
 	font-size: 16px;
 	border: none;
 	border-radius: var(--space-01);
@@ -168,13 +193,23 @@ button {
 }
 
 input {
+	padding: var(--space-01) var(--space-00);
 	background-color: var(--surface-area);
 	color: var(--front);
 }
 
 button {
+	padding: var(--space-01) var(--space-00);
 	background-color: var(--active);
 	box-shadow: 0px 5px 20px rgba(0, 56, 255, 0.4);
+	color: var(--back);
+	font-weight: bold;
+}
+
+button.big {
+	padding: var(--space-00) var(--space-10);
+	background: linear-gradient(0.4turn, #ba4aff, #ff6b57);
+	box-shadow: none;
 	color: var(--back);
 	font-weight: bold;
 }

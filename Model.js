@@ -1,6 +1,12 @@
 const Model = {
 	landing: [
 		{
+			module: `landing`,
+			about: `The most advance all-in-one human input device in the world!`,
+		},
+	],
+	relations: [
+		{
 			module: `product`,
 			about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
 			list: [
