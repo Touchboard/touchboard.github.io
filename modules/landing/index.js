@@ -14,6 +14,14 @@ Main.add_module({
 		    grid-template-rows: 1fr 1fr 1fr;
 			color: white;
 		}
+		.landing .play {
+			clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+			height: 12vh;
+			width: 12vh;
+			object-fit: cover;
+			object-position: 65%;
+		}
+
 		.landing .product_name {
 			max-width: 80vw;
 			width: 500px;
@@ -51,11 +59,15 @@ Main.add_module({
 					<div class="product_about typo_10">${about}</div>
 				</div>
 				<div>
-					<img
+					<video
 						${Main.router(intro)}
-						src="./modules/landing/graphic/play.png"
-						width="60vw"
-					/>
+						src="./modules/landing/graphic/preview.mp4"
+						class="play"
+						muted loop playsinline preload autoplay
+						oncanplaythrough="Main.modules.loader.on_load()"
+					>
+						Sorry, your browser doesn't support embedded videos.
+					</video>
 				</div>
 				<div>
 					<button
@@ -69,3 +81,9 @@ Main.add_module({
 		`
 	},
 })
+// <img
+// 	class="play"
+// 	${Main.router(intro)}
+// 	src="./modules/landing/graphic/play.png"
+// 	width="60vw"
+// />

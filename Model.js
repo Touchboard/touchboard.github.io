@@ -1,6 +1,9 @@
 const Model = {
 	landing: [
 		{
+			module: `loader`,
+		},
+		{
 			module: `landing`,
 			about: `The most advance all-in-one human input device in the world!`,
 			intro: `https://www.youtube.com/embed/WEZk_21VpL0?autoplay=1`,

@@ -9,7 +9,7 @@ Main.add_module({
 			top: 50px;
 			width: 64px;
 			height: 38px;
-			background-image: url('./modules/logo/graphic mono.png');
+			background-image: url('./main/graphic/logo.png');
 			background-size: 50px;
 			transform: translate(-50%, -50%);
 			background-position: center;
