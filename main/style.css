@@ -51,6 +51,12 @@
 	user-select: none; /* Non-prefixed version, currently */
 }
 
+.cover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 html {
 	font-family: var(--font-family);
 	line-height: var(--line-height);
@@ -59,6 +65,7 @@ html {
 body {
 	background-color: var(--back);
 	color: var(--front);
+	/* scroll-snap-type: y proximity; */
 }
 
 body.dev * {
@@ -108,8 +115,8 @@ a {
 .full {
 	position: fixed;
 	z-index: -1;
-	width: 100%;
-	height: 100%;
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
 	background-size: cover;
 	background-position: center;
 	background-color: gray;
@@ -121,6 +128,9 @@ a {
 @media screen and (max-width: 815px) {
 	.responsive {
 		padding: var(--space-10) var(--space-00);
+	}
+	.responsive:first-child {
+		padding-top: var(--space-20);
 	}
 	.responsive.no {
 		padding-left: 0;
@@ -151,6 +161,10 @@ a {
 	.responsive {
 		padding: var(--space-20);
 	}
+
+	.responsive:first-child {
+		padding-top: var(--space-30);
+	}
 	.responsive.no {
 		padding-left: 0;
 		padding-right: 0;
@@ -180,7 +194,7 @@ a {
 	.full {
 		width: 1681px;
 		height: calc(100% - var(--space-00));
-		border-radius: var(--space-00);
+		border-radius: var(--space-10);
 	}
 }
 
@@ -207,7 +221,9 @@ button {
 }
 
 button.big {
-	padding: var(--space-00) var(--space-10);
+	font-size: 22px;
+	padding: var(--space-10) var(--space-20);
+	border-radius: var(--space-00);
 	background: linear-gradient(0.4turn, #ba4aff, #ff6b57);
 	box-shadow: none;
 	color: var(--back);

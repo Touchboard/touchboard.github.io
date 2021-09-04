@@ -2,15 +2,16 @@ Main.add_module({
 	type: 'landing',
 
 	style: `
-		.full {
-			background-image: url('./modules/landing/img.jpg');
+		.full_landing {
+			background-image: url('./modules/landing/graphic/img.jpg');
 		}
 		.landing {
+			scroll-snap-align: center;
 			text-align: center;
 			height: 100vh;
 			display: grid;
 			align-items: center;
-		    grid-template-rows: min-content 1fr min-content;
+		    grid-template-rows: 1fr 1fr 1fr;
 			color: white;
 		}
 		.landing .product_name {
@@ -34,9 +35,9 @@ Main.add_module({
 		}
 	`,
 
-	html: ({about}) => {
+	html: ({about, intro, preorder}) => {
 		return `
-			<div class="full" id="target_full"></div>
+			<div class="full full_landing" id="target_full"></div>
 			<div
 				class="landing responsive source_full"
 				data-target="target_full"
@@ -44,22 +45,22 @@ Main.add_module({
 				<div>
 					<img
 						class="product_name"
-						src="./modules/landing/touchboard.png"
+						src="./modules/landing/graphic/touchboard.png"
 					/>
 					<br/>
 					<div class="product_about typo_10">${about}</div>
 				</div>
 				<div>
 					<img
-						${Main.router('https://youtu.be/WEZk_21VpL0')}
-						src="./modules/landing/play.png"
-						width="50vw"
+						${Main.router(intro)}
+						src="./modules/landing/graphic/play.png"
+						width="60vw"
 					/>
 				</div>
 				<div>
 					<button
 						class="big"
-						${Main.router('https://youtu.be/WEZk_21VpL0')}
+						${Main.router(preorder)}
 					>
 						Pre-Order
 					</button>
@@ -67,8 +68,4 @@ Main.add_module({
 			</div>
 		`
 	},
-
-	on_start() {},
-
-	on_click(i) {},
 })

@@ -3,6 +3,7 @@ Main.add_module({
 
 	style: `
 		.timeline {
+			scroll-snap-align: center;
 			display: grid;
 			grid-gap : var(--space-00);
 			justify-content: center;

@@ -3,6 +3,7 @@ Main.add_module({
 
 	style: `
 		.text {
+			scroll-snap-align: center;
 			text-align: center;
 		}
 		.text p {

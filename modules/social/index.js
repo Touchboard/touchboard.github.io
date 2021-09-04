@@ -17,8 +17,6 @@ Main.add_module({
 			width: var(--size);
 			height: var(--size);
 			display: inline-block;
-			background-repeat: no-repeat;
-			background-position: center;
 			cursor: pointer;
 		}
 
@@ -41,7 +39,7 @@ Main.add_module({
 			`url('./modules/social/graphic/${url}.png')`
 		const container = ({icon, url}) => `
 			<div
-				class="img dark"
+				class="img cover dark"
 				style="background-image: ${img(icon)};"
 				${Main.router(url)}
 			>

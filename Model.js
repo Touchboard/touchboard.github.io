@@ -3,74 +3,88 @@ const Model = {
 		{
 			module: `landing`,
 			about: `The most advance all-in-one human input device in the world!`,
+			intro: `https://www.youtube.com/embed/WEZk_21VpL0?autoplay=1`,
+			preorder: `google.com`,
 		},
-	],
-	relations: [
 		{
-			module: `product`,
-			about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
+			module: `explore`,
+			list: {
+				spotify: {
+					top: [
+						{go: `mouse`, x: 2.9, y: 12.1},
+						{go: 'commands', x: -3.2, y: 12.1},
+						{go: 'media', x: -9.2, y: 12.1},
+					],
+					mouse: [{x: 2.9, y: 12.1}],
+					commands: [{x: -3.2, y: 12.1}],
+					media: [{x: -9.2, y: 12.1}],
+				},
+				photoshop: {
+					$compliment: [
+						['tablet', 50, -15, 1192, 968],
+						['mouse', 30, 1, 595, 639],
+					],
+					top: [
+						{go: 'tools', x: -11.1, y: 7},
+						{go: 'numpad', x: -4.8, y: 7.3},
+					],
+					tools: [{x: -11.1, y: 7}],
+					numpad: [{x: -4.8, y: 7.3}],
+				},
+				mail: {
+					top: [
+						{go: 'split', x: 0, y: -6.5},
+						{go: 'ru', x: 9.3, y: 6.3},
+						{go: 'symbols', x: 9.3, y: 12.2},
+					],
+					split: [{x: 0, y: -6.5}],
+					ru: [{x: 9.3, y: 6.3}],
+					symbols: [{x: 9.3, y: 12.2}],
+				},
+				safari: {
+					top: [
+						{
+							go: 'text',
+							x: 9.3,
+							y: -6.2,
+							stay: true,
+							app: 'focused',
+						},
+					],
+					text: [
+						{
+							go: 'top',
+							x: 34,
+							y: -6.2,
+							stay: true,
+							app: 'app',
+						},
+					],
+				},
+				live: {top: []},
+			},
+		},
+		{
+			module: `features`,
 			list: [
-				{
-					graphic: `text`,
-					title: `Text input however you want`,
-					description: `Touchboard recognizes text fields and changes its layout to your favorite language`,
-				},
-				{
-					graphic: `graphic`,
-					title: `Intuitive sliders and other controls`,
-					description: `Relevant control elements let you intuitively navigate through your favorite graphics editor  like Photoshop, Sketch, or Figma.`,
-				},
-				{
-					graphic: `music`,
-					title: `Pressure sensitive gestures`,
-					description: `Make music with Touchboard. Use it as a MIDI controller that supports various interactions, like drumming.`,
-				},
-				{
-					graphic: `cursor`,
-					title: `A trackpad at your fingertips`,
-					description: `Move the cursor, click, zoom, and navigate in 3D.`,
-				},
-				{
-					graphic: `more`,
-					title: `...and so much more`,
-					description: `The Touchboard has endless functions and applications. Schedule a live demo today to try it out yourself!`,
-				},
+				['all-in-one', true],
+				['context aware'],
+				['pressure sensitive gestures', true],
+				['easy to find keys'],
+				['intuitive ui', true],
+				['multitouch'],
+				['controls under favorite fingers', true],
+				['better ergonomy'],
+				['wireless'],
+				['touchboard studio'],
+				['cloud'],
+				['work from anywhere'],
 			],
 		},
 		{
-			module: `social`,
-			message: `Want to find out more about Touchboard and support us? Get in touch!`,
-			list: [
-				{
-					icon: `mail`,
-					url: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
-				},
-				{
-					icon: `instagram`,
-					url: `https://www.instagram.com/butterfly.touchboard/`,
-				},
-				{
-					icon: `facebook`,
-					url: `https://www.facebook.com/Buttefly.Touchboard/`,
-				},
-				{
-					icon: `youtube`,
-					url: `https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
-				},
-			],
-		},
-		{
-			module: `text`,
-			type: `wide`,
-			body: `
-				There are plenty of input devices, like orthogonal keyboards, MIDI instruments or even Apple's touch bar, but these only solve some of the many interaction problems of the modern desktop workflows.
-				<br/>
-				<br/>
-				We <span class="accent">combined</span> all the best ideas and cutting-edge technologies in just one single device (patent pending) that follows a simple philosophy: accessibility to all relevant controls of your frontmost desktop application at your fingertips.
-				<br/>
-				<br/>
-				Besides typing, executing shortcuts and controlling the cursor, our interface also allows novel interactions the world has never seen before. All of this without the need to move within or between devices.
-			`,
+			module: `preorder`,
+			url: 'google.com',
+			message: 'Like Touchboard? You can pre-order here!',
 		},
 		{
 			module: `quotes`,
@@ -115,6 +129,61 @@ const Model = {
 				// },
 			],
 		},
+	],
+	relations: [
+		// {
+		// 	module: `product`,
+		// 	about: `The highly adaptable all-in-one input device. Comfortable and intuitive for any workflow.`,
+		// 	list: [
+		// 		{
+		// 			graphic: `text`,
+		// 			title: `Text input however you want`,
+		// 			description: `Touchboard recognizes text fields and changes its layout to your favorite language`,
+		// 		},
+		// 		{
+		// 			graphic: `graphic`,
+		// 			title: `Intuitive sliders and other controls`,
+		// 			description: `Relevant control elements let you intuitively navigate through your favorite graphics editor  like Photoshop, Sketch, or Figma.`,
+		// 		},
+		// 		{
+		// 			graphic: `music`,
+		// 			title: `Pressure sensitive gestures`,
+		// 			description: `Make music with Touchboard. Use it as a MIDI controller that supports various interactions, like drumming.`,
+		// 		},
+		// 		{
+		// 			graphic: `cursor`,
+		// 			title: `A trackpad at your fingertips`,
+		// 			description: `Move the cursor, click, zoom, and navigate in 3D.`,
+		// 		},
+		// 		{
+		// 			graphic: `more`,
+		// 			title: `...and so much more`,
+		// 			description: `The Touchboard has endless functions and applications. Schedule a live demo today to try it out yourself!`,
+		// 		},
+		// 	],
+		// },
+		// {
+		// 	module: `social`,
+		// 	message: `Want to find out more about Touchboard and support us? Get in touch!`,
+		// 	list: [
+		// 		{
+		// 			icon: `mail`,
+		// 			url: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+		// 		},
+		// 		{
+		// 			icon: `instagram`,
+		// 			url: `https://www.instagram.com/butterfly.touchboard/`,
+		// 		},
+		// 		{
+		// 			icon: `facebook`,
+		// 			url: `https://www.facebook.com/Buttefly.Touchboard/`,
+		// 		},
+		// 		{
+		// 			icon: `youtube`,
+		// 			url: `https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+		// 		},
+		// 	],
+		// },
 		{
 			module: `team`,
 			about: `We are a <span class="accent">multidisciplinary</span> team, focused on maximizing customer value in a resource-limited environment with our state-of-the-art technology.`,
@@ -123,21 +192,31 @@ const Model = {
 					name: `Sergej Nejman`,
 					position: `Manufacturing, R&D`,
 					about: `Years of professional experience in various companies as a freelance industrial designer. Bachelor in Industrial Design.`,
-					quote: `Give me that puzzle`,
 				},
 				{
 					name: `Anton Brams`,
 					position: `Vision, R&D`,
 					about: `Software, hardware, graphic, motion, sound, industrial and experience designer. Master in Human-Computer Interaction and Bachelor in Industrial Design.`,
-					quote: `Experience design down to zeros and ones`,
 				},
 				{
 					name: `Philip Mewes`,
 					position: `Marketing, Operations`,
 					about: `International work experience with Magna Europe and Daimler in Tokyo. Master in Media Management and Bachelor in International Business.`,
-					quote: `Let me make a spreadsheet for that`,
 				},
 			],
+		},
+		{
+			module: `text`,
+			type: `wide`,
+			body: `
+				There are plenty of input devices, like orthogonal keyboards, MIDI instruments or even Apple's touch bar, but these only solve some of the many interaction problems of the modern desktop workflows.
+				<br/>
+				<br/>
+				We <span class="accent">combined</span> all the best ideas and cutting-edge technologies in just one single device (patent pending) that follows a simple philosophy: accessibility to all relevant controls of your frontmost desktop application at your fingertips.
+				<br/>
+				<br/>
+				Besides typing, executing shortcuts and controlling the cursor, our interface also allows novel interactions the world has never seen before. All of this without the need to move within or between devices.
+			`,
 		},
 		{
 			module: `timeline`,
@@ -209,13 +288,59 @@ const Model = {
 		},
 		{
 			module: 'footer',
-			list: [
-				{body: `impressum`, onclick: `/impressum`},
-				{body: `made by`, onclick: `http://antonbrams.io`},
-				{
-					body: `Copyright © 2021 Butterfly Company GbR. All rights reserved`,
-				},
-			],
+			list: {
+				'Sitemap': [
+					['Main Page', '/landing'],
+					['Pre-Order', 'google.com'],
+					['Investor Relations', '/relations'],
+					['Impressum', '/impressum'],
+				],
+				'Social': [
+					[
+						'E-Mail',
+						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+					],
+					[
+						'Instagram',
+						`https://www.instagram.com/butterfly.touchboard/`,
+					],
+					[
+						'Facebook',
+						`https://www.facebook.com/Buttefly.Touchboard/`,
+					],
+					[
+						'YouTube',
+						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+					],
+				],
+				'Education': [
+					[
+						'Concept Video',
+						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+					],
+					[
+						'Shortcuts',
+						`https://www.instagram.com/butterfly.touchboard/`,
+					],
+				],
+				'News': [
+					[
+						'Neudeli',
+						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+					],
+					[
+						'Exist',
+						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+					],
+					['Team', `/relations`],
+				],
+				'Made by': [
+					['Anton Brams', `http://antonbrams.io`],
+					[
+						`Copyright © 2021 Butterfly Company GbR. All rights reserved`,
+					],
+				],
+			},
 		},
 	],
 }

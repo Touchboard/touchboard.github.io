@@ -2,18 +2,9 @@ Main.add_module({
 	type: 'logo',
 
 	style: `
-		// @media screen and (max-width: 815px) {
-		// 	body {
-		// 		padding-top: var(--space-20);
-		// 	}
-		// }
-		// @media screen and (min-width: 815px) {
-		// 	body {
-		// 		padding-top: var(--space-10);
-		// 	}
-		// }
 		.logo {
 			position: fixed;
+			z-index: 1;
 			left: 50%;
 			top: 50px;
 			width: 64px;
@@ -31,6 +22,7 @@ Main.add_module({
 			background-size: 64px;
 		}
 		.logo.on_scroll {
+			top: 30px;
 			opacity: .8;
 		}
 	`,

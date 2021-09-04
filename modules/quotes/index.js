@@ -3,6 +3,7 @@ Main.add_module({
 
 	style: `
 		.quotes {
+			scroll-snap-align: center;
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
 			grid-gap : var(--space-00);
@@ -26,8 +27,6 @@ Main.add_module({
 			width: var(--size);
 			height : var(--size);
 			grid-area: img;
-			background-size: cover;
-			background-repeat: no-repeat;
 			border-radius: 9999px;
 		}
 
@@ -64,7 +63,10 @@ Main.add_module({
 		const container = ({person, says, position}) => `
 			<div class="container">
 				<div class="says">"${says}"</div>
-				<div class="img" style="background-image: ${url(person)};"></div>
+				<div
+					class="img cover"
+					style="background-image: ${url(person)};"
+				></div>
 				<div class="info typo_01"><b>${person}</b><br/>${position}</div>
 			</div>
 		`

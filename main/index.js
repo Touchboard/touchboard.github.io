@@ -48,34 +48,34 @@ const Main = {
 	},
 
 	add_full_listener() {
+		const onscroll = source => {
+			const id = source.getAttribute('data-target')
+			const target = document.querySelector(`#${id}`)
+			const rect = source.getBoundingClientRect()
+			const screen_middle = window.innerHeight / 2
+			const half = rect.height / 2
+			const a = helpers.map(
+				screen_middle,
+				rect.top - half * 0.2,
+				rect.top + half * 0.8,
+				0,
+				1,
+				true
+			)
+			const b = helpers.map(
+				screen_middle,
+				rect.bottom - half * 0.8,
+				rect.bottom + half * 0.2,
+				1,
+				0,
+				true
+			)
+			target.style.opacity = a * b
+		}
 		window.addEventListener('scroll', e => {
 			document
 				.querySelectorAll('.source_full')
-				.forEach((source, i) => {
-					const id = source.getAttribute('data-target')
-					const target = document.querySelector(`#${id}`)
-					const rect = source.getBoundingClientRect()
-					const top = rect.top + rect.height * 0.2
-					const bottom = rect.bottom - rect.height * 0.2
-					const middle = document.body.offsetHeight / 2
-					const a = helpers.map(
-						middle,
-						rect.top,
-						top,
-						0,
-						1,
-						true
-					)
-					const b = helpers.map(
-						middle,
-						bottom,
-						rect.bottom,
-						1,
-						0,
-						true
-					)
-					target.style.opacity = a * b
-				})
+				.forEach(onscroll)
 		})
 	},
 
