@@ -21,7 +21,7 @@ Main.add_module({
 		@media screen and (max-width: 815px) {
 			.features {
 				grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-				grid-auto-rows : 120px;
+				grid-auto-rows : 140px;
 			}
 			.features .feature.big {
 				grid-area: span 2 / span 2;
@@ -30,7 +30,7 @@ Main.add_module({
 		@media screen and (min-width: 815px) {
 			.features {
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-				grid-auto-rows : 200px;
+				grid-auto-rows : 220px;
 			}
 			.features .feature.big {
 				grid-area: span 2 / span 2;

@@ -4,7 +4,8 @@
 }
 
 :root {
-	--space-30: 100px;
+	--space-40: 256px;
+	--space-30: 128px;
 	--space-20: 64px;
 	--space-10: 32px;
 	--space-00: 16px;

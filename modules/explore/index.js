@@ -56,6 +56,7 @@ Main.add_module({
 			left: 50%;
 			transform: translate(-50%, -50%);
 			max-width: 1200px;
+			max-height: 1200px;
 			opacity: 0;
 			visibility: hidden;
 		}
@@ -71,8 +72,6 @@ Main.add_module({
 		.explore .compliment {
 			position: absolute;
 			z-index: -1;
-			left: calc(50% + var(--x));
-			top: calc(50% + var(--y));
 			transform: translate(-50%, -50%);
 
 			background-repeat: no-repeat;
@@ -116,8 +115,12 @@ Main.add_module({
 		@media screen and (max-width: 815px) {
 			.explore .layout,
 			.explore .compliments {
-				width: 120vw;
-				height: 120vw;
+				width: 110vw;
+				height: 110vw;
+			}
+			.explore .compliment {
+				left: calc(50% + var(--x) - 5%);
+				top: calc(50% + var(--y) + 10%);
 			}
 		}
 		@media screen and (min-width: 815px) {
@@ -126,6 +129,10 @@ Main.add_module({
 				width: 100vh;
 				height: 100vh;
 			}
+			.explore .compliment {
+				left: calc(50% + var(--x));
+				top: calc(50% + var(--y));
+			}
 		}
 	`,
 
@@ -133,6 +140,8 @@ Main.add_module({
 	layout_current: 'top',
 	interval: null,
 	root: './modules/explore/apps',
+	current: 'spotify',
+	apps: [],
 
 	html({list}) {
 		this.model = list
@@ -175,6 +184,7 @@ Main.add_module({
 					data-to="${app}"
 				/>
 			`
+			this.apps.push(app)
 			for (let layout in list[app]) {
 				if (layout[0] == '$') {
 					if (layout == '$compliment')
@@ -280,6 +290,40 @@ Main.add_module({
 	},
 
 	on_start() {
-		setTimeout(() => this.select_app(this.app_current), 100)
+		setTimeout(() => this.select_app(this.current), 100)
+		let intro = false
+		let interval = null
+		let dir = 1
+		let cursor = 3
+		const play_animation = active => {
+			console.log(active)
+			if (active && !interval) {
+				interval = setInterval(() => {
+					this.select_app(this.apps[cursor])
+					cursor += dir
+					if (cursor == 0 || cursor == this.apps.length - 1)
+						dir *= -1
+				}, 500)
+			}
+			if (!active) {
+				console.log('off')
+				cursor = 0
+				dir = 1
+				clearInterval(interval)
+				interval = null
+				this.select_app(this.current)
+			}
+		}
+		const container = document.querySelector('.app_container')
+		window.addEventListener('scroll', e => {
+			const rect = container.getBoundingClientRect()
+			const half = rect.top
+			const bottom = window.innerHeight
+			const bool = bottom * 1.5 > half && half > bottom / 4
+			if (intro != bool) {
+				intro = bool
+				play_animation(bool)
+			}
+		})
 	},
 })

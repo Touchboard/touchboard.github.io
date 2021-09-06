@@ -5,55 +5,56 @@ const Model = {
 		},
 		{
 			module: `landing`,
-			about: `The most advance all-in-one human input device in the world!`,
-			intro: `https://www.youtube.com/embed/WEZk_21VpL0?autoplay=1`,
-			preorder: `google.com`,
+			about: `The most advanced all-in-one human input device in the world!`,
+			intro: `xfspSw90OOI`,
+			button: `Join the Waitlist!`,
+			preorder: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
 		{
 			module: `title`,
-			title: `Try it yourself`,
-			sub: `See what Touchboard is capable of!`,
+			title: `Explore Touchboard's Interaction`,
+			sub: `With these examplary layouts`,
 		},
 		{
 			module: `explore`,
 			list: {
-				spotify: {
-					top: [
-						{go: `mouse`, x: 2.95, y: 12.1},
-						{go: 'commands', x: -3.3, y: 12.1},
-						{go: 'media', x: -9.3, y: 12.1},
-					],
-					mouse: [{x: 2.95, y: 12.1}],
-					commands: [{x: -3.3, y: 12.1}],
-					media: [{x: -9.3, y: 12.1}],
-				},
 				photoshop: {
 					$compliment: [
-						['tablet', 50, -15, 1192, 968],
-						['mouse', 30, 1, 595, 639],
+						['mouse', 40, -4, 595, 639],
+						['tablet', 70, -15, 1192, 968],
 					],
 					top: [
-						{go: 'tools', x: -11.3, y: 7},
-						{go: 'numpad', x: -5, y: 7.4},
+						{go: 'tools', x: -11.1, y: 7},
+						{go: 'numpad', x: -4.8, y: 7.3},
 					],
-					tools: [{x: -11.3, y: 7}],
-					numpad: [{x: -5, y: 7.4}],
+					tools: [{x: -11.1, y: 7}],
+					numpad: [{x: -4.8, y: 7.3}],
 				},
 				mail: {
 					top: [
 						{go: 'split', x: 0, y: -6.5},
-						{go: 'ru', x: 9.6, y: 6.3},
-						{go: 'symbols', x: 9.6, y: 12.2},
+						{go: 'ru', x: 9.3, y: 6.3},
+						{go: 'symbols', x: 9.3, y: 12.2},
 					],
 					split: [{x: 0, y: -6.5}],
-					ru: [{x: 9.6, y: 6.3}],
-					symbols: [{x: 9.6, y: 12.2}],
+					ru: [{x: 9.3, y: 6.3}],
+					symbols: [{x: 9.3, y: 12.2}],
+				},
+				spotify: {
+					top: [
+						{go: `mouse`, x: 2.9, y: 12.1},
+						{go: 'commands', x: -3.3, y: 12.1},
+						{go: 'media', x: -9.2, y: 12.1},
+					],
+					mouse: [{x: 2.9, y: 12.1}],
+					commands: [{x: -3.3, y: 12.1}],
+					media: [{x: -9.2, y: 12.1}],
 				},
 				safari: {
 					top: [
 						{
 							go: 'text',
-							x: 9.6,
+							x: 9.3,
 							y: -6.2,
 							stay: true,
 							app: 'focused',
@@ -62,7 +63,7 @@ const Model = {
 					text: [
 						{
 							go: 'top',
-							x: 35,
+							x: 34,
 							y: -6.2,
 							stay: true,
 							app: 'app',
@@ -74,8 +75,8 @@ const Model = {
 		},
 		{
 			module: `title`,
-			title: `So versatile`,
-			sub: `Touchboard is not just a hardware, it's a system`,
+			title: `Versatility at its Core`,
+			sub: `Touchboard is not just a device, it's a system`,
 		},
 		{
 			module: `features`,
@@ -87,22 +88,24 @@ const Model = {
 				['intuitive ui', true],
 				['multitouch'],
 				['controls under favorite fingers', true],
-				['better ergonomy'],
+				['refined ergonomy'],
 				['wireless'],
-				['touchboard studio'],
-				['cloud'],
+				['motion efficient'],
+				['haptic feedback'],
+				// ['touchboard studio'],
+				// ['cloud'],
 				['work from anywhere'],
 			],
 		},
 		{
 			module: `title`,
 			title: `Do you like Touchboard?`,
-			sub: `You can preorder here!`,
+			sub: `Give us feedback!`,
 		},
 		{
 			module: `preorder`,
-			url: 'google.com',
-			message: 'Pre-Order',
+			message: 'Join the Waitlist!',
+			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
 		{
 			module: `quotes`,
@@ -312,33 +315,55 @@ const Model = {
 		{
 			module: 'footer',
 			list: {
-				'Sitemap': [
+				Sitemap: [
 					['Main Page', '/landing'],
-					['Pre-Order', 'google.com'],
+					[
+						'Waitlist',
+						`https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
+					],
 					['Investor Relations', '/relations'],
+					['News', 'https://twitter.com/btouchboard'],
 					['Impressum', '/impressum'],
 				],
-				'Social': [
+				// News: [
+				// 	['Trip', `https://trip.community/en/start-ups/`],
+				// 	[
+				// 		'Exist',
+				// 		`https://www.exist.de/DE/Programm/Exist-Gruenderstipendium/Vorhabenkarte/EGSVorhaben/03EGSTH121.html`,
+				// 	],
+				// 	['Team', `/relations`],
+				// ],
+				Contact: [
 					[
 						'E-Mail',
 						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
 					],
+					[
+						'Feedback',
+						`https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
+					],
+				],
+				Social: [
 					[
 						'Instagram',
 						`https://www.instagram.com/butterfly.touchboard/`,
 					],
 					[
 						'Facebook',
-						`https://www.facebook.com/Buttefly.Touchboard/`,
+						`https://www.facebook.com/butterfly.touchboard`,
 					],
 					[
 						'YouTube',
 						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
 					],
 				],
-				'Education': [
+				Education: [
 					[
 						'Concept Video',
+						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+					],
+					[
+						'Tutorials',
 						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
 					],
 					[
@@ -346,21 +371,20 @@ const Model = {
 						`https://www.instagram.com/butterfly.touchboard/`,
 					],
 				],
-				'News': [
+				Career: [
 					[
-						'Neudeli',
-						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+						'Full-Time',
+						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
 					],
 					[
-						'Exist',
-						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+						'Internship',
+						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
 					],
-					['Team', `/relations`],
 				],
-				'Made by': [
-					['Anton Brams', `http://antonbrams.io`],
+				Copyright: [
 					[
-						`Copyright © 2021 Butterfly Company GbR. All rights reserved`,
+						`© 2021 Butterfly Company GbR. All rights reserved`,
+						`http://antonbrams.io`,
 					],
 				],
 			},

@@ -4,6 +4,7 @@ Main.add_module({
 	style: `
 		.full_landing {
 			background-image: url('./modules/landing/graphic/img.jpg');
+			filter: grayscale(100%) brightness(.8);
 		}
 		.landing {
 			scroll-snap-align: center;
@@ -16,18 +17,21 @@ Main.add_module({
 		}
 		.landing .play {
 			position: relative;
-			clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+			clip-path: polygon(15% -1%, 15% 101%, 101% 50%);
 			height: 12vh;
 			width: 12vh;
 			object-fit: cover;
-			object-position: 65%;
 			animation: play_pulse .5s infinite alternate;
+			transition: .5s transform, .5s filter;
+		}
+		.landing .play:hover {
+			transform: scale(1.2);
 		}
 
-		@keyframes play_pulse {
-			0% {transform: scale(1);}
-			100% {transform: scale(1.2);}
-		}
+		// @keyframes play_pulse {
+		// 	0% {transform: scale(1);}
+		// 	100% {transform: scale(1.2);}
+		// }
 
 		.landing .product_name {
 			max-width: 80vw;
@@ -45,19 +49,19 @@ Main.add_module({
 		}
 		@media screen and (min-width: 815px) {
 			.landing .product_name {
-				margin: var(--space-10) 0 var(--space-10);
+				margin: var(--space-20) 0 var(--space-10);
 			}
 		}
 	`,
 
-	html: ({about, intro, preorder}) => {
+	html: ({about, intro, button, preorder}) => {
 		return `
 			<div class="full full_landing" id="target_full"></div>
 			<div
 				class="landing responsive source_full"
 				data-target="target_full"
 			>
-				<div>
+				<div style="align-self: start;">
 					<img
 						class="product_name"
 						src="./modules/landing/graphic/touchboard.png"
@@ -67,7 +71,7 @@ Main.add_module({
 				</div>
 				<div>
 					<video
-						${Main.router(intro)}
+						${Main.router(`https://www.youtube.com/embed/${intro}?autoplay=1`)}
 						src="./modules/landing/graphic/preview.mp4"
 						class="play"
 						muted loop playsinline preload autoplay
@@ -81,7 +85,7 @@ Main.add_module({
 						class="big"
 						${Main.router(preorder)}
 					>
-						Pre-Order
+						${button}
 					</button>
 				</div>
 			</div>

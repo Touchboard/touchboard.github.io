@@ -10,15 +10,23 @@ Main.add_module({
 		.title div {
 			display: inline-block;
 		}
-
 		.title .typo_30 {
-			// border-top: 1px var(--surface-line) solid;
-			// padding-top: var(--space-20);
 			max-width: 15ch;
 		}
 
 		.title .typo_00 {
 			max-width: 30ch;
+		}
+		@media screen and (max-width: 815px) {
+			.title {
+				padding-top: var(--space-20);
+			}
+		}
+		@media screen and (min-width: 815px) {
+			.title {
+				padding-top: var(--space-40);
+				padding-bottom: var(--space-10);
+			}
 		}
 	`,
 
