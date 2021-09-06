@@ -15,11 +15,18 @@ Main.add_module({
 			color: white;
 		}
 		.landing .play {
+			position: relative;
 			clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
 			height: 12vh;
 			width: 12vh;
 			object-fit: cover;
 			object-position: 65%;
+			animation: play_pulse .5s infinite alternate;
+		}
+
+		@keyframes play_pulse {
+			0% {transform: scale(1);}
+			100% {transform: scale(1.2);}
 		}
 
 		.landing .product_name {

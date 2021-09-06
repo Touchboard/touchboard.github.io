@@ -73,6 +73,10 @@ body.dev * {
 }
 
 /* TYPO */
+.typo_30 {
+	font-weight: bold;
+}
+
 .typo_20 {
 	font-weight: bold;
 }
@@ -139,6 +143,11 @@ a {
 	.full {
 	}
 	/* TYPO */
+	.typo_30 {
+		font-size: 48px;
+		line-height: 1;
+		letter-spacing: -2px;
+	}
 	.typo_20 {
 		font-size: 28px;
 		line-height: 1.2;
@@ -172,6 +181,11 @@ a {
 	.full {
 	}
 	/* TYPO */
+	.typo_30 {
+		font-size: 90px;
+		line-height: 1.2;
+		letter-spacing: -4px;
+	}
 	.typo_20 {
 		font-size: 48px;
 		line-height: 1.3;

@@ -10,8 +10,8 @@ Main.add_module({
 			width: 64px;
 			height: 38px;
 			background-image: url('./main/graphic/logo.png');
-			background-size: 50px;
-			transform: translate(-50%, -50%);
+			background-size: 64px;
+			transform: translate(-50%, -50%) scale(.8);
 			background-position: center;
 			background-repeat: no-repeat;
 			cursor: pointer;
@@ -19,11 +19,21 @@ Main.add_module({
 		}
 		.logo.on_landing {
 			background-image: url('./modules/logo/graphic color.png');
-			background-size: 64px;
+
 		}
 		.logo.on_scroll {
 			top: 30px;
 			opacity: .8;
+		}
+		@media screen and (max-width: 815px) {
+			.logo.on_landing {
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+		@media screen and (min-width: 815px) {
+			.logo.on_landing {
+				transform: translate(-50%, -50%) scale(1.4);
+			}
 		}
 	`,
 

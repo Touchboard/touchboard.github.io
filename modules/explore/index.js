@@ -43,7 +43,7 @@ Main.add_module({
 		.explore .app_container .slider .app.show {
 			z-index: -1;
 		}
-		@keyframes focus {
+		@keyframes app_focus {
 			0% {transform: translateY(0%);}
 			25% {transform: translateY(4%);}
 			60% {transform: translateY(-1%);}
@@ -99,10 +99,10 @@ Main.add_module({
 			width: 40px;
 			height: 40px;
 			cursor: pointer;
-			animation: pulse .5s infinite alternate;
+			animation: explore_pulse .5s infinite alternate;
 		}
 
-		@keyframes pulse {
+		@keyframes explore_pulse {
 			0% {
 				transform: translate(-50%, -50%) scale(1);
 				background-color: rgba(117, 177, 255, 0.2);
@@ -192,13 +192,15 @@ Main.add_module({
 				}
 			}
 		}
-		return `<div class="explore">
-			<div class="app_container">
-				<div class="slider">${apps}</div>
+		return `
+			<div class="explore">
+				<div class="app_container">
+					<div class="slider">${apps}</div>
+				</div>
+				<div class="compliments">${compliments}</div>
+				${layouts}
 			</div>
-			<div class="compliments">${compliments}</div>
-			${layouts}
-		</div>`
+		`
 	},
 
 	select_app(to) {
@@ -272,7 +274,7 @@ Main.add_module({
 				a.src = `${this.root}/${this.app_current}/${app}.png`
 				a.style.animation = 'none'
 				a.offsetHeight
-				a.style.animation = 'focus 1s alternate'
+				a.style.animation = 'app_focus 1s alternate'
 			}
 		}
 	},

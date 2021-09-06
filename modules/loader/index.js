@@ -25,9 +25,9 @@ Main.add_module({
 			left: 50%;
 			top: 50%;
 			width : 8vh;
-			animation: .5s load infinite alternate;
+			animation: .5s loader_load infinite alternate;
 		}
-		@keyframes load {
+		@keyframes loader_load {
 			0% {transform: translate(-50%, -50%)  scale(1);}
 			100% {transform: translate(-50%, -50%)  scale(1.2);}
 		}

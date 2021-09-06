@@ -10,17 +10,22 @@ const Model = {
 			preorder: `google.com`,
 		},
 		{
+			module: `title`,
+			title: `Try it yourself`,
+			sub: `See what Touchboard is capable of!`,
+		},
+		{
 			module: `explore`,
 			list: {
 				spotify: {
 					top: [
-						{go: `mouse`, x: 2.9, y: 12.1},
-						{go: 'commands', x: -3.2, y: 12.1},
-						{go: 'media', x: -9.2, y: 12.1},
+						{go: `mouse`, x: 2.95, y: 12.1},
+						{go: 'commands', x: -3.3, y: 12.1},
+						{go: 'media', x: -9.3, y: 12.1},
 					],
-					mouse: [{x: 2.9, y: 12.1}],
-					commands: [{x: -3.2, y: 12.1}],
-					media: [{x: -9.2, y: 12.1}],
+					mouse: [{x: 2.95, y: 12.1}],
+					commands: [{x: -3.3, y: 12.1}],
+					media: [{x: -9.3, y: 12.1}],
 				},
 				photoshop: {
 					$compliment: [
@@ -28,27 +33,27 @@ const Model = {
 						['mouse', 30, 1, 595, 639],
 					],
 					top: [
-						{go: 'tools', x: -11.1, y: 7},
-						{go: 'numpad', x: -4.8, y: 7.3},
+						{go: 'tools', x: -11.3, y: 7},
+						{go: 'numpad', x: -5, y: 7.4},
 					],
-					tools: [{x: -11.1, y: 7}],
-					numpad: [{x: -4.8, y: 7.3}],
+					tools: [{x: -11.3, y: 7}],
+					numpad: [{x: -5, y: 7.4}],
 				},
 				mail: {
 					top: [
 						{go: 'split', x: 0, y: -6.5},
-						{go: 'ru', x: 9.3, y: 6.3},
-						{go: 'symbols', x: 9.3, y: 12.2},
+						{go: 'ru', x: 9.6, y: 6.3},
+						{go: 'symbols', x: 9.6, y: 12.2},
 					],
 					split: [{x: 0, y: -6.5}],
-					ru: [{x: 9.3, y: 6.3}],
-					symbols: [{x: 9.3, y: 12.2}],
+					ru: [{x: 9.6, y: 6.3}],
+					symbols: [{x: 9.6, y: 12.2}],
 				},
 				safari: {
 					top: [
 						{
 							go: 'text',
-							x: 9.3,
+							x: 9.6,
 							y: -6.2,
 							stay: true,
 							app: 'focused',
@@ -57,7 +62,7 @@ const Model = {
 					text: [
 						{
 							go: 'top',
-							x: 34,
+							x: 35,
 							y: -6.2,
 							stay: true,
 							app: 'app',
@@ -66,6 +71,11 @@ const Model = {
 				},
 				live: {top: []},
 			},
+		},
+		{
+			module: `title`,
+			title: `So versatile`,
+			sub: `Touchboard is not just a hardware, it's a system`,
 		},
 		{
 			module: `features`,
@@ -85,9 +95,14 @@ const Model = {
 			],
 		},
 		{
+			module: `title`,
+			title: `Do you like Touchboard?`,
+			sub: `You can preorder here!`,
+		},
+		{
 			module: `preorder`,
 			url: 'google.com',
-			message: 'Like Touchboard? You can pre-order here!',
+			message: 'Pre-Order',
 		},
 		{
 			module: `quotes`,
@@ -220,6 +235,11 @@ const Model = {
 				<br/>
 				Besides typing, executing shortcuts and controlling the cursor, our interface also allows novel interactions the world has never seen before. All of this without the need to move within or between devices.
 			`,
+		},
+		{
+			module: `title`,
+			title: `Our path`,
+			sub: `Thanks to all the networks for helping us!`,
 		},
 		{
 			module: `timeline`,
