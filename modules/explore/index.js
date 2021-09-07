@@ -167,7 +167,7 @@ Main.add_module({
 						? `onclick="${handler}(event)"`
 						: `
 							onmousedown="${handler}(event)"
-							onpointerdown="${handler}(event)"
+							ontouchstart="${handler}(event)"
 						`
 				}
 				data-type="layout"
@@ -277,11 +277,11 @@ Main.add_module({
 				const body = document.body
 				const handler = e => {
 					body.removeEventListener('mouseup', handler)
-					body.removeEventListener('pointerup', handler)
+					body.removeEventListener('touchend', handler)
 					setTimeout(() => this.select_layout(up), 400)
 				}
 				body.addEventListener('mouseup', handler)
-				body.addEventListener('pointerup', handler)
+				body.addEventListener('touchend', handler)
 			}
 			this.select_layout(to)
 			if (app) {
