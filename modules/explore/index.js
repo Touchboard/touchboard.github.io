@@ -278,7 +278,7 @@ Main.add_module({
 				const handler = e => {
 					body.removeEventListener('mouseup', handler)
 					body.removeEventListener('touchend', handler)
-					setTimeout(() => this.select_layout(up), 400)
+					this.select_layout(up)
 				}
 				body.addEventListener('mouseup', handler)
 				body.addEventListener('touchend', handler)
@@ -294,6 +294,7 @@ Main.add_module({
 			}
 		}
 		e.preventDefault()
+		e.stopPropagation()
 	},
 
 	on_start() {
