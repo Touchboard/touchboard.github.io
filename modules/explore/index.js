@@ -11,6 +11,7 @@ Main.add_module({
 			overflow: hidden;
 			width: 100vw;
 			height: 100vh;
+			-webkit-user-select: none !important;
 		}
 
 		.explore .app_container {
