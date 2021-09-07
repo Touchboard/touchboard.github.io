@@ -165,7 +165,10 @@ Main.add_module({
 				${
 					stay
 						? `onclick="${handler}(event)"`
-						: `onmousedown="${handler}(event)"`
+						: `
+							onmousedown="${handler}(event)"
+							onpointerdown="${handler}(event)"
+						`
 				}
 				data-type="layout"
 				data-to="${go}"
@@ -274,9 +277,11 @@ Main.add_module({
 				const body = document.body
 				const handler = e => {
 					body.removeEventListener('mouseup', handler)
+					body.removeEventListener('pointerup', handler)
 					setTimeout(() => this.select_layout(up), 400)
 				}
 				body.addEventListener('mouseup', handler)
+				body.addEventListener('pointerup', handler)
 			}
 			this.select_layout(to)
 			if (app) {
