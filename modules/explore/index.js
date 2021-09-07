@@ -288,6 +288,7 @@ Main.add_module({
 				a.style.animation = 'app_focus 1s alternate'
 			}
 		}
+		e.preventDefault()
 	},
 
 	on_start() {
