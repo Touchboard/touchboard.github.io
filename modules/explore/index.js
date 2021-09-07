@@ -274,7 +274,7 @@ Main.add_module({
 				const body = document.body
 				const handler = e => {
 					body.removeEventListener('mouseup', handler)
-					this.select_layout(up)
+					setTimeout(() => this.select_layout(up), 500)
 				}
 				body.addEventListener('mouseup', handler)
 			}
