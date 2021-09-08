@@ -149,40 +149,43 @@ const Model = {
 				// },
 			],
 		},
-		// {
-		// 	module: `title`,
-		// 	title: `You might ask..`,
-		// },
-		// {
-		// 	module: 'questions',
-		// 	list: [
-		// 		[
-		// 			`Why i should by it, i love my keyboard already?`,
-		// 			`You have no idea how many nice features you are missing without Touchboard. We've analyzed various workflows and find out that you lose a lot of time by just using conventional keyboard and mouse. And just look how sexy Touchboard is!!!`,
-		// 		],
-		// 		[
-		// 			`Why i can't just use my iPad instead?`,
-		// 			`Did you try to type on the iPad without to pay attention on your fingers? iPad surface is flat and also if you relax your fingers and put on the surface like on a keyboard, you will trigger keys. Touchboard's surface is curved for blind text input, and additionally it has a force feedback system allowing you to put your fingers on the surface and use it as a physical button.`,
-		// 		],
-		// 		[
-		// 			`Will Touchboard change it's graphics on the fly or the final product will be just black?`,
-		// 			`Touchboard will have displays so you will see what you get!`,
-		// 		],
-		// 		[
-		// 			`Why it has so few buttons?`,
-		// 			`Touchboard is optimized for fast input, therefore we moved all remote keys to other layouts that are easily accessible with your thumbs`,
-		// 		],
-		// 		[`Can i extend it somehow?`, `Maybe? ;)`],
-		// 		[
-		// 			`Is it easy to get use to all the interactions?`,
-		// 			`Of course! In our tests people memorize most important functions just after one minute of use. Moreover, in case you've forgott, where the function is, you can just look at Touchboard's displays.`,
-		// 		],
-		// 		[
-		// 			`Can i use it for serious text input like in coding?`,
-		// 			`The need for Touchboard has appeared while coding. This device is shaped to access all the nessessary textual functions in milliseconds.`,
-		// 		],
-		// 	],
-		// },
+		{
+			module: `title`,
+			title: `You might ask..`,
+		},
+		{
+			module: 'questions',
+			list: [
+				[
+					`But I already own a keyboard?`,
+					`Touchboard is much more than a keyboard. Text input is just one of the many layouts Touchboard offers. In every application you have hundreds of hidden shorcuts and functions that Touchboard visualizes for you. And just look how sexy Touchboard is!!!`,
+				],
+				[
+					`Why can't I just use my iPad instead?`,
+					`While the iPad is visual and intuitive you cannot feel where and what you type. Touchboards ergonomic surface allows you to position and move your fingers blindly and you can feel the interaction with haptic feedback.`,
+				],
+				[
+					`Will Touchboard change it's graphics on the fly or is the final product going to be just black?`,
+					`Touchboard has displays. You will see what you get!`,
+				],
+				[
+					`Why does it have so few buttons?`,
+					`Touchboard is optimized for fast input. We moved all remote keys to other layouts that are easily accessible with your thumbs`,
+				],
+				[
+					`How long does it take to learn all these new interactions?`,
+					`Minutes. In our tests people memorized the most important functions just after a few minutes of use. Moreover, in case you forget where the functions are, you can just look at your Touchboard.`,
+				],
+				[
+					`Can I use it for serious text input like coding?`,
+					`We used it to code this website. Touchboard is shaped to access all the nessessary text-functions in milliseconds.`,
+				],
+				[
+					`Is Touchboard really that great?`,
+					`Yes.`,
+				],
+			],
+		},
 	],
 	relations: [
 		// {
@@ -323,7 +326,7 @@ const Model = {
 				},
 			],
 		},
-	], 
+	],
 	impressum: [
 		{
 			module: `text`,
