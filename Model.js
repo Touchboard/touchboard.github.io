@@ -151,26 +151,19 @@ const Model = {
 		},
 		{
 			module: `title`,
-			title: `You might ask..`,
+			title: `You might ask...`,
+			sub: `These are some frequently asked questions.`,
 		},
 		{
 			module: 'questions',
 			list: [
 				[
-					`But I already own a keyboard?`,
-					`Touchboard is much more than a keyboard. Text input is just one of the many layouts Touchboard offers. In every application you have hundreds of hidden shorcuts and functions that Touchboard visualizes for you. And just look how sexy Touchboard is!!!`,
-				],
-				[
 					`Why can't I just use my iPad instead?`,
-					`While the iPad is visual and intuitive you cannot feel where and what you type. Touchboards ergonomic surface allows you to position and move your fingers blindly and you can feel the interaction with haptic feedback.`,
+					`With iPad you cannot feel where you type and your fingers will press keys if you just rest them on the surface. Touchboards ergonomic surface allows you to find all the keys blindly and you can feel the keystroke due to the haptic feedback.`,
 				],
 				[
-					`Will Touchboard change it's graphics on the fly or is the final product going to be just black?`,
-					`Touchboard has displays. You will see what you get!`,
-				],
-				[
-					`Why does it have so few buttons?`,
-					`Touchboard is optimized for fast input. We moved all remote keys to other layouts that are easily accessible with your thumbs`,
+					`But I already own a keyboard?`,
+					`Touchboard is much more than a keyboard. Text input is just one of the many layouts Touchboard offers. In every application you have hundreds of hidden shorcuts and functions that Touchboard visualizes for you. And just look how sexy Touchboard is!`,
 				],
 				[
 					`How long does it take to learn all these new interactions?`,
@@ -178,12 +171,17 @@ const Model = {
 				],
 				[
 					`Can I use it for serious text input like coding?`,
-					`We used it to code this website. Touchboard is shaped to access all the nessessary text-functions in milliseconds.`,
+					`Touchboard was invented by a coder. And we used it to code this website. Touchboard is shaped to access all the nessessary text-functions in milliseconds.`,
 				],
 				[
-					`Is Touchboard really that great?`,
-					`Yes.`,
+					`Why does it have so few buttons?`,
+					`Touchboard is optimized for fast input. We removed distant keys that force you to jump around the keyboard. Now they are moved other layouts directly to your finger tipps.`,
 				],
+				[
+					`Are layouts just printed on keys in the final product?`,
+					`Not at all. Touchboard has displays! They will change depending on the frontmost application. What you see is what you get!`,
+				],
+				[`Is Touchboard really that great?`, `Yes.`],
 			],
 		},
 	],
