@@ -335,7 +335,7 @@ Main.add_module({
 				}/${app}.png`
 				a.style.animation = 'none'
 				a.offsetHeight
-				a.style.animation = 'app_focus 1s alternate'
+				a.style.animation = '1s app_focus alternate'
 			}
 		}
 		e.preventDefault()

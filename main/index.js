@@ -70,7 +70,7 @@ const Main = {
 				0,
 				true
 			)
-			target.style.opacity = a * b
+			if (a || b) target.style.opacity = a * b
 		}
 		window.addEventListener('scroll', e => {
 			document
