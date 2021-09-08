@@ -100,6 +100,7 @@ const Model = {
 		{
 			module: `title`,
 			title: `Wanna try out the Prototype?`,
+			sub: `Schedule a live demo today to try it out yourself!`,
 		},
 		{
 			module: `preorder`,
