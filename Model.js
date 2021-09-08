@@ -98,14 +98,43 @@ const Model = {
 			],
 		},
 		{
+			module: 'questions',
+			list: [
+				[
+					`Why i should by it, i love my keyboard already?`,
+					`You have no idea how many nice features you are missing without Touchboard. We've analyzed various workflows and find out that you lose a lot of time by just using conventional keyboard and mouse. And just look how sexy Touchboard is!!!`,
+				],
+				[
+					`Why i can't just use my iPad instead?`,
+					`Did you try to type on the iPad without to pay attention on your fingers? iPad surface is flat and also if you relax your fingers and put on the surface like on a keyboard, you will trigger keys. Touchboard's surface is curved for blind text input, and additionally it has a force feedback system allowing you to put your fingers on the surface and use it as a physical button.`,
+				],
+				[
+					`Will Touchboard change it's graphics on the fly or the final product will be just black?`,
+					`Touchboard will have displays so you will see what you get!`,
+				],
+				[
+					`Why it has so few buttons?`,
+					`Touchboard is optimized for fast input, therefore we moved all remote keys to other layouts that are easily accessible with your thumbs`,
+				],
+				[`Can i extend it somehow?`, `Maybe? ;)`],
+				[
+					`Is it easy to get use to all the interactions?`,
+					`Of course! In our tests people memorize most important functions just after one minute of use. Moreover, in case you've forgott, where the function is, you can just look at Touchboard's displays.`,
+				],
+				[
+					`Can i use it for serious text input like in coding?`,
+					`The need for Touchboard has appeared while coding. This device is shaped to access all the nessessary textual functions in milliseconds.`,
+				],
+			],
+		},
+		{
 			module: `title`,
-			title: `Do you like Touchboard?`,
-			sub: `Give us feedback!`,
+			title: `Wanna try out the Prototype?`,
 		},
 		{
 			module: `preorder`,
-			message: 'Join the Waitlist!',
-			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
+			message: 'Get in Touch!',
+			url: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
 		},
 		{
 			module: `quotes`,
