@@ -121,6 +121,14 @@ a {
 .full {
 	position: fixed;
 	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+.full:after {
+	content: '';
+	position: fixed;
+	z-index: -1;
 	width: calc(100% + 2px);
 	height: calc(100% + 2px);
 	background-size: cover;
@@ -141,8 +149,6 @@ a {
 	.responsive.no {
 		padding-left: 0;
 		padding-right: 0;
-	}
-	.full {
 	}
 	/* TYPO */
 	.typo_30 {
@@ -180,8 +186,6 @@ a {
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.full {
-	}
 	/* TYPO */
 	.typo_30 {
 		font-size: 90px;
@@ -207,7 +211,7 @@ a {
 }
 
 @media screen and (min-width: 1681px) {
-	.full {
+	.full:after {
 		width: 1681px;
 		height: calc(100% - var(--space-00));
 		border-radius: var(--space-10);

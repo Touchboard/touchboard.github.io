@@ -3,8 +3,11 @@ Main.add_module({
 
 	style: `
 		.full_landing {
+			background-color: black;
+		}
+		.full_landing:after {
 			background-image: url('./modules/landing/graphic/img.jpg');
-			filter: grayscale(100%) brightness(.8);
+			filter: brightness(.8);
 		}
 		.landing {
 			scroll-snap-align: center;

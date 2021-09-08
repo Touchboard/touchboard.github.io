@@ -2,7 +2,7 @@ Main.add_module({
 	type: 'team',
 
 	style: `
-		.full_team {
+		.full_team:after {
 			background-image: url('./modules/team/graphic.jpg');
 		}
 
