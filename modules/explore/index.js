@@ -26,6 +26,25 @@ Main.add_module({
 			background-size: auto 60%;
 		}
 
+		.explore .app_container .nav {
+			position: absolute;
+			z-index: 1;
+			top: 54%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 200px;
+			height: 200px;
+			cursor: pointer;
+		}
+		.explore .app_container .nav.left {
+			background-image: url('./modules/explore/graphic/left.png');
+			margin-left: calc(-1 * var(--o));
+		}
+		.explore .app_container .nav.right {
+			background-image: url('./modules/explore/graphic/right.png');
+			margin-left: var(--o);
+		}
+
 		.explore .app_container .slider {
 			position: absolute;
 			white-space: nowrap;
@@ -39,7 +58,6 @@ Main.add_module({
 			display: inline-block;
 			height: 100%;
 			margin: 0 -20px;
-			cursor: pointer;
 		}
 		.explore .app_container .slider .app.show {
 			z-index: -1;
@@ -123,6 +141,9 @@ Main.add_module({
 				left: calc(50% + var(--x) - 5%);
 				top: calc(50% + var(--y) + 10%);
 			}
+			.explore .app_container .nav {
+				--o: 45vw;
+			}
 		}
 		@media screen and (min-width: 815px) {
 			.explore .layout,
@@ -134,14 +155,17 @@ Main.add_module({
 				left: calc(50% + var(--x));
 				top: calc(50% + var(--y));
 			}
+			.explore .app_container .nav {
+				--o: 200px;
+			}
 		}
 	`,
 
-	app_current: '',
 	layout_current: 'top',
 	interval: null,
 	root: './modules/explore/apps',
-	current: 'spotify',
+	current: 2,
+	pointer: 2,
 	apps: [],
 
 	html({list}) {
@@ -183,8 +207,6 @@ Main.add_module({
 				<img
 					class="app app_${app}"
 					src="${this.root}/${app}/app.png"
-					onclick="${handler}(event)"
-					data-type="app"
 					data-to="${app}"
 				/>
 			`
@@ -209,6 +231,18 @@ Main.add_module({
 		return `
 			<div class="explore">
 				<div class="app_container">
+					<div
+						class="nav cover left"
+						onclick="${handler}(event)"
+						data-type="nav"
+						data-to="left"
+					></div>
+					<div
+						class="nav cover right"
+						onclick="${handler}(event)"
+						data-type="nav"
+						data-to="right"
+					></div>
 					<div class="slider">${apps}</div>
 				</div>
 				<div class="compliments">${compliments}</div>
@@ -218,7 +252,7 @@ Main.add_module({
 	},
 
 	select_app(to) {
-		this.app_current = to
+		let app_current = this.apps[to]
 
 		const slider = document.querySelector(`.explore .slider`)
 		document.querySelectorAll('.app').forEach(app => {
@@ -226,7 +260,7 @@ Main.add_module({
 			const name = app.getAttribute('data-to')
 			app.src = `${this.root}/${name}/app.png`
 			// get / set data from current
-			const a = app.classList.contains(`app_${to}`)
+			const a = app.classList.contains(`app_${app_current}`)
 			if (a) {
 				const o = `-${app.offsetLeft + app.offsetWidth / 2}px`
 				slider.style.marginLeft = o
@@ -243,7 +277,7 @@ Main.add_module({
 		let counter = 0
 		const interval = () => {
 			document
-				.querySelectorAll(`.compliment_${this.app_current}`)
+				.querySelectorAll(`.compliment_${app_current}`)
 				.forEach((c, i, list) => {
 					const a = counter % list.length == i
 					c.classList[a ? 'add' : 'remove']('show')
@@ -258,18 +292,27 @@ Main.add_module({
 		this.layout_current = to
 		document.querySelectorAll('.layout').forEach(layout => {
 			const a = layout.classList.contains(
-				`child_${this.app_current}`
+				`child_${this.apps[this.pointer]}`
 			)
 			const l = layout.classList.contains(`layout_${to}`)
 			layout.classList[a && l ? 'add' : 'remove']('show')
 		})
 	},
 
+	navigate(to) {
+		this.pointer =
+			(this.apps.length +
+				this.pointer +
+				(to == 'left' ? -1 : 1)) %
+			this.apps.length
+		this.select_app(this.pointer)
+	},
+
 	on_click(e) {
 		const t = e.currentTarget
 		const type = t.getAttribute('data-type')
 		const to = t.getAttribute('data-to')
-		if (type == 'app') this.select_app(to)
+		if (type == 'nav') this.navigate(to)
 		else if (type == 'layout') {
 			const up = t.getAttribute('data-up')
 			const app = t.getAttribute('data-app')
@@ -285,9 +328,11 @@ Main.add_module({
 			}
 			this.select_layout(to)
 			if (app) {
-				const c = `.app_${this.app_current}`
+				const c = `.app_${this.apps[this.pointer]}`
 				const a = document.querySelector(c)
-				a.src = `${this.root}/${this.app_current}/${app}.png`
+				a.src = `${this.root}/${
+					this.apps[this.pointer]
+				}/${app}.png`
 				a.style.animation = 'none'
 				a.offsetHeight
 				a.style.animation = 'app_focus 1s alternate'
@@ -302,24 +347,24 @@ Main.add_module({
 		let intro = false
 		let interval = null
 		let dir = 1
-		let cursor = 3
 		const play_animation = active => {
-			console.log(active)
 			if (active && !interval) {
 				interval = setInterval(() => {
-					this.select_app(this.apps[cursor])
-					cursor += dir
-					if (cursor == 0 || cursor == this.apps.length - 1)
+					this.select_app(this.pointer)
+					this.pointer += dir
+					if (
+						this.pointer == 0 ||
+						this.pointer == this.apps.length - 1
+					)
 						dir *= -1
 				}, 500)
 			}
 			if (!active) {
-				console.log('off')
-				cursor = 0
+				this.pointer = this.current
+				this.select_app(this.pointer)
 				dir = 1
 				clearInterval(interval)
 				interval = null
-				this.select_app(this.current)
 			}
 		}
 		const container = document.querySelector('.app_container')
