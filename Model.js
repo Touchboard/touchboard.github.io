@@ -290,7 +290,7 @@ const Model = {
 				},
 			],
 		},
-	],
+	], 
 	impressum: [
 		{
 			module: `text`,
