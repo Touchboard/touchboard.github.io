@@ -21,17 +21,10 @@ Main.add_module({
 			height: 12vh;
 			width: 12vh;
 			object-fit: cover;
-			animation: play_pulse .5s infinite alternate;
-			transition: .5s transform, .5s filter;
 		}
 		.landing .play:hover {
-			transform: scale(1.2);
+			transform: scale(1.4);
 		}
-
-		// @keyframes play_pulse {
-		// 	0% {transform: scale(1);}
-		// 	100% {transform: scale(1.2);}
-		// }
 
 		.landing .product_name {
 			max-width: 80vw;

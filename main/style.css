@@ -33,7 +33,8 @@
 
 .theme_light {
 	--back: white;
-	--surface-area: rgba(0, 0, 0, 0.05);
+	/* --surface-area: rgba(0, 0, 0, 0.05); */
+	--surface-area: hsl(0, 0%, 95%);
 	--surface-line: rgba(0, 0, 0, 0.1);
 	--middle-area: rgba(0, 0, 0, 0.35);
 	--middle-line: rgba(0, 0, 0, 0.4);

@@ -5,32 +5,46 @@ Main.add_module({
 		.questions {
 			display: inline-block;
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
-			grid-gap : var(--space-20);
-			align-items: center;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-gap : var(--space-00);
 		}
 
 		.questions .container {
-			display: inline-block;
-			background-color: var(--surface-area);
-			padding: var(--space-00);
-			padding-right: var(--space-10);
-			border-radius: var(--space-00);
+			position: relative;
 			cursor: pointer;
-			transition: .2s;
-			animation: 1s var(--d) questions_jiggle infinite alternate linear;
-		}
-
-		@keyframes questions_jiggle {
-			0% {transform: translate(-1%, .5%) rotate(calc(var(--r) + 1deg));}
-			50% {transform: translate(.5%, -1%) rotate(calc(var(--r) - 1deg));}
-			100% {transform: translate(.5%, 1%) rotate(calc(var(--r) + .5deg));}
 		}
 
 		.questions .container.show {
-			grid-area: span 2;
-			transform: translate(0%, 0%) rotate(0deg);
-			animation: none;
+			z-index: 1;
+		}
+
+		.questions .container .popup {
+			display: grid;
+			height: 100%;
+			box-sizing: border-box;
+			background-color: var(--surface-area);
+			border-radius: var(--space-00);
+			grid-gap : var(--space-00);
+			align-items: center;
+		}
+
+		@keyframes questions_pop_close {
+			0% {transform: scaleY(0.8);}
+			25% {transform: scaleY(1.01);}
+			60% {transform: scaleY(0.995);}
+			100% {transform: scaleY(1);}
+		}
+
+		@keyframes questions_pop_open {
+			0% {transform: scaleY(1.2);}
+			25% {transform: scaleY(0.98);}
+			60% {transform: scaleY(1.005);}
+			100% {transform: scaleY(1);}
+		}
+
+		.questions .container.show .popup {
+			box-shadow: 0 20px 60px 0 rgba(0,0,0, 0.4);
+			height: auto;
 		}
 
 		.questions .container.show .a {
@@ -40,6 +54,7 @@ Main.add_module({
 		.questions .container .q {
 			position: relative;
 			font-weight: bold;
+			padding-right: var(--space-20);
 		}
 
 		.questions .container .q:after {
@@ -49,7 +64,7 @@ Main.add_module({
 			height: 16px;
 			transform: translate(-50%, -50%);
 			background: url('./modules/questions/cross.png') center;
-			right: -30px;
+			right: 0px;
 			top: 50%;
 			transition: .2s;
 		}
@@ -65,14 +80,23 @@ Main.add_module({
 		@media screen and (max-width: 815px) {
 			.questions {
 				grid-gap : var(--space-00);
+				grid-template-columns: 1fr;
 			}
 			.questions .container {
 				transform: rotate(0deg);
 				animation: none;
 			}
+			.questions .container .popup {
+				padding: var(--space-00);
+			}
 		}
 		@media screen and (min-width: 815px) {
-
+			.questions .container {
+				height: 200px;
+			}
+			.questions .container .popup {
+				padding: var(--space-10);
+			}
 		}
 	`,
 
@@ -83,13 +107,11 @@ Main.add_module({
 			<div
 				class="container"
 				onclick="${router}(event);"
-				style="
-					--r: ${angles[i % angles.length]}deg;
-					--d: ${i / angles.length}s;
-				"
 			>
-				<div class="q">${q}</div>
-				<div class="a"></br>${a}</div>
+				<div class="popup">
+					<div class="q">${q}</div>
+					<div class="a">${a}</div>
+				</div>
 			</div>
 		`
 		return `<div class="questions responsive">
@@ -101,6 +123,14 @@ Main.add_module({
 		const els = document.querySelectorAll('.questions .container')
 		els.forEach(el => {
 			const a = el == e.currentTarget
+			if (a || el.classList.contains('show')) {
+				const dir = el.classList.contains('show')
+					? 'open'
+					: 'close'
+				el.style.animation = 'none'
+				el.offsetHeight
+				el.style.animation = `1s questions_pop_${dir} alternate`
+			}
 			el.classList[a ? 'toggle' : 'remove']('show')
 		})
 	},
