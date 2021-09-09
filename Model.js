@@ -179,6 +179,10 @@ const Model = {
 					`Touchboard was invented by a coder. And we used it to code this website. Touchboard is shaped to access all the nessessary text-functions in milliseconds.`,
 				],
 				[
+					`I think Speech-To-Text or Mid-Air-Gestures like in Minority Report are the future!`,
+					`Modern PCs already have speech-to-text but it’s not suited for quick and precise tasks. Imagine playing a shooter game by screaming "left, left, jump, shoot". Our finger movements are just faster than spoken commands. Mid-Air-Gestures look spectacular in movies but in reality you have to hold your hands in the air 8 hours a day, executing precise gestures. After 10 minutes you will want to rest your hands on the table. We don't see these technologies in use not because they are new, but because interactions with physical buttons on the table are just the optimal way.`,
+				],
+				[
 					`Why does it have so few buttons?`,
 					`Touchboard is optimized for fast input. We removed distant keys that force you to jump around the keyboard. Now they are moved other layouts directly to your finger tipps.`,
 				],
