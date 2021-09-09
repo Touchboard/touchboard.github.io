@@ -167,6 +167,10 @@ const Model = {
 					`Touchboard is much more than a keyboard. Text input is just one of the many layouts Touchboard offers. In every application you have hundreds of hidden shorcuts and functions that Touchboard visualizes for you. And just look how sexy Touchboard is!`,
 				],
 				[
+					`Won't resting my fingers trigger the keys?`,
+					`No. Touchboards force sensitive input allows you to type only by applying force (i.e. press) on the key. Moreover this technology gives you additional interactions like typing uppercase letters by pressing harder.`,
+				],
+				[
 					`How long does it take to learn all these new interactions?`,
 					`Minutes. In our tests people memorized the most important functions just after a few minutes of use. Moreover, in case you forget where the functions are, you can just look at your Touchboard.`,
 				],
