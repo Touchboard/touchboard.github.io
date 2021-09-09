@@ -2,6 +2,10 @@ Main.add_module({
 	type: 'loader',
 
 	style: `
+		body.show_loader {
+			overflow: hidden;
+		}
+
 		.loader {
 			position: fixed;
 			z-index: 2;
@@ -15,7 +19,7 @@ Main.add_module({
 			pointer-events: none;
 			transition: 1s;
 		}
-		.loader.show {
+		body.show_loader .loader {
 			opacity: 1;
 			visibility: visible;
 			pointer-events: auto;
@@ -35,15 +39,14 @@ Main.add_module({
 
 	html: ({about, intro, preorder}) => {
 		return `
-			<div class="loader show">
+			<div class="loader">
 				<img src="./main/graphic/logo.png"/>
 			</div>
 		`
 	},
 
 	on_load() {
-		const loader = document.querySelector('.loader')
-		loader.classList.remove('show')
+		document.body.classList.remove('show_loader')
 		console.log('loaded')
 	},
 
