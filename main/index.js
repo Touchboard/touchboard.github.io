@@ -10,7 +10,6 @@ const Main = {
 				const html = this.modules[m].html(
 					Model[current_page][i]
 				)
-
 				document.body.innerHTML += html
 			}
 		}

@@ -4,6 +4,17 @@ const Model = {
 			module: `loader`,
 		},
 		{
+			module: `cookies`,
+			accept: {
+				message: `Can we use third-party cookies to give you the best experience on our website?`,
+				button: `I agree`,
+			},
+			reject: {
+				message: `If you tired from third-party cookies, just tell us:`,
+				button: `Stop tracking`,
+			},
+		},
+		{
 			module: `landing`,
 			about: `The most advanced all-in-one human input device in the world!`,
 			intro: `xfspSw90OOI`,

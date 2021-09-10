@@ -88,9 +88,3 @@ Main.add_module({
 		`
 	},
 })
-// <img
-// 	class="play"
-// 	${Main.router(intro)}
-// 	src="./modules/landing/graphic/play.png"
-// 	width="60vw"
-// />
