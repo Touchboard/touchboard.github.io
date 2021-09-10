@@ -344,39 +344,39 @@ Main.add_module({
 
 	on_start() {
 		setTimeout(() => this.select_app(this.current), 100)
-		let intro = false
-		let interval = null
-		let dir = 1
-		const play_animation = active => {
-			if (active && !interval) {
-				interval = setInterval(() => {
-					this.select_app(this.pointer)
-					this.pointer += dir
-					if (
-						this.pointer == 0 ||
-						this.pointer == this.apps.length - 1
-					)
-						dir *= -1
-				}, 500)
-			}
-			if (!active) {
-				this.pointer = this.current
-				this.select_app(this.pointer)
-				dir = 1
-				clearInterval(interval)
-				interval = null
-			}
-		}
-		const container = document.querySelector('.app_container')
-		window.addEventListener('scroll', e => {
-			const rect = container.getBoundingClientRect()
-			const half = rect.top
-			const bottom = window.innerHeight
-			const bool = bottom * 1.5 > half && half > bottom / 4
-			if (intro != bool) {
-				intro = bool
-				play_animation(bool)
-			}
-		})
+		// let intro = false
+		// let interval = null
+		// let dir = 1
+		// const play_animation = active => {
+		// 	if (active && !interval) {
+		// 		interval = setInterval(() => {
+		// 			this.select_app(this.pointer)
+		// 			this.pointer += dir
+		// 			if (
+		// 				this.pointer == 0 ||
+		// 				this.pointer == this.apps.length - 1
+		// 			)
+		// 				dir *= -1
+		// 		}, 500)
+		// 	}
+		// 	if (!active) {
+		// 		this.pointer = this.current
+		// 		this.select_app(this.pointer)
+		// 		dir = 1
+		// 		clearInterval(interval)
+		// 		interval = null
+		// 	}
+		// }
+		// const container = document.querySelector('.app_container')
+		// window.addEventListener('scroll', e => {
+		// 	const rect = container.getBoundingClientRect()
+		// 	const half = rect.top
+		// 	const bottom = window.innerHeight
+		// 	const bool = bottom * 1.5 > half && half > bottom / 4
+		// 	if (intro != bool) {
+		// 		intro = bool
+		// 		play_animation(bool)
+		// 	}
+		// })
 	},
 })
