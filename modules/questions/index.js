@@ -5,7 +5,7 @@ Main.add_module({
 		.questions {
 			display: inline-block;
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 			grid-gap : var(--space-00);
 		}
 
@@ -19,6 +19,7 @@ Main.add_module({
 		}
 
 		.questions .container .popup {
+			position: relative;
 			display: grid;
 			height: 100%;
 			box-sizing: border-box;
@@ -45,6 +46,8 @@ Main.add_module({
 		.questions .container.show .popup {
 			box-shadow: 0 20px 60px 0 rgba(0,0,0, 0.4);
 			height: auto;
+			// top: 50%;
+			// transform: translateY(-50%);
 		}
 
 		.questions .container.show .a {
