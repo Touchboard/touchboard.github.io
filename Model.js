@@ -17,7 +17,7 @@ const Model = {
 		{
 			module: `landing`,
 			about: `The most advanced all-in-one human input device in the world!`,
-			intro: `xfspSw90OOI`,
+			intro: `hNuDdbyXHTU`,
 			button: `Join the Waitlist!`,
 			preorder: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
