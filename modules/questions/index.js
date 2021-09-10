@@ -95,7 +95,7 @@ Main.add_module({
 		}
 		@media screen and (min-width: 815px) {
 			.questions .container {
-				height: 200px;
+				height: 160px;
 			}
 			.questions .container .popup {
 				padding: var(--space-10);
