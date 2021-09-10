@@ -117,17 +117,18 @@ Main.add_module({
 			width: 40px;
 			height: 40px;
 			cursor: pointer;
-			animation: explore_pulse .5s infinite alternate;
+			animation: explore_pulse .2s infinite alternate;
+			animation-delay:  var(--f);
 		}
 
 		@keyframes explore_pulse {
 			0% {
 				transform: translate(-50%, -50%) scale(1);
-				background-color: rgba(117, 177, 255, 0.2);
+				background-color: transparent;
 			}
 			100% {
-				transform: translate(-50%, -50%) scale(1.1);
-				background-color: rgba(117, 177, 255, 0.4);
+				transform: translate(-50%, -50%) scale(1.4);
+				background-color: rgba(236, 117, 255, 0.4);
 			}
 		}
 
@@ -182,10 +183,10 @@ Main.add_module({
 				src="${this.root}/${app}/add_${name}.png"
 			/>
 		`
-		const create_dot = ({go, x, y, stay, app}) => `
+		const create_dot = ({go, x, y, stay, app}, i) => `
 			<div
 				class="go"
-				style="--x: ${x}%; --y: ${y}%"
+				style="--x: ${x}%; --y: ${y}%; --f: ${i / 3}s;"
 				${
 					stay
 						? `onclick="${handler}(event)"`
@@ -284,7 +285,7 @@ Main.add_module({
 				})
 			counter++
 		}
-		this.interval = setInterval(interval, 5000)
+		this.interval = setInterval(interval, 3000)
 		interval()
 	},
 

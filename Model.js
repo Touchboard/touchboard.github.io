@@ -53,12 +53,12 @@ const Model = {
 				},
 				spotify: {
 					top: [
-						{go: `mouse`, x: 2.9, y: 12.1},
-						{go: 'commands', x: -3.3, y: 12.1},
+						{go: `mouse`, x: 3.1, y: 12.1},
+						{go: 'commands', x: -3.1, y: 12.1},
 						{go: 'media', x: -9.2, y: 12.1},
 					],
-					mouse: [{x: 2.9, y: 12.1}],
-					commands: [{x: -3.3, y: 12.1}],
+					mouse: [{x: 3.1, y: 12.1}],
+					commands: [{x: -3.1, y: 12.1}],
 					media: [{x: -9.2, y: 12.1}],
 				},
 				safari: {
