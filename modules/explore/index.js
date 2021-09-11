@@ -9,8 +9,6 @@ Main.add_module({
 
 			position: relative;
 			overflow: hidden;
-			width: 100vw;
-			height: 100vh;
 			-webkit-user-select: none !important;
 		}
 
@@ -133,6 +131,10 @@ Main.add_module({
 		}
 
 		@media screen and (max-width: 815px) {
+			.explore {
+				width: 100vw;
+				height: 90vh;
+			}
 			.explore .layout,
 			.explore .compliments {
 				width: 110vw;
@@ -147,6 +149,10 @@ Main.add_module({
 			}
 		}
 		@media screen and (min-width: 815px) {
+			.explore {
+				width: 100vw;
+				height: 100vh;
+			}
 			.explore .layout,
 			.explore .compliments {
 				width: 100vh;
