@@ -105,7 +105,7 @@ Main.add_module({
 			background-position: left center;
 			background-size: auto;
 
-			height: calc(100% * var(--h) / 1200);
+			height: calc(100% * var(--h) / 1400);
 			opacity: 0;
 			visibility: hidden;
 			transition: .5s;
