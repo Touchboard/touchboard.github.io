@@ -19,7 +19,7 @@ Main.add_module({
 
 		.product .box {
 			position: relative;
-			background-color: var(--surface-area);
+			background-color: var(--surface-area-o);
 		}
 		.product .container {
 			display: grid;
@@ -57,7 +57,7 @@ Main.add_module({
 			cursor: pointer;
 			width: var(--space-00);
 			height: var(--space-00);
-			background-color: var(--surface-line);
+			background-color: var(--surface-line-o);
 			border-radius: 9999px;
 		}
 

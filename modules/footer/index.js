@@ -14,7 +14,7 @@ Main.add_module({
 
 		.footer .border {
 			position: relative;
-			border-top: 1px var(--surface-line) solid;
+			border-top: 1px var(--surface-line-o) solid;
 		}
 
 		.footer .section {

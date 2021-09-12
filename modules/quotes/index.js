@@ -18,7 +18,7 @@ Main.add_module({
 			grid-template-areas:
 				'says says'
 				'img info';
-			background-color: var(--surface-area);
+			background-color: var(--surface-area-o);
 			border-radius : var(--space-00);
 			padding : var(--space-10);
 		}

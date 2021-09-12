@@ -17,10 +17,14 @@
 
 .theme_dark {
 	--back: #1c1c1c;
-	--surface-area: rgba(255, 255, 255, 0.05);
-	--surface-line: rgba(255, 255, 255, 0.1);
-	--middle-area: rgba(255, 255, 255, 0.35);
-	--middle-line: rgba(255, 255, 255, 0.4);
+	--surface-area-t: hsla(0, 0%, 100%, 0.05);
+	--surface-area-o: hsl(0, 0%, 5%);
+	--surface-line-t: hsla(0, 0%, 100%, 0.1);
+	--surface-area-o: hsl(0, 0%, 10%);
+	--middle-area-t: hsla(0, 0%, 100%, 0.35);
+	--middle-area-o: hsl(0, 0%, 35%);
+	--middle-line-t: hsla(0, 0%, 100%, 0.4);
+	--middle-line-o: hsl(0, 0%, 40%);
 	--front: white;
 	--active: #4896fc;
 	--success: #9aff00;
@@ -33,11 +37,14 @@
 
 .theme_light {
 	--back: white;
-	/* --surface-area: rgba(0, 0, 0, 0.05); */
-	--surface-area: hsl(0, 0%, 95%);
-	--surface-line: rgba(0, 0, 0, 0.1);
-	--middle-area: rgba(0, 0, 0, 0.35);
-	--middle-line: rgba(0, 0, 0, 0.4);
+	--surface-area-t: hsla(0, 0%, 0%, 0.05);
+	--surface-area-o: hsl(0, 0%, 95%);
+	--surface-line-t: hsla(0, 0%, 0%, 0.1);
+	--surface-line-o: hsl(0, 0%, 90%);
+	--middle-area-t: hsla(0, 0%, 0%, 0.35);
+	--middle-area-o: hsl(0, 0%, 65%);
+	--middle-line-t: hsla(0, 0%, 0%, 0.4);
+	--middle-line-o: hsl(0, 0%, 60%);
 	--front: black;
 	--active: #0038ff;
 	--success: #9aff00;

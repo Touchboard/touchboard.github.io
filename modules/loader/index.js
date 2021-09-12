@@ -38,6 +38,7 @@ Main.add_module({
 	`,
 
 	html: ({about, intro, preorder}) => {
+		document.body.classList.add('show_loader')
 		return `
 			<div class="loader">
 				<img src="./main/graphic/logo.png"/>

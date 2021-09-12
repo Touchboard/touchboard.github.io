@@ -13,7 +13,7 @@ Main.add_module({
 			display: grid;
 			grid-template-rows: auto min-content;
 			text-align: center;
-			background-color: var(--surface-area);
+			background-color: var(--surface-area-o);
 			border-radius: var(--space-00);
 			justify-items: center;
 			align-items: center;
