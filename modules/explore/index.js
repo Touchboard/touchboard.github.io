@@ -29,11 +29,23 @@ Main.add_module({
 			z-index: 1;
 			top: 54%;
 			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 200px;
-			height: 200px;
+			width: 80px;
+			height: 80px;
 			cursor: pointer;
+			background-color: white;
+			background-size: auto 30px;
+			border-radius: 9999px;
+			box-shadow: 0 10px 40px 0 hsla(0, 0%, 0%, .8);
+			animation: explore_nav .2s infinite alternate;
 		}
+
+		@keyframes explore_nav {
+			0% {transform: translate(-50%, -50%) scale(0.9);}
+			100% {transform: translate(-50%, -50%) scale(1);}
+		}
+
+
+
 		.explore .app_container .nav.left {
 			background-image: url('./modules/explore/graphic/left.png');
 			margin-left: calc(-1 * var(--o));
@@ -117,16 +129,17 @@ Main.add_module({
 			cursor: pointer;
 			animation: explore_pulse .2s infinite alternate;
 			animation-delay:  var(--f);
+			background-color: white;
 		}
 
 		@keyframes explore_pulse {
 			0% {
 				transform: translate(-50%, -50%) scale(1);
-				background-color: transparent;
+				opacity: 0;
 			}
 			100% {
 				transform: translate(-50%, -50%) scale(1.4);
-				background-color: rgba(236, 117, 255, 0.4);
+				opacity: .5;
 			}
 		}
 
