@@ -44,8 +44,6 @@ Main.add_module({
 			100% {transform: translate(-50%, -50%) scale(1);}
 		}
 
-
-
 		.explore .app_container .nav.left {
 			background-image: url('./modules/explore/graphic/left.png');
 			margin-left: calc(-1 * var(--o));
@@ -129,7 +127,7 @@ Main.add_module({
 			cursor: pointer;
 			animation: explore_pulse .2s infinite alternate;
 			animation-delay:  var(--f);
-			background-color: white;
+			background-color: #ff42b9;
 		}
 
 		@keyframes explore_pulse {
@@ -139,7 +137,7 @@ Main.add_module({
 			}
 			100% {
 				transform: translate(-50%, -50%) scale(1.4);
-				opacity: .5;
+				opacity: .4;
 			}
 		}
 
@@ -176,7 +174,7 @@ Main.add_module({
 				top: calc(50% + var(--y));
 			}
 			.explore .app_container .nav {
-				--o: 200px;
+				--o: 230px;
 			}
 		}
 	`,
