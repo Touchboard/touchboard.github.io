@@ -195,7 +195,7 @@ const Model = {
 				],
 				[
 					`Why does it have so few buttons?`,
-					`Touchboard is optimized for fast input. We removed distant keys that force you to jump around the keyboard. Now they are moved other layouts directly to your finger tipps.`,
+					`Touchboard is optimized for fast input. We removed distant keys that force you to jump around the keyboard. Now they are moved to other layouts directly to your finger tipps.`,
 				],
 				[
 					`Are layouts just printed on keys in the final product?`,
