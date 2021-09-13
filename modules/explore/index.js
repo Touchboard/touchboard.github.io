@@ -362,6 +362,7 @@ Main.add_module({
 
 	on_start() {
 		setTimeout(() => this.select_app(this.current), 1000)
+		setTimeout(() => this.select_app(this.current), 5000)
 		// let intro = false
 		// let interval = null
 		// let dir = 1
