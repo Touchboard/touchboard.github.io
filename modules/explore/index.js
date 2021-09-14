@@ -32,11 +32,14 @@ Main.add_module({
 			width: 80px;
 			height: 80px;
 			cursor: pointer;
-			background-color: white;
+			background-color: hsla(0, 0%, 100%, .7);
 			background-size: auto 30px;
 			border-radius: 9999px;
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
 			box-shadow: 0 10px 40px 0 hsla(0, 0%, 0%, .8);
-			animation: explore_nav .2s infinite alternate;
+			transform: translate(-50%, -50%);
+			// animation: explore_nav .2s infinite alternate;
 		}
 
 		@keyframes explore_nav {
@@ -122,8 +125,6 @@ Main.add_module({
 			top: calc(50% + var(--y));
 			left: calc(50% + var(--x));
 			border-radius: 9999px;
-			width: 40px;
-			height: 40px;
 			cursor: pointer;
 			animation: explore_pulse .2s infinite alternate;
 			animation-delay:  var(--f);
@@ -158,6 +159,10 @@ Main.add_module({
 			.explore .app_container .nav {
 				--o: 45vw;
 			}
+			.explore .go {
+				width: 30px;
+				height: 30px;
+			}
 		}
 		@media screen and (min-width: 815px) {
 			.explore {
@@ -175,6 +180,10 @@ Main.add_module({
 			}
 			.explore .app_container .nav {
 				--o: 230px;
+			}
+			.explore .go {
+				width: 40px;
+				height: 40px;
 			}
 		}
 	`,
@@ -203,7 +212,7 @@ Main.add_module({
 		const create_dot = ({go, x, y, stay, app}, i) => `
 			<div
 				class="go"
-				style="--x: ${x}%; --y: ${y}%; --f: ${i / 3}s;"
+				style="--x: ${x}%; --y: ${y}%; --f: ${i / 2}s;"
 				${
 					stay
 						? `onclick="${handler}(event)"`

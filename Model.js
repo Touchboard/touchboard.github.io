@@ -31,8 +31,8 @@ const Model = {
 			list: {
 				photoshop: {
 					$compliment: [
-						['mouse', 40, -4, 595, 639],
-						['tablet', 70, -15, 1192, 968],
+						['mouse', 25, -5, 595, 639],
+						['tablet', 55, -20, 1192, 968],
 					],
 					top: [
 						{go: 'tools', x: -11.1, y: 7},
