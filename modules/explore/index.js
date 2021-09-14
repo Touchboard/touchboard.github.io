@@ -148,8 +148,8 @@ Main.add_module({
 			}
 			.explore .layout,
 			.explore .compliments {
-				width: 110vw;
-				height: 110vw;
+				width: 130vw;
+				height: 130vw;
 			}
 			.explore .compliment {
 				left: calc(50% + var(--x) - 5%);

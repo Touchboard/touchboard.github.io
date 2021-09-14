@@ -15,7 +15,7 @@ Main.add_module({
 			width: 100%;
 			height: 100%;
 			border-radius: var(--space-00);
-			background-color: var(--surface-area-o);
+			background-color: var(--surface-area);
 		}
 
 		@media screen and (max-width: 815px) {

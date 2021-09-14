@@ -23,7 +23,7 @@ Main.add_module({
 			display: grid;
 			height: 100%;
 			box-sizing: border-box;
-			background-color: var(--surface-area-o);
+			background-color: var(--surface-area);
 			border-radius: var(--space-00);
 			grid-gap : var(--space-00);
 			align-items: center;

@@ -20,8 +20,10 @@ const Main = {
 				document.body.innerHTML += html
 			}
 		}
-		for (let i in this.modules) {
-			if (this.modules[i].on_start) this.modules[i].on_start()
+		for (let i in Model[current_page]) {
+			const m = Model[current_page][i].module
+			if (m in this.modules && this.modules[m].on_start)
+				this.modules[m].on_start()
 		}
 	},
 
