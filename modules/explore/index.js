@@ -145,7 +145,7 @@ Main.add_module({
 		@media screen and (max-width: 815px) {
 			.explore {
 				width: 100vw;
-				height: 90vh;
+				height: 95vh;
 			}
 			.explore .layout,
 			.explore .compliments {

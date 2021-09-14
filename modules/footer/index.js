@@ -8,7 +8,6 @@ Main.add_module({
 
 		.footer .sections {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, min-content));
 			grid-gap : var(--space-00);
 		}
 
@@ -33,12 +32,16 @@ Main.add_module({
 			.footer .border {
 				top: calc(-1 * var(--space-10));
 			}
+			.footer .sections {
+				grid-template-columns: 1fr 1fr;
+			}
 		}
 		@media screen and (min-width: 815px) {
 			.footer .border {
 				top: calc(-1 * var(--space-20));
 			}
 			.footer .sections {
+				grid-template-columns: repeat(auto-fit, minmax(200px, min-content));
 				justify-content: center;
 			}
 		}
