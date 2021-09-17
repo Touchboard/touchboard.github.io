@@ -25,6 +25,11 @@ const Main = {
 			if (m in this.modules && this.modules[m].on_start)
 				this.modules[m].on_start()
 		}
+		for (let i in Model.global) {
+			const m = Model.global[i].module
+			if (m in this.modules && this.modules[m].on_start)
+				this.modules[m].on_start()
+		}
 	},
 
 	get_current_page() {

@@ -4,11 +4,11 @@ Main.add_module({
 	style: `
 		.quotes {
 			scroll-snap-align: center;
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
-			grid-gap : var(--space-00);
-			align-items: flex-start;
-			justify-content: center;
+			max-width: 1680px;
+			width: 100vw;
+			overflow-y: hidden;
+			box-sizing: border-box;
+			margin: 0 auto;
 		}
 
 		.quotes .container {
@@ -40,14 +40,35 @@ Main.add_module({
 		}
 
 		@media screen and (max-width: 815px) {
+			.quotes {
+				padding: var(--space-00);
+				padding-right: 0;
+				white-space: nowrap;
+				scroll-snap-type: x mandatory;
+			}
 			.quotes .container {
-				padding : var(--space-00);
+				scroll-snap-align: center;
+				display: inline-grid;
+				white-space: normal;
+				padding: var(--space-00);
+				width: 70vw;
+				flex: 0 0 auto;
+				margin-right: var(--space-00);
 			}
 			.quotes .img {
 				--size: 40px;
 			}
 		}
 		@media screen and (min-width: 815px) {
+			.quotes {
+				display: grid;
+				grid-gap : var(--space-00);
+				grid-template-columns:
+					repeat(auto-fit, minmax(300px, max-content));
+				align-items: flex-start;
+				justify-content: center;
+				padding: var(--space-20);
+			}
 			.quotes .container {
 				padding : var(--space-10);
 			}
@@ -71,7 +92,7 @@ Main.add_module({
 			</div>
 		`
 		return `
-			<div class="quotes responsive">
+			<div class="quotes">
 				${list.map(container).join('')}
 			</div>
 		`
