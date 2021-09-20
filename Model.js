@@ -22,7 +22,7 @@ const Model = {
 
 		{
 			module: `title`,
-			title: `Like Touchbaord?`,
+			title: `You like Touchbaord?`,
 			sub: `Or you want to test the Prototype? Add yourself to the Waitlist to tell us what you think, make an appointment or receive news!`,
 		},
 
@@ -94,7 +94,7 @@ const Model = {
 		},
 		{
 			module: `title`,
-			title: `Like Touchbaord?`,
+			title: `You like Touchbaord?`,
 			sub: `Or you want to test the Prototype? Add yourself to the Waitlist to tell us what you think, make an appointment or receive news!`,
 		},
 		{
@@ -132,7 +132,7 @@ const Model = {
 				],
 				[
 					`I think Speech-To-Text or Mid-Air-Gestures like in Minority Report are the future!`,
-					`Modern PCs already have speech-to-text but it’s not suited for quick and precise tasks. Imagine playing a shooter game by screaming "left, left, jump, shoot". Our finger movements are just faster than spoken commands. Mid-Air-Gestures look spectacular in movies but in reality you have to hold your hands in the air 8 hours a day, executing precise gestures. After 10 minutes you will want to rest your hands on the table. We don't see these technologies in use not because they are new, but because interactions with physical buttons on the table are just the optimal way.`,
+					`Modern PCs already have speech-to-text but it’s not suited for quick and precise tasks. Imagine playing a shooter game by screaming "left, left, jump, shoot". Our finger movements are just faster than spoken commands. Mid-Air-Gestures look spectacular in movies but in reality you have to hold your hands in the air 8 hours a day, executing precise gestures. After 10 minutes you will want to rest your hands on the table. We don't see these technologies in use not because they aren't possible, but because interactions with physical buttons on the table are just the optimal way.`,
 				],
 				[
 					`Why does it have so few buttons?`,

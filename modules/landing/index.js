@@ -11,7 +11,7 @@ Main.add_module({
 			display: grid;
 			align-items: center;
 		    grid-template-rows: .5fr 1fr;
-			background-image: url('./modules/landing/graphic/img2.jpg');
+			background-image: url('./modules/landing/graphic/img.jpg');
 			background-position: top center;
 			background-size:  cover;
 			background-repeat: no-repeat;
@@ -19,7 +19,7 @@ Main.add_module({
 			height: 100%;
 			padding: var(--space-00);
 			box-sizing: border-box;
-			color: white;
+			// color: white;
 		}
 		.landing .play {
 			position: relative;
