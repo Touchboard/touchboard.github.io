@@ -10,4 +10,9 @@ const helpers = {
 				: value
 		return ((x - aMin) / (aMax - aMin)) * (bMax - bMin) + bMin
 	},
+	image_preloader(url, callback) {
+		const img = document.createElement('img')
+		img.onload = callback
+		img.src = url
+	},
 }

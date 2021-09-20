@@ -3,7 +3,7 @@ Main.add_module({
 
 	style: `
 		.footer {
-			scroll-snap-align: center;
+			scroll-snap-align: end;
 		}
 
 		.footer .sections {
@@ -14,6 +14,7 @@ Main.add_module({
 		.footer .border {
 			position: relative;
 			border-top: 1px var(--surface-line) solid;
+			top: calc(-1 * var(--space-20));
 		}
 
 		.footer .section {
@@ -29,17 +30,16 @@ Main.add_module({
 		}
 
 		@media screen and (max-width: 815px) {
-			.footer .border {
-				top: calc(-1 * var(--space-10));
+			.footer {
+				// height: 100vh;
 			}
 			.footer .sections {
 				grid-template-columns: 1fr 1fr;
+				align-content: center;
+				// height: 100%;
 			}
 		}
 		@media screen and (min-width: 815px) {
-			.footer .border {
-				top: calc(-1 * var(--space-20));
-			}
 			.footer .sections {
 				grid-template-columns: repeat(auto-fit, minmax(200px, min-content));
 				justify-content: center;

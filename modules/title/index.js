@@ -3,6 +3,7 @@ Main.add_module({
 
 	style: `
 		.title {
+			scroll-snap-align: start;
 			width: 100%;
 			text-align: center;
 			padding-bottom: var(--space-00);
@@ -15,7 +16,7 @@ Main.add_module({
 			max-width: 15ch;
 		}
 		.title .typo_00 {
-			max-width: 30ch;
+			max-width: 40ch;
 		}
 		@media screen and (max-width: 815px) {
 

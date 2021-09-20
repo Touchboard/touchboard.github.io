@@ -18,106 +18,55 @@ const Model = {
 			module: `landing`,
 			about: `The most advanced all-in-one human input device in the world!`,
 			intro: `TA_t3FcigRw`,
-			button: `Join the Waitlist!`,
-			preorder: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
+
 		{
 			module: `title`,
-			title: `Explore Touchboard's Interaction`,
-			sub: `With these examplary layouts`,
+			title: `Like Touchbaord?`,
+			sub: `Or you want to test the Prototype? Add yourself to the Waitlist to tell us what you think, make an appointment or receive news!`,
 		},
-		{
-			module: `explore`,
-			list: {
-				photoshop: {
-					$compliment: [
-						['mouse', 25, -5, 595, 639],
-						['tablet', 55, -20, 1192, 968],
-					],
-					top: [
-						{go: 'tools', x: -11.1, y: 7},
-						{go: 'numpad', x: -4.8, y: 7.3},
-					],
-					tools: [{x: -11.1, y: 7}],
-					numpad: [{x: -4.8, y: 7.3}],
-				},
-				mail: {
-					top: [
-						{go: 'split', x: 0, y: -6.5},
-						{go: 'ru', x: 9.3, y: 6.3},
-						{go: 'symbols', x: 9.3, y: 12.2},
-					],
-					split: [{x: 0, y: -6.5}],
-					ru: [{x: 9.3, y: 6.3}],
-					symbols: [{x: 9.3, y: 12.2}],
-				},
-				spotify: {
-					top: [
-						{go: `mouse`, x: 3.1, y: 12.1},
-						{go: 'commands', x: -3.1, y: 12.1},
-						{go: 'media', x: -9.2, y: 12.1},
-					],
-					mouse: [{x: 3.1, y: 12.1}],
-					commands: [{x: -3.1, y: 12.1}],
-					media: [{x: -9.2, y: 12.1}],
-				},
-				safari: {
-					top: [
-						{
-							go: 'text',
-							x: 9.3,
-							y: -6.2,
-							stay: true,
-							app: 'focused',
-						},
-					],
-					text: [
-						{
-							go: 'top',
-							x: 34,
-							y: -6.2,
-							stay: true,
-							app: 'app',
-						},
-					],
-				},
-				live: {top: []},
-			},
-		},
-		{
-			module: `title`,
-			title: `Versatility at its Core`,
-			sub: `Touchboard is not just a device, it's a system`,
-		},
-		{
-			module: `features`,
-			list: [
-				['all-in-one', true],
-				['context aware'],
-				['pressure sensitive gestures', true],
-				['easy to find keys'],
-				['intuitive ui', true],
-				['multitouch'],
-				['controls under favorite fingers', true],
-				['refined ergonomy'],
-				['wireless'],
-				['motion efficient'],
-				['haptic feedback'],
-				// ['touchboard studio'],
-				// ['cloud'],
-				['work from anywhere'],
-			],
-		},
-		{
-			module: `title`,
-			title: `Wanna try out the Prototype?`,
-			sub: `Schedule a live demo today to try it out yourself!`,
-		},
+
 		{
 			module: `preorder`,
-			message: 'Get in Touch!',
-			url: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+			message: 'Join the Waitlist',
+			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
+
+		{
+			module: `product`,
+			app: 'context',
+			length: 5,
+		},
+
+		{
+			module: `product`,
+			app: 'spotify',
+			length: 6,
+		},
+
+		{
+			module: `product`,
+			app: 'mail',
+			length: 6,
+		},
+
+		{
+			module: `product`,
+			app: 'photoshop',
+			length: 4,
+		},
+
+		{
+			module: `product`,
+			app: 'live',
+			length: 1,
+		},
+		{
+			module: `title`,
+			title: `People say about Touchboard`,
+			sub: `These people tested our prototype and were thrilled.`,
+		},
+
 		{
 			module: `quotes`,
 			list: [
@@ -141,25 +90,17 @@ const Model = {
 					says: `I'm not a computer person at all. The Touchboard however is very visual and clear, that I'd be able to operate Excel Sheets like a pro without knowing a single shortcut.`,
 					position: `Entrepreneur`,
 				},
-				// {
-				// 	person: `Philipp`,
-				// 	says: `It is going to revolutionize the interaction with the computer. Ill definetely buy it for my son`,
-				// 	position: `Media Creator`,
-				// },
-				// {
-				// 	person: `Tobias`,
-				// 	says: `Touchboard is not just for media creators like mzself. It is going to be an input device for everz aspect of the PC.`,
-				// 	position: `Entrepreneur`,
-				// },
-				// 	person: `Alexandra`,
-				// 	says: `Wow. This'll make you rich`,
-				// 	position: 'UX Designer'`,
-				// },
-				// 	person: `Justus`,
-				// 	says: `Even as a patent lawyer I don't see such revolutionary technologies often.`,
-				// 	position: 'Patent lawyer'`,
-				// },
 			],
+		},
+		{
+			module: `title`,
+			title: `Like Touchbaord?`,
+			sub: `Or you want to test the Prototype? Add yourself to the Waitlist to tell us what you think, make an appointment or receive news!`,
+		},
+		{
+			module: `preorder`,
+			message: 'Join the Waitlist',
+			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
 		{
 			module: `title`,

@@ -85,10 +85,6 @@ Main.add_module({
 				grid-gap : var(--space-00);
 				grid-template-columns: 1fr;
 			}
-			.questions .container {
-				transform: rotate(0deg);
-				animation: none;
-			}
 			.questions .container .popup {
 				padding: var(--space-00);
 			}
@@ -101,6 +97,7 @@ Main.add_module({
 				padding: var(--space-10);
 			}
 		}
+		${Shared.more.styles}
 	`,
 
 	html({list}) {
@@ -108,7 +105,7 @@ Main.add_module({
 		const angles = [-3, 4, 2, -4, -3]
 		const container = ([q, a], i) => `
 			<div
-				class="container"
+				class="container ${i > 3 ? 'more_hide' : ''}"
 				onclick="${router}(event);"
 			>
 				<div class="popup">
@@ -119,6 +116,7 @@ Main.add_module({
 		`
 		return `<div class="questions responsive">
 			${list.map(container).join('')}
+			${Shared.more.html}
 		</div>`
 	},
 

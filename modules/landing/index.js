@@ -2,87 +2,85 @@ Main.add_module({
 	type: 'landing',
 
 	style: `
-		.full_landing {
-			background-color: black;
-		}
-		.full_landing:after {
-			background-image: url('./modules/landing/graphic/img.jpg');
-			filter: brightness(.8);
-		}
 		.landing {
 			scroll-snap-align: center;
+			box-sizing: border-box;
+		}
+		.landing .box {
 			text-align: center;
-			height: 100vh;
 			display: grid;
 			align-items: center;
-		    grid-template-rows: 1fr 1fr 1fr;
+		    grid-template-rows: .5fr 1fr;
+			background-image: url('./modules/landing/graphic/img2.jpg');
+			background-position: top center;
+			background-size:  cover;
+			background-repeat: no-repeat;
+			background-color: var(--surface-area);
+			height: 100%;
+			padding: var(--space-00);
+			box-sizing: border-box;
 			color: white;
 		}
 		.landing .play {
 			position: relative;
-			clip-path: polygon(15% -1%, 15% 101%, 101% 50%);
-			height: 12vh;
-			width: 12vh;
-			object-fit: cover;
-		}
-		.landing .play:hover {
-			transform: scale(1.4);
+			height: 20vh;
 		}
 
 		.landing .product_name {
-			max-width: 80vw;
+			max-width: 90vw;
 			width: 500px;
 		}
 		.landing .product_about {
 			display: inline-block;
-			color: white;
-			max-width: 30ch;
+			max-width: 24ch;
 		}
 		@media screen and (max-width: 815px) {
+			.landing {
+				margin-bottom: var(--space-00);
+				height: calc(100vh - var(--space-00));
+			}
+			.landing .box {
+				border-radius: 0 0 var(--space-10) var(--space-10);
+			}
 			.landing .product_name {
 				margin: var(--space-20) 0 var(--space-00);
 			}
 		}
 		@media screen and (min-width: 815px) {
+			.landing {
+				max-width: 1680px;
+				margin: var(--space-00) auto;
+				padding: 0 var(--space-20);
+				height: calc(100vh - 2 * var(--space-00));
+			}
+			.landing .box {
+				border-radius: var(--space-10);
+			}
 			.landing .product_name {
-				margin: var(--space-20) 0 var(--space-10);
+				margin: var(--space-30) 0 var(--space-10);
 			}
 		}
 	`,
 
 	html: ({about, intro, button, preorder}) => {
 		return `
-			<div class="full full_landing" id="target_full"></div>
-			<div
-				class="landing responsive source_full"
-				data-target="target_full"
-			>
-				<div style="align-self: start;">
-					<img
-						class="product_name"
-						src="./modules/landing/graphic/touchboard.png"
-					/>
-					<br/>
-					<div class="product_about typo_10">${about}</div>
-				</div>
-				<div>
-					<video
-						${Main.router(`https://www.youtube.com/embed/${intro}?autoplay=1`)}
-						src="./modules/landing/graphic/preview.mp4"
-						class="play"
-						muted loop playsinline preload autoplay
-						oncanplaythrough="Main.modules.loader.on_load()"
-					>
-						Sorry, your browser doesn't support embedded videos.
-					</video>
-				</div>
-				<div>
-					<button
-						class="big"
-						${Main.router(preorder)}
-					>
-						${button}
-					</button>
+			<div class="landing">
+				<div class="box">
+					<div style="align-self: start;">
+						<img
+							class="product_name"
+							src="./modules/landing/graphic/touchboard.png"
+						/>
+						<br/>
+						<div class="product_about typo_20">${about}</div>
+					</div>
+					<div>
+						<img
+							${Main.router(`https://www.youtube.com/embed/${intro}?autoplay=1`)}
+							src="./modules/landing/graphic/play.png"
+							class="play"
+						/>
+					</div>
 				</div>
 			</div>
 		`

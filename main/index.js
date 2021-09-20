@@ -20,15 +20,18 @@ const Main = {
 				document.body.innerHTML += html
 			}
 		}
-		for (let i in Model[current_page]) {
-			const m = Model[current_page][i].module
-			if (m in this.modules && this.modules[m].on_start)
-				this.modules[m].on_start()
+		for (let i in this.modules) {
+			let length = Model[current_page].filter(
+				o => o.module === i
+			).length
+			if (length > 0 && this.modules[i].on_start)
+				this.modules[i].on_start()
 		}
-		for (let i in Model.global) {
-			const m = Model.global[i].module
-			if (m in this.modules && this.modules[m].on_start)
-				this.modules[m].on_start()
+		for (let i in this.modules) {
+			let length = Model.global.filter(o => o.module === i)
+				.length
+			if (length > 0 && this.modules[i].on_start)
+				this.modules[i].on_start()
 		}
 	},
 

@@ -6,12 +6,11 @@ Main.add_module({
 			position: fixed;
 			z-index: 1;
 			left: 50%;
-			top: 50px;
 			width: 64px;
 			height: 38px;
 			background-image: url('./main/graphic/logo.png');
 			background-size: 64px;
-			transform: translate(-50%, -50%) scale(.8);
+			transform: translateX(-50%) scale(.8);
 			background-position: center;
 			background-repeat: no-repeat;
 			cursor: pointer;
@@ -22,17 +21,23 @@ Main.add_module({
 
 		}
 		.logo.on_scroll {
-			top: 30px;
-			opacity: .8;
+			top: var(--space-00);
+			opacity: .2;
 		}
 		@media screen and (max-width: 815px) {
+			.logo {
+				top: var(--space-00);
+			}
 			.logo.on_landing {
-				transform: translate(-50%, -50%) scale(1);
+				transform: translateX(-50%) scale(1);
 			}
 		}
 		@media screen and (min-width: 815px) {
+			.logo {
+				top: var(--space-20);
+			}
 			.logo.on_landing {
-				transform: translate(-50%, -50%) scale(1.4);
+				transform: translateX(-50%) scale(1.4);
 			}
 		}
 	`,

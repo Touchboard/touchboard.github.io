@@ -3,12 +3,13 @@ Main.add_module({
 
 	style: `
 		.quotes {
-			scroll-snap-align: center;
-			max-width: 1680px;
-			width: 100vw;
-			overflow-y: hidden;
-			box-sizing: border-box;
-			margin: 0 auto;
+			scroll-snap-align: start;
+			display: grid;
+			grid-gap : var(--space-00);
+			grid-template-columns:
+				repeat(auto-fit, minmax(300px, max-content));
+			align-items: end;
+			justify-content: center;
 		}
 
 		.quotes .container {
@@ -20,7 +21,7 @@ Main.add_module({
 				'img info';
 			background-color: var(--surface-area);
 			border-radius : var(--space-00);
-			padding : var(--space-10);
+			text-align: left;
 		}
 
 		.quotes .img {
@@ -40,20 +41,8 @@ Main.add_module({
 		}
 
 		@media screen and (max-width: 815px) {
-			.quotes {
-				padding: var(--space-00);
-				padding-right: 0;
-				white-space: nowrap;
-				scroll-snap-type: x mandatory;
-			}
 			.quotes .container {
-				scroll-snap-align: center;
-				display: inline-grid;
-				white-space: normal;
 				padding: var(--space-00);
-				width: 70vw;
-				flex: 0 0 auto;
-				margin-right: var(--space-00);
 			}
 			.quotes .img {
 				--size: 40px;
@@ -61,13 +50,6 @@ Main.add_module({
 		}
 		@media screen and (min-width: 815px) {
 			.quotes {
-				display: grid;
-				grid-gap : var(--space-00);
-				grid-template-columns:
-					repeat(auto-fit, minmax(300px, max-content));
-				align-items: flex-start;
-				justify-content: center;
-				padding: var(--space-20);
 			}
 			.quotes .container {
 				padding : var(--space-10);
@@ -76,24 +58,27 @@ Main.add_module({
 				--size: 80px;
 			}
 		}
+		${Shared.more.style}
 	`,
 
 	html: ({list}) => {
 		const url = url =>
 			`url('./modules/quotes/graphic/${url}.jpeg')`
-		const container = ({person, says, position}) => `
-			<div class="container">
+		const container = ({person, says, position}, i) => `
+			<div class="container ${i > 1 ? 'more_hide' : ''}">
 				<div class="says">"${says}"</div>
 				<div
 					class="img cover"
 					style="background-image: ${url(person)};"
-				></div>
+				>
+				</div>
 				<div class="info typo_01"><b>${person}</b><br/>${position}</div>
 			</div>
 		`
 		return `
-			<div class="quotes">
+			<div class="quotes responsive">
 				${list.map(container).join('')}
+				${Shared.more.html}
 			</div>
 		`
 	},

@@ -3,205 +3,202 @@ Main.add_module({
 
 	style: `
 		.product {
-			text-align: center;
-			padding-bottom: 0;
-		}
-
-		.product .product_name {
-			max-width: 80vw;
-			width: 500px;
-		}
-
-		.product .product_about {
-			max-width: 40ch;
-			display: inline-block;
+			scroll-snap-align: center;
+			box-sizing: border-box;
 		}
 
 		.product .box {
 			position: relative;
-			background-color: var(--surface-area);
+			height: 90vh;
+			background-color: #EBEBEB;
+			border-radius: var(--space-10);
 		}
-		.product .container {
-			display: grid;
-			grid-auto-columns: 1fr;
-			grid-gap: var(--space-10);
 
+		.product .frame {
 			position: absolute;
-			left: 0; right: 0;
-			top: 0; bottom: 0;
-			opacity: 0;
-			transition: 1s opacity, 1s visibility;
-			visibility: hidden;
-		}
-		.product .container.show {
-			opacity: 1;
-			visibility: visible;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 90vh;
+			height: 90vh;
+			background-size: cover;
+			transition: .2s;
 		}
 
-		.product .container .slide_description {
-			position: relative;
-			z-index: 1;
-			align-self: center;
-			justify-self: center;
-			max-width : 50ch;
-			grid-area: desc;
+		.product .nav {
+			position: absolute;
+			top: 50%;
+			width: 100px;
+			height: 90vh;
+			background-size: auto 40px;
+			background-repeat: no-repeat;
+			background-position: center;
+			cursor: pointer;
 		}
 
-		.product .container .pagination {
-			text-align: center;
+		.product .nav.hide {
+			display: none;
+		}
+
+		.product .nav.l {
+			margin-left: calc(-1 * var(--offset));
+			background-image: url('./modules/product/graphic/l.png');
+
+		}
+		.product .nav.r {
+			margin-left: var(--offset);
+			background-image: url('./modules/product/graphic/r.png');
+		}
+
+		.product .pagination {
+			position: absolute;
+			bottom: var(--space-00);
+			left: 50%;
+			transform: translateX(-50%);
 			cursor: default;
 		}
 
-		.product .container .pagination .dot {
+		.product .pagination > div {
 			display: inline-block;
-			cursor: pointer;
-			width: var(--space-00);
-			height: var(--space-00);
-			background-color: var(--surface-line);
+			width: var(--space-01);
+			height: var(--space-01);
+			background-color: hsla(0, 0%, 40%, .3);
 			border-radius: 9999px;
+			margin: 0 2px;
 		}
-
-		.product .container .pagination .dot.current {
-			width: var(--space-10);
-			position: relative;
-			overflow: hidden;
-		}
-
-		.product .container .pagination .dot.current .progress {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			left: 0;
-			top: 0;
-			background-color: var(--active);
-			animation: expand 5s linear;
-		}
-
-		@keyframes expand {
-			from {width: 0%;}
-			to {width: 100%;}
-		}
-
-		.product .container .slide {
-			position: relative;
-			width: 100%;
-			object-fit: contain;
-			grid-area: prod;
+		.product .pagination > div.current {
+			background-color: var(--front);
 		}
 
 		@media screen and (max-width: 815px) {
-			.product .product_name {
-				margin-bottom: var(--space-00);
-			}
-			.product .product_about {
-				margin-bottom: var(--space-30);
-			}
-			.product .container {
-				grid-template-areas:
-					"prod"
-					"desc"
-					"page";
-				grid-template-rows: min-content 230px min-content;
-				padding: var(--space-00);
-			}
-			.product .box {
-				height: 520px;
-			}
-			.product .slide {
-				height: 300px;
-				margin: -70px 0;
-			}
-		}
-		@media screen and (min-width: 815px) {
-			.product .product_name {
+			.product {
+				width: 100vw;
 				margin-bottom: var(--space-10);
 			}
-			.product .product_about {
+			.product .box {
+				overflow: hidden;
+			}
+			.product .nav {transform: translateY(-50%);}
+			.product .nav.l {left: -30px;}
+			.product .nav.r {right: -30px;}
+		}
+		@media screen and (min-width: 815px) {
+			.product {
+				max-width: 1680px;
+				margin: 0 auto;
+				padding: 0 var(--space-20);
 				margin-bottom: var(--space-20);
 			}
-			.product .container {
-				grid-template-areas:
-					"desc prod";
-					"page prod";
-				padding: var(--space-20);
-			}
-			.product .box {
-				height: 50vh;
-				min-height: 440px;
-			}
-			.product .slide {
-				height: calc(50vh + 200px);
-				margin: -120px 0 -250px;
+			.product .nav {
+				--offset : 50vh;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			}
 		}
 
 	`,
 
-	html: ({list, about}) => {
-		const url = url =>
-			`./modules/product/graphic/slides/${url}.png`
-		const container = ({graphic, title, description}, i, array) =>
-			`<div class="container">
-				<div class="slide_description">
-					<div class="typo_20">${title}</div>
-					<br/>
-					<div>${description}</div>
-				</div>
-				<div class="pagination">
-					${array
-						.map(
-							(l, n) => `
-						<div
-							class="dot ${i == n ? 'current' : ''}"
-							onclick="Main.modules.product.on_click('${n}')"
-						>
-							<div class="progress"></div>
-						</div>
-					`
-						)
-						.join(' ')}
-				</div>
-				<img class="slide" src="${url(graphic)}">
-			</div>`
+	router: `Main.modules.product.pagination`,
+
+	html({app, length}) {
+		const img = `./modules/product/apps/${app}`
+		const pagination =
+			length == 1
+				? ''
+				: `
+					<div
+						class="nav l hide"
+						onclick="${this.router}('${app}', 'l')"
+					></div>
+					<div
+						class="nav r"
+						onclick="${this.router}('${app}', 'r')"
+					></div>
+					<div class="pagination">
+						<div class="current"></div>
+						${Array(length - 1)
+							.fill(0)
+							.map(a => `<div></div>`)
+							.join(' ')}
+					</div>
+				`
+		for (let i = 0; i < length; i++)
+			helpers.image_preloader(`${img} ${i}.jpg`)
+
+		if (app == 'context') {
+			const open = c =>
+				c == length - 1 && Main.modules.loader.on_load()
+			let count = 0
+			for (let i = 0; i < length; i++) {
+				helpers.image_preloader(`${img} ${i}.jpg`, () =>
+					open(count++)
+				)
+			}
+		}
+
 		return `
-			<div class="product responsive">
-				<img class="product_name" src="./modules/product/graphic/touchboard.png">
-				<br/>
-				<div class="product_about typo_10">${about}</div>
-				<br/>
-				<div class="box">${list.map(container).join('')}</div>
+			<div
+				class="product product_${app}"
+				data-current="0"
+				data-length="${length}"
+				data-app="${app}"
+			>
+				<div class="box">
+					<div
+						class="frame"
+						style="background-image: url('${img} 0.jpg')"
+					></div>
+					${pagination}
+				</div>
 			</div>
 		`
 	},
 
-	current: 0,
-	interval: null,
-
-	on_start() {
-		const cs = document.querySelectorAll('.product .container')
-		const check = () => {
-			cs.forEach((container, i) => {
-				container.classList[
-					i == this.current ? 'add' : 'remove'
-				]('show')
-				if (i == this.current)
-					container
-						.querySelectorAll('.progress')
-						.forEach(p => {
-							p.style.animation = 'none'
-							p.offsetHeight
-							p.style.animation = null
-						})
-			})
-			this.current = (this.current + 1) % cs.length
-		}
-		check()
-		clearInterval(this.interval)
-		this.interval = setInterval(check, 5000)
+	pagination(app, dir) {
+		const product = document.querySelector(`.product_${app}`)
+		const length = parseInt(product.getAttribute('data-length'))
+		let current = parseInt(product.getAttribute('data-current'))
+		current = (current + (dir == 'r' ? 1 : -1) + length) % length
+		this.set_page(app, current)
 	},
 
-	on_click(i) {
-		this.current = parseInt(i)
-		this.on_start()
+	set_page(app, n) {
+		const product = document.querySelector(`.product_${app}`)
+		product
+			.querySelector(`.nav.l`)
+			.classList[n == 0 ? 'add' : 'remove']('hide')
+		product
+			.querySelectorAll('.pagination > div')
+			.forEach((p, i) =>
+				p.classList[i == n ? 'add' : 'remove']('current')
+			)
+
+		const img = `./modules/product/apps/${app} ${n}`
+		product.querySelector(
+			'.frame'
+		).style.backgroundImage = `url('${img}.jpg')`
+		product.setAttribute('data-current', n)
+	},
+
+	on_start() {
+		window.addEventListener('scroll', e => {
+			document
+				.querySelectorAll('.product')
+				.forEach(container => {
+					const rect = container.getBoundingClientRect()
+					const center = rect.top + rect.height / 2
+					const middle = window.innerHeight / 2
+					const offset = window.innerHeight * 0.2
+					if (
+						center < middle - offset ||
+						middle + offset < center
+					) {
+						const app = container.getAttribute('data-app')
+						let current = parseInt(
+							container.getAttribute('data-current')
+						)
+						if (current != 0) this.set_page(app, 0)
+					}
+				})
+		})
 	},
 })

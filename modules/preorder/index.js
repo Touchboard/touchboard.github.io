@@ -3,9 +3,20 @@ Main.add_module({
 
 	style: `
 		.preorder {
-			scroll-snap-align: center;
+			scroll-snap-align: start;
 			text-align: center;
 			align-items: center;
+
+			// display: grid;
+			// grid-template-rows: 1fr 1fr;
+			// justify-items: center;
+		}
+
+		.preorder button {
+		}
+
+		.preorder .typo_30 {
+			max-width: 16ch;
 		}
 	`,
 
