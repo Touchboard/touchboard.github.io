@@ -23,7 +23,7 @@ const Model = {
 		{
 			module: `title`,
 			title: `You like Touchbaord?`,
-			sub: `Or you want to test the Prototype? Add yourself to the Waitlist to tell us what you think, make an appointment or receive news!`,
+			sub: `Or you want to test the Prototype? Add yourself to the waitlist to tell us what you think, make an appointment or receive news!`,
 		},
 
 		{
@@ -95,7 +95,7 @@ const Model = {
 		{
 			module: `title`,
 			title: `You like Touchbaord?`,
-			sub: `Or you want to test the Prototype? Add yourself to the Waitlist to tell us what you think, make an appointment or receive news!`,
+			sub: `Or you want to test the Prototype? Add yourself to the waitlist to tell us what you think, make an appointment or receive news!`,
 		},
 		{
 			module: `preorder`,
