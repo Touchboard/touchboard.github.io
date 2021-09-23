@@ -22,7 +22,7 @@ Main.add_module({
 		}
 		.logo.on_scroll {
 			top: var(--space-00);
-			opacity: .2;
+			opacity: .4;
 		}
 		@media screen and (max-width: 815px) {
 			.logo {

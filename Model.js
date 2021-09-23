@@ -17,7 +17,8 @@ const Model = {
 		{
 			module: `landing`,
 			about: `The most advanced all-in-one human input device in the world!`,
-			intro: `TA_t3FcigRw`,
+			portrait: `NmiezBxf7Fg`,
+			landscape: `TA_t3FcigRw`,
 		},
 
 		{

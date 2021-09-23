@@ -72,6 +72,10 @@ Main.add_module({
 			transition: .2s;
 		}
 
+		body.theme_dark .questions .container .q:after {
+			filter: invert(1);
+		}
+
 		.questions .container.show .q:after {
 			transform: translate(-50%, -50%) rotate(45deg);
 		}

@@ -16,9 +16,9 @@
 }
 
 .theme_dark {
-	--back: #1c1c1c;
-	--surface-area: hsl(0, 0%, 5%);
-	--surface-line: hsl(0, 0%, 10%);
+	--back: black;
+	--surface-area: hsl(0, 0%, 10%);
+	--surface-line: hsl(0, 0%, 15%);
 	--middle-area: hsl(0, 0%, 35%);
 	--middle-line: hsl(0, 0%, 40%);
 	--front: white;
@@ -187,7 +187,7 @@ button.big {
 	border-radius: var(--space-00);
 	background: linear-gradient(0.4turn, #eb00ff, #ff0000);
 	box-shadow: none;
-	color: var(--back);
+	color: white;
 	font-weight: bold;
 }
 

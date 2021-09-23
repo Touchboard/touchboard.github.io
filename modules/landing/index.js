@@ -19,7 +19,7 @@ Main.add_module({
 			height: 100%;
 			padding: var(--space-00);
 			box-sizing: border-box;
-			// color: white;
+			color: black;
 		}
 		.landing .play {
 			position: relative;
@@ -45,6 +45,7 @@ Main.add_module({
 			.landing .product_name {
 				margin: var(--space-20) 0 var(--space-00);
 			}
+			.landing .landscape {display: none;}
 		}
 		@media screen and (min-width: 815px) {
 			.landing {
@@ -59,10 +60,11 @@ Main.add_module({
 			.landing .product_name {
 				margin: var(--space-30) 0 var(--space-10);
 			}
+			.landing .portrait {display: none;}
 		}
 	`,
 
-	html: ({about, intro, button, preorder}) => {
+	html: ({about, portrait, landscape, button, preorder}) => {
 		return `
 			<div class="landing">
 				<div class="box">
@@ -76,9 +78,16 @@ Main.add_module({
 					</div>
 					<div>
 						<img
-							${Main.router(`https://www.youtube.com/embed/${intro}?autoplay=1`)}
+							${Main.router(`https://www.youtube.com/embed/${portrait}?autoplay=1`)}
 							src="./modules/landing/graphic/play.png"
-							class="play"
+							class="play portrait"
+						/>
+						<img
+							${Main.router(
+								`https://www.youtube.com/embed/${landscape}?autoplay=1`
+							)}
+							src="./modules/landing/graphic/play.png"
+							class="play landscape"
 						/>
 					</div>
 				</div>
