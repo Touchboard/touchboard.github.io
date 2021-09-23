@@ -7,23 +7,74 @@ Main.add_module({
 			box-sizing: border-box;
 		}
 		.landing .box {
+			color: black;
 			text-align: center;
 			display: grid;
+			grid-template-rows: .5fr 1fr;
 			align-items: center;
-		    grid-template-rows: .5fr 1fr;
 			background-image: url('./modules/landing/graphic/img.jpg');
 			background-position: top center;
 			background-size:  cover;
 			background-repeat: no-repeat;
 			background-color: var(--surface-area);
-			height: 100%;
 			padding: var(--space-00);
 			box-sizing: border-box;
-			color: black;
+			height: 100%;
 		}
+
+		.landing .video {
+			position: fixed;
+			z-index: 2;
+			top: 0; left: 0;
+			right: 0; bottom: 0;
+			width: 100%;
+			heigth: 100%;
+			background-color: hsla(0, 0%, 0%, .5);
+			display: none;
+			cursor: pointer;
+			backdrop-filter: blur(5px);
+			-webkit-backdrop-filter: blur(5px);
+		}
+
+		.landing.show .video {
+			display: block !important;
+		}
+
+		.landing .ratio {
+			position: relative;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 80vw;
+		}
+
+		.landing .ratio iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: var(--space-00);
+		}
+
+		@keyframes landing_pop_open {
+			0% {transform: translate(-50%, -50%) scale(0.5);}
+			25% {transform: translate(-50%, -50%) scale(1.01);}
+			60% {transform: translate(-50%, -50%) scale(0.995);}
+			100% {transform: translate(-50%, -50%) scale(1);}
+		}
+
+		@keyframes landing_pop_close {
+			0% {transform: scale(2);}
+			25% {transform: scale(0.98);}
+			60% {transform: scale(1.005);}
+			100% {transform: scale(1);}
+		}
+
 		.landing .play {
 			position: relative;
 			height: 20vh;
+			cursor: pointer;
 		}
 
 		.landing .product_name {
@@ -45,6 +96,7 @@ Main.add_module({
 			.landing .product_name {
 				margin: var(--space-20) 0 var(--space-00);
 			}
+			.landing .ratio {height: calc(80vw / 9 * 16);}
 			.landing .landscape {display: none;}
 		}
 		@media screen and (min-width: 815px) {
@@ -60,11 +112,13 @@ Main.add_module({
 			.landing .product_name {
 				margin: var(--space-30) 0 var(--space-10);
 			}
+			.landing .ratio {height: calc(80vw / 16 * 9);}
 			.landing .portrait {display: none;}
 		}
 	`,
 
-	html: ({about, portrait, landscape, button, preorder}) => {
+	html({about, portrait, landscape, button, preorder}) {
+		const handler = `Main.modules.landing.on_click`
 		return `
 			<div class="landing">
 				<div class="box">
@@ -78,20 +132,50 @@ Main.add_module({
 					</div>
 					<div>
 						<img
-							${Main.router(`https://www.youtube.com/embed/${portrait}?autoplay=1`)}
+							onclick="${handler}(event)"
+							data-action="open"
 							src="./modules/landing/graphic/play.png"
-							class="play portrait"
+							class="play"
 						/>
-						<img
-							${Main.router(
-								`https://www.youtube.com/embed/${landscape}?autoplay=1`
-							)}
-							src="./modules/landing/graphic/play.png"
-							class="play landscape"
-						/>
+					</div>
+				</div>
+
+				<div
+					class="video"
+					onclick="${handler}(event)"
+					data-action="close"
+				>
+					<div class="ratio">
+						<iframe class="portrait" src="https://www.youtube.com/embed/${portrait}?modestbranding=1&showinfo=0&rel=0" frameborder="0"></iframe>
+
+						<iframe class="landscape" src="https://www.youtube.com/embed/${landscape}?modestbranding=1&showinfo=0&rel=0" frameborder="0"></iframe>
 					</div>
 				</div>
 			</div>
 		`
+	},
+
+	on_click(e) {
+		const landing = document.querySelector('.landing')
+		const open =
+			e.currentTarget.getAttribute('data-action') == 'open'
+		landing.classList[open ? 'add' : 'remove']('show')
+		if (!open) {
+			const videos = landing.querySelectorAll('iframe')
+			videos.forEach(video => {
+				video.src = video.src
+			})
+		}
+		if (open) {
+			const ratio = landing.querySelector('.ratio')
+			ratio.style.animation = 'none'
+			ratio.offsetHeight
+			ratio.style.animation = `1s landing_pop_open alternate`
+		} else {
+			const ratio = landing.querySelector('.play')
+			ratio.style.animation = 'none'
+			ratio.offsetHeight
+			ratio.style.animation = `1s landing_pop_close alternate`
+		}
 	},
 })
