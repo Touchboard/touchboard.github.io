@@ -22,7 +22,7 @@ Main.add_module({
 			height: 100%;
 		}
 
-		.landing .video {
+		.landing .lightbox {
 			position: fixed;
 			z-index: 2;
 			top: 0; left: 0;
@@ -36,25 +36,18 @@ Main.add_module({
 			-webkit-backdrop-filter: blur(5px);
 		}
 
-		.landing.show .video {
+		.landing.show .lightbox {
 			display: block !important;
 		}
 
-		.landing .ratio {
+		.landing .video {
 			position: relative;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
 			width: 80vw;
-		}
-
-		.landing .ratio iframe {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
 			border-radius: var(--space-00);
+			background: black;
 		}
 
 		@keyframes landing_pop_open {
@@ -96,8 +89,7 @@ Main.add_module({
 			.landing .product_name {
 				margin: var(--space-20) 0 var(--space-00);
 			}
-			.landing .ratio {height: calc(80vw / 9 * 16);}
-			.landing .landscape {display: none;}
+			.landing .video {height: calc(80vw / 9 * 16);}
 		}
 		@media screen and (min-width: 815px) {
 			.landing {
@@ -112,8 +104,7 @@ Main.add_module({
 			.landing .product_name {
 				margin: var(--space-30) 0 var(--space-10);
 			}
-			.landing .ratio {height: calc(80vw / 16 * 9);}
-			.landing .portrait {display: none;}
+			.landing .video {height: calc(80vw / 16 * 9);}
 		}
 	`,
 
@@ -132,8 +123,7 @@ Main.add_module({
 					</div>
 					<div>
 						<img
-							onclick="${handler}(event)"
-							data-action="open"
+							onclick="${handler}(true)"
 							src="./modules/landing/graphic/play.png"
 							class="play"
 						/>
@@ -141,41 +131,36 @@ Main.add_module({
 				</div>
 
 				<div
-					class="video"
-					onclick="${handler}(event)"
-					data-action="close"
+					class="lightbox"
+					onclick="${handler}(false)"
+					data-src="${window.innerWidth > 815 ? landscape : portrait}"
 				>
-					<div class="ratio">
-						<iframe class="portrait" src="https://www.youtube.com/embed/${portrait}?modestbranding=1&showinfo=0&rel=0" frameborder="0"></iframe>
-
-						<iframe class="landscape" src="https://www.youtube.com/embed/${landscape}?modestbranding=1&showinfo=0&rel=0" frameborder="0"></iframe>
-					</div>
+					<iframe class="video" frameborder="0"></iframe>
 				</div>
 			</div>
 		`
 	},
 
-	on_click(e) {
+	on_click(open) {
 		const landing = document.querySelector('.landing')
-		const open =
-			e.currentTarget.getAttribute('data-action') == 'open'
 		landing.classList[open ? 'add' : 'remove']('show')
-		if (!open) {
-			const videos = landing.querySelectorAll('iframe')
-			videos.forEach(video => {
-				video.src = video.src
-			})
-		}
+		const video = landing.querySelector('.video')
 		if (open) {
-			const ratio = landing.querySelector('.ratio')
-			ratio.style.animation = 'none'
-			ratio.offsetHeight
-			ratio.style.animation = `1s landing_pop_open alternate`
+			const url = landing
+				.querySelector('.lightbox')
+				.getAttribute('data-src')
+			video.src = `https://www.youtube.com/embed/${url}?modestbranding=1&showinfo=0&rel=0&autoplay=1`
+		} else video.src = ''
+
+		if (open) {
+			video.style.animation = 'none'
+			video.offsetHeight
+			video.style.animation = `1s landing_pop_open alternate`
 		} else {
-			const ratio = landing.querySelector('.play')
-			ratio.style.animation = 'none'
-			ratio.offsetHeight
-			ratio.style.animation = `1s landing_pop_close alternate`
+			const button = landing.querySelector('.play')
+			button.style.animation = 'none'
+			button.offsetHeight
+			button.style.animation = `1s landing_pop_close alternate`
 		}
 	},
 })
