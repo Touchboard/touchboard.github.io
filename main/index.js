@@ -89,7 +89,7 @@ const Main = {
 	},
 
 	load() {
-		this.add_keyboard_listener()
+		// this.add_keyboard_listener()
 		this.add_full_listener()
 		const module_unique = []
 		for (let i in Model) {

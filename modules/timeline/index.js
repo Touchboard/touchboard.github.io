@@ -19,7 +19,7 @@ Main.add_module({
 			align-items: center;
 		}
 		.timeline .container.marked {
-			background: linear-gradient(to right bottom, #BA4AFF, #FF6B57);
+			background: linear-gradient(to right bottom, #eb00ff, #ff0000);
 			color: white;
 		}
 
