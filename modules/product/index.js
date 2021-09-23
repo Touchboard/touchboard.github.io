@@ -10,8 +10,9 @@ Main.add_module({
 		.product .box {
 			position: relative;
 			height: 90vh;
-			background-color: #EBEBEB;
+			background-color: white;
 			border-radius: var(--space-10);
+			filter: contrast(.9);
 		}
 
 		.product .frame {
@@ -21,7 +22,14 @@ Main.add_module({
 			width: 90vh;
 			height: 90vh;
 			background-size: cover;
-			transition: .2s;
+			transition: .5s linear;
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		.product .frame.show {
+			visibility: visible;
+			opacity: 1;
 		}
 
 		.product .nav {
@@ -33,6 +41,7 @@ Main.add_module({
 			background-repeat: no-repeat;
 			background-position: center;
 			cursor: pointer;
+			transform: translateY(-50%);
 		}
 
 		.product .nav.hide {
@@ -40,12 +49,10 @@ Main.add_module({
 		}
 
 		.product .nav.l {
-			margin-left: calc(-1 * var(--offset));
 			background-image: url('./modules/product/graphic/l.png');
 
 		}
 		.product .nav.r {
-			margin-left: var(--offset);
 			background-image: url('./modules/product/graphic/r.png');
 		}
 
@@ -77,7 +84,6 @@ Main.add_module({
 			.product .box {
 				overflow: hidden;
 			}
-			.product .nav {transform: translateY(-50%);}
 			.product .nav.l {left: -30px;}
 			.product .nav.r {right: -30px;}
 		}
@@ -88,11 +94,8 @@ Main.add_module({
 				padding: 0 var(--space-20);
 				margin-bottom: var(--space-20);
 			}
-			.product .nav {
-				--offset : 50vh;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}
+			.product .nav.l {left: 5vw;}
+			.product .nav.r {right: 5vw;}
 		}
 
 	`,
@@ -121,8 +124,6 @@ Main.add_module({
 							.join(' ')}
 					</div>
 				`
-		for (let i = 0; i < length; i++)
-			helpers.image_preloader(`${img} ${i}.jpg`)
 
 		if (app == 'context') {
 			const open = c =>
@@ -135,6 +136,14 @@ Main.add_module({
 			}
 		}
 
+		let imgs = ''
+		for (let i = 0; i < length; i++)
+			imgs += `<div
+				class="frame ${i == 0 ? 'show' : ''}"
+				data-i="${i}"
+				style="background-image: url('${img} ${i}.jpg')"
+			></div>`
+
 		return `
 			<div
 				class="product product_${app}"
@@ -143,10 +152,7 @@ Main.add_module({
 				data-app="${app}"
 			>
 				<div class="box">
-					<div
-						class="frame"
-						style="background-image: url('${img} 0.jpg')"
-					></div>
+					${imgs}
 					${pagination}
 				</div>
 			</div>
@@ -172,10 +178,10 @@ Main.add_module({
 				p.classList[i == n ? 'add' : 'remove']('current')
 			)
 
-		const img = `./modules/product/apps/${app} ${n}`
-		product.querySelector(
-			'.frame'
-		).style.backgroundImage = `url('${img}.jpg')`
+		product.querySelectorAll('.frame').forEach(frame => {
+			const current = frame.getAttribute('data-i') == n
+			frame.classList[current ? 'add' : 'remove']('show')
+		})
 		product.setAttribute('data-current', n)
 	},
 
