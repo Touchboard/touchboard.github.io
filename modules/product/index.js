@@ -58,7 +58,6 @@ Main.add_module({
 
 		.product .pagination {
 			position: absolute;
-			bottom: var(--space-00);
 			left: 50%;
 			transform: translateX(-50%);
 			cursor: default;
@@ -86,6 +85,7 @@ Main.add_module({
 			}
 			.product .nav.l {left: -30px;}
 			.product .nav.r {right: -30px;}
+			.product .pagination {bottom: var(--space-01);}
 		}
 		@media screen and (min-width: 815px) {
 			.product {
@@ -96,6 +96,7 @@ Main.add_module({
 			}
 			.product .nav.l {left: 5vw;}
 			.product .nav.r {right: 5vw;}
+			.product .pagination {bottom: var(--space-00);}
 		}
 
 	`,
