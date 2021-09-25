@@ -21,7 +21,7 @@ Main.add_module({
 			height: 100vh;
 			text-align: center;
 			display: grid;
-			grid-template-rows: .5fr 1fr;
+			grid-template-rows: 1fr 1fr;
 			align-items: center;
 		}
 
@@ -31,7 +31,6 @@ Main.add_module({
 			top: 0;
 			width: 100%;
 			height: 100vh;
-			object-fit: cover;
 		}
 
 		.landing .lightbox {
@@ -78,7 +77,7 @@ Main.add_module({
 
 		.landing .play {
 			position: relative;
-			height: 20vh;
+			height: 15vh;
 			cursor: pointer;
 		}
 
@@ -116,7 +115,7 @@ Main.add_module({
 							src="./modules/landing/graphic/touchboard.png"
 						/>
 						<br/>
-						<div class="product_about typo_20">${about}</div>
+						<div class="product_about typo_10">${about}</div>
 					</div>
 					<div>
 						<img

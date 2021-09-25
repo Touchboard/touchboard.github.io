@@ -18,12 +18,13 @@ Main.add_module({
 			position: absolute;
 			left: 50%;
 			transform: translateX(-50%);
-			width: 90vh;
 			height: 90vh;
 			background-size: cover;
+			background-position: center;
 			transition: .5s linear;
 			visibility: hidden;
 			opacity: 0;
+			border-radius: var(--space-10);
 		}
 
 		.product .frame.show {
@@ -82,6 +83,7 @@ Main.add_module({
 			.product .box {
 				overflow: hidden;
 			}
+			.product .frame {width: 100vw;}
 			.product .nav.l {left: -30px;}
 			.product .nav.r {right: -30px;}
 			.product .pagination {bottom: var(--space-01);}
@@ -93,6 +95,7 @@ Main.add_module({
 				padding: 0 var(--space-20);
 				margin-bottom: var(--space-20);
 			}
+			.product .frame {width: 90vh;}
 			.product .nav.l {left: 5vw;}
 			.product .nav.r {right: 5vw;}
 			.product .pagination {bottom: var(--space-00);}
