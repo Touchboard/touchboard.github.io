@@ -5,7 +5,7 @@ Main.add_module({
 		.landing {
 			position: relative;
 			scroll-snap-align: center;
-			height: 100vh;
+			height: 400vh;
 			max-width: 1680px;
 			margin: 0 auto;
 		}
@@ -122,14 +122,7 @@ Main.add_module({
 					</div>
 				</div>
 
-				<video
-					class="animation"
-					playsinline muted
-					oncanplaythrough="Main.modules.loader.on_load()"
-					type="video/mp4"
-				>
-				    <a>Can't play video</a>
-				</video>
+				<canvas	class="animation"></canvas>
 
 				<div
 					class="lightbox"
@@ -166,30 +159,41 @@ Main.add_module({
 	},
 
 	on_start() {
+		const url = a =>
+			`./modules/landing/graphic/sequence/sequence_${a}.jpg`
+
 		const landing = document.querySelector('.landing')
-		const animation = landing.querySelector('.animation')
+		const cnv = landing.querySelector('.animation')
+		const ctx = cnv.getContext('2d')
+
+		const imgs = []
+
+		const preload = url => {
+			const img = document.createElement('img')
+			img.src = url('000')
+			img.onload = () => {
+				console.log(img)
+				ctx.drawImage(img, 0, 0)
+			}
+		}
+
 		window.addEventListener('scroll', e => {
 			const rect = landing.getBoundingClientRect()
 			const a =
 				-rect.top /
 				(landing.offsetHeight - window.innerHeight)
-			animation.currentTime = a * animation.duration
+			// animation.currentTime = a * animation.duration
 		})
-		// this.preload()
+		this.preload()
 		Main.modules.loader.on_load()
+
+		const on_resize = () => {
+			cnv.width = cnv.offsetWidth
+			cnv.height = cnv.offsetHeight
+		}
+		on_resize()
+		window.addEventListener('resize', on_resize)
 	},
 
-	preload() {
-		const animation = document.querySelector(
-			'.landing .animation'
-		)
-		var r = new XMLHttpRequest()
-		r.onload = function () {
-			animation.src = URL.createObjectURL(r.response)
-			Main.modules.loader.on_load()
-		}
-		r.open('GET', './modules/landing/graphic/animation.mp4')
-		r.responseType = 'blob'
-		r.send()
-	},
+	preload() {},
 })
