@@ -5,7 +5,7 @@ Main.add_module({
 		.landing {
 			position: relative;
 			scroll-snap-align: center;
-			height: 400vh;
+			height: 100vh;
 			max-width: 1680px;
 			margin: 0 auto;
 		}
@@ -121,13 +121,16 @@ Main.add_module({
 						/>
 					</div>
 				</div>
-				<img
+
+				<video
 					class="animation"
-					src="./modules/landing/graphic/animation.mp4"
+					playsinline muted
+					oncanplaythrough="Main.modules.loader.on_load()"
 					type="video/mp4"
-					muted playsinline
-					onload="Main.modules.loader.on_load()"
-				/>
+				>
+				    <a>Can't play video</a>
+				</video>
+
 				<div
 					class="lightbox"
 					onclick="${handler}(false)"
@@ -172,5 +175,20 @@ Main.add_module({
 				(landing.offsetHeight - window.innerHeight)
 			animation.currentTime = a * animation.duration
 		})
+		this.preload()
+	},
+
+	preload() {
+		const animation = document.querySelector(
+			'.landing .animation'
+		)
+		var r = new XMLHttpRequest()
+		r.onload = function () {
+			animation.src = URL.createObjectURL(r.response)
+			Main.modules.loader.on_load()
+		}
+		r.open('GET', './modules/landing/graphic/animation.mp4')
+		r.responseType = 'blob'
+		r.send()
 	},
 })
