@@ -11,6 +11,7 @@ Main.add_module({
 			background-image: url('./modules/landing/sequence/sequence_0000.jpg');
 			background-size: cover;
 			background-repeat: no-repeat;
+			margin-bottom: -30vh;
 		}
 
 		.landing .typo {
