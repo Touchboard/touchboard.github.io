@@ -10,9 +10,8 @@ Main.add_module({
 		.product .box {
 			position: relative;
 			height: 90vh;
-			background-color: white;
+			background-color: #292929;
 			border-radius: var(--space-10);
-			filter: contrast(.9);
 		}
 
 		.product .frame {
@@ -67,7 +66,7 @@ Main.add_module({
 			display: inline-block;
 			width: var(--space-01);
 			height: var(--space-01);
-			background-color: hsla(0, 0%, 40%, .3);
+			background-color: hsla(0, 0%, 60%, .3);
 			border-radius: 9999px;
 			margin: 0 2px;
 		}
@@ -110,11 +109,11 @@ Main.add_module({
 				? ''
 				: `
 					<div
-						class="nav l hide"
+						class="nav l dark hide"
 						onclick="${this.router}('${app}', 'l')"
 					></div>
 					<div
-						class="nav r"
+						class="nav r dark"
 						onclick="${this.router}('${app}', 'r')"
 					></div>
 					<div class="pagination">
@@ -125,18 +124,6 @@ Main.add_module({
 							.join(' ')}
 					</div>
 				`
-
-		if (app == 'context') {
-			const open = c =>
-				c == length - 1 && Main.modules.loader.on_load()
-			let count = 0
-			for (let i = 0; i < length; i++) {
-				helpers.image_preloader(`${img} ${i}.jpg`, () =>
-					open(count++)
-				)
-			}
-		}
-
 		let imgs = ''
 		for (let i = 0; i < length; i++)
 			imgs += `<div

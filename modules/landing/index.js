@@ -3,23 +3,31 @@ Main.add_module({
 
 	style: `
 		.landing {
+			position: relative;
 			scroll-snap-align: center;
-			box-sizing: border-box;
+			height: 400vh;
+			max-width: 1680px;
+			margin: 0 auto;
 		}
-		.landing .box {
-			color: black;
+
+		.landing .typo {
+			position: absolute;
+			z-index: 1;
+			top: 0; left: 0;
+			width: 100vw;
+			height: 100vh;
 			text-align: center;
 			display: grid;
 			grid-template-rows: .5fr 1fr;
 			align-items: center;
-			background-image: url('./modules/landing/graphic/img.jpg');
-			background-position: top center;
-			background-size:  cover;
-			background-repeat: no-repeat;
-			background-color: var(--surface-area);
-			padding: var(--space-00);
-			box-sizing: border-box;
-			height: 100%;
+		}
+
+		.landing .animation {
+			position: sticky;
+			top: 0;
+			width: 100%;
+			height: 100vh;
+			object-fit: cover;
 		}
 
 		.landing .lightbox {
@@ -79,30 +87,14 @@ Main.add_module({
 			max-width: 24ch;
 		}
 		@media screen and (max-width: 815px) {
-			.landing {
-				margin-bottom: var(--space-00);
-				height: calc(100vh - var(--space-00));
-			}
-			.landing .box {
-				border-radius: 0 0 var(--space-10) var(--space-10);
-			}
 			.landing .product_name {
-				margin: var(--space-20) 0 var(--space-00);
+				margin: var(--space-00) 0 var(--space-00);
 			}
 			.landing .video {height: calc(80vw / 9 * 16);}
 		}
 		@media screen and (min-width: 815px) {
-			.landing {
-				max-width: 1680px;
-				margin: var(--space-00) auto;
-				padding: 0 var(--space-20);
-				height: calc(100vh - 2 * var(--space-00));
-			}
-			.landing .box {
-				border-radius: var(--space-10);
-			}
 			.landing .product_name {
-				margin: var(--space-30) 0 var(--space-10);
+				margin: var(--space-10) 0 var(--space-10);
 			}
 			.landing .video {height: calc(80vw / 16 * 9);}
 		}
@@ -112,7 +104,7 @@ Main.add_module({
 		const handler = `Main.modules.landing.on_click`
 		return `
 			<div class="landing">
-				<div class="box">
+				<div class="typo responsive">
 					<div style="align-self: start;">
 						<img
 							class="product_name"
@@ -129,7 +121,14 @@ Main.add_module({
 						/>
 					</div>
 				</div>
-
+				<video
+					class="animation"
+					src="./modules/landing/graphic/animation.mp4"
+					muted playsinline preload
+					oncanplaythrough="Main.modules.loader.on_load()"
+				>
+					 Sorry, your browser doesn't support embedded videos.
+				</video>
 				<div
 					class="lightbox"
 					onclick="${handler}(false)"
@@ -162,5 +161,17 @@ Main.add_module({
 			button.offsetHeight
 			button.style.animation = `1s landing_pop_close alternate`
 		}
+	},
+
+	on_start() {
+		const landing = document.querySelector('.landing')
+		const animation = landing.querySelector('.animation')
+		window.addEventListener('scroll', e => {
+			const rect = landing.getBoundingClientRect()
+			const a =
+				-rect.top /
+				(landing.offsetHeight - window.innerHeight)
+			animation.currentTime = a * animation.duration
+		})
 	},
 })

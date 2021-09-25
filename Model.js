@@ -1,8 +1,8 @@
 const Model = {
 	landing: [
-		{
-			module: `loader`,
-		},
+		// {
+		// 	module: `loader`,
+		// },
 		{
 			module: `cookies`,
 			accept: {

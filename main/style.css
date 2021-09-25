@@ -16,7 +16,7 @@
 }
 
 .theme_dark {
-	--back: hsl(0, 0%, 10%);
+	--back: hsl(0, 0%, 0%);
 	--surface-area: hsl(0, 0%, 18%);
 	--surface-line: hsl(0, 0%, 22%);
 	--middle-area: hsl(0, 0%, 35%);
