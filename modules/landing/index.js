@@ -175,7 +175,8 @@ Main.add_module({
 				(landing.offsetHeight - window.innerHeight)
 			animation.currentTime = a * animation.duration
 		})
-		this.preload()
+		// this.preload()
+		Main.modules.loader.on_load()
 	},
 
 	preload() {
