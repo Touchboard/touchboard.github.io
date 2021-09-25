@@ -8,7 +8,7 @@ Main.add_module({
 			left: 50%;
 			width: 64px;
 			height: 38px;
-			background-image: url('./main/graphic/logo.png');
+			background-image: url('./modules/logo/graphic mono.png');
 			background-size: 64px;
 			transform: translateX(-50%) scale(.8);
 			background-position: center;

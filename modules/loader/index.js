@@ -13,7 +13,7 @@ Main.add_module({
 			top: 0;
 			right: 0;
 			bottom: 0;
-			background: white;
+			background-color: var(--back);
 			opacity: 0;
 			visibility: hidden;
 			pointer-events: none;
@@ -41,7 +41,7 @@ Main.add_module({
 		document.body.classList.add('show_loader')
 		return `
 			<div class="loader">
-				<img src="./main/graphic/logo.png"/>
+				<img src="./modules/logo/graphic color.png"/>
 			</div>
 		`
 	},
