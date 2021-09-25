@@ -8,7 +8,7 @@ Main.add_module({
 			height: 100vh;
 			max-width: 1680px;
 			margin: 0 auto;
-			background-image: url('./modules/landing/sequence/sequence_000.jpg');
+			background-image: url('./modules/landing/sequence/sequence_0000.jpg');
 			background-size: cover;
 			background-repeat: no-repeat;
 		}
@@ -162,24 +162,25 @@ Main.add_module({
 	},
 
 	on_start() {
+		const sequences = 128
 		const landing = document.querySelector('.landing')
 		const cnv = landing.querySelector('.animation')
 		const ctx = cnv.getContext('2d')
-		const sequences = 45
 		let current = 0
 		let load_check_counter = 0
 		let to_draw = false
-		const imgs = new Array(sequences).fill().map((_, i) => {
+		const imgs = new Array(sequences + 1).fill().map((_, i) => {
 			const img = document.createElement('img')
 			img.onload = () => {
-				if (load_check_counter++ < sequences - 1) return
+				if (load_check_counter++ < sequences) return
 				Main.modules.loader.on_load()
 				landing.style.height = `500vh`
 				landing.style.backgroundImage = 'none'
 				on_resize()
 			}
 			const n = i.toLocaleString('en-US', {
-				minimumIntegerDigits: 3,
+				minimumIntegerDigits: 4,
+				useGrouping: false,
 			})
 			img.src = `./modules/landing/sequence/sequence_${n}.jpg`
 			return img
@@ -218,7 +219,7 @@ Main.add_module({
 			const rect = landing.getBoundingClientRect()
 			const a = -rect.top / (rect.height - window.innerHeight)
 			current = Math.round(
-				Math.min(Math.max(a, 0), 1) * (sequences - 1)
+				Math.min(Math.max(a, 0), 1) * sequences
 			)
 			draw()
 		})
