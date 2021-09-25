@@ -52,6 +52,6 @@ Main.add_module({
 	},
 
 	on_start() {
-		setTimeout(this.onload, 10000)
+		setTimeout(this.on_load, 10000)
 	},
 })
