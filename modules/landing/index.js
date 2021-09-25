@@ -121,14 +121,13 @@ Main.add_module({
 						/>
 					</div>
 				</div>
-				<video
+				<img
 					class="animation"
 					src="./modules/landing/graphic/animation.mp4"
-					muted playsinline preload
-					oncanplaythrough="Main.modules.loader.on_load()"
-				>
-					 Sorry, your browser doesn't support embedded videos.
-				</video>
+					type="video/mp4"
+					muted playsinline
+					onload="Main.modules.loader.on_load()"
+				/>
 				<div
 					class="lightbox"
 					onclick="${handler}(false)"
