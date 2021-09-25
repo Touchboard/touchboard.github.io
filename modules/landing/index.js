@@ -5,14 +5,16 @@ Main.add_module({
 		.landing {
 			position: relative;
 			scroll-snap-align: center;
-			height: 400vh;
+			height: 100vh;
 			max-width: 1680px;
 			margin: 0 auto;
+			background-image: url('./modules/landing/sequence/sequence_000.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
 		}
 
 		.landing .typo {
 			position: absolute;
-			z-index: 1;
 			top: 0; left: 0;
 			width: 100vw;
 			height: 100vh;
@@ -24,6 +26,7 @@ Main.add_module({
 
 		.landing .animation {
 			position: sticky;
+			z-index: -1;
 			top: 0;
 			width: 100%;
 			height: 100vh;
@@ -159,41 +162,65 @@ Main.add_module({
 	},
 
 	on_start() {
-		const url = a =>
-			`./modules/landing/graphic/sequence/sequence_${a}.jpg`
-
 		const landing = document.querySelector('.landing')
 		const cnv = landing.querySelector('.animation')
 		const ctx = cnv.getContext('2d')
-
-		const imgs = []
-
-		const preload = url => {
+		const sequences = 45
+		let current = 0
+		let load_check_counter = 0
+		let to_draw = false
+		const imgs = new Array(sequences).fill().map((_, i) => {
 			const img = document.createElement('img')
-			img.src = url('000')
 			img.onload = () => {
-				console.log(img)
-				ctx.drawImage(img, 0, 0)
+				if (load_check_counter++ < sequences - 1) return
+				Main.modules.loader.on_load()
+				landing.style.height = `500vh`
+				landing.style.backgroundImage = 'none'
+				on_resize()
 			}
-		}
-
-		window.addEventListener('scroll', e => {
-			const rect = landing.getBoundingClientRect()
-			const a =
-				-rect.top /
-				(landing.offsetHeight - window.innerHeight)
-			// animation.currentTime = a * animation.duration
+			const n = i.toLocaleString('en-US', {
+				minimumIntegerDigits: 3,
+			})
+			img.src = `./modules/landing/sequence/sequence_${n}.jpg`
+			return img
 		})
-		this.preload()
-		Main.modules.loader.on_load()
+
+		const draw = () => {
+			to_draw = true
+			window.requestAnimationFrame(() => {
+				if (!to_draw) return
+				to_draw = false
+				const img = imgs[current]
+				// get the scale
+				var s = Math.max(
+					cnv.width / img.width,
+					cnv.height / img.height
+				)
+				// get the top left position of the image
+				ctx.drawImage(
+					img,
+					cnv.width / 2 - (img.width / 2) * s,
+					cnv.height / 2 - (img.height / 2) * s,
+					img.width * s,
+					img.height * s
+				)
+			})
+		}
 
 		const on_resize = () => {
 			cnv.width = cnv.offsetWidth
 			cnv.height = cnv.offsetHeight
+			draw(current)
 		}
-		on_resize()
 		window.addEventListener('resize', on_resize)
-	},
 
-	preload() {},
+		window.addEventListener('scroll', e => {
+			const rect = landing.getBoundingClientRect()
+			const a = -rect.top / (rect.height - window.innerHeight)
+			current = Math.round(
+				Math.min(Math.max(a, 0), 1) * (sequences - 1)
+			)
+			draw()
+		})
+	},
 })
