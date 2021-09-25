@@ -89,6 +89,7 @@ Main.add_module({
 		.landing .product_about {
 			display: inline-block;
 			max-width: 24ch;
+			text-shadow: 0 0 50px black;
 		}
 		@media screen and (max-width: 815px) {
 			.landing .product_name {
