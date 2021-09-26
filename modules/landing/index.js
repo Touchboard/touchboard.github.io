@@ -11,7 +11,12 @@ Main.add_module({
 			background-image: url('./modules/landing/sequence/sequence_0000.jpg');
 			background-size: cover;
 			background-repeat: no-repeat;
-			margin-bottom: -30vh;
+		}
+
+		.landing.loaded {
+			height : 500vh;
+			background-image : none;
+			margin-bottom : -30vh;
 		}
 
 		.landing .typo {
@@ -174,9 +179,8 @@ Main.add_module({
 			const img = document.createElement('img')
 			img.onload = () => {
 				if (load_check_counter++ < sequences) return
+				landing.classList.add('loaded')
 				Main.modules.loader.on_load()
-				landing.style.height = `500vh`
-				landing.style.backgroundImage = 'none'
 				on_resize()
 			}
 			const n = i.toLocaleString('en-US', {
