@@ -8,9 +8,13 @@ Main.add_module({
 			height: 100vh;
 			max-width: 1680px;
 			margin: 0 auto;
-			background-image: url('./modules/landing/sequence/sequence_0000.jpg');
+		}
+
+		.landing:not(.loaded) {
 			background-size: cover;
 			background-repeat: no-repeat;
+			background-image:
+				url('./modules/landing/sequence/sequence_0000.jpg');
 		}
 
 		.landing.loaded {
@@ -181,6 +185,10 @@ Main.add_module({
 				if (load_check_counter++ < sequences) return
 				landing.classList.add('loaded')
 				Main.modules.loader.on_load()
+<<<<<<< HEAD
+=======
+				landing.classList.add('loaded')
+>>>>>>> dev
 				on_resize()
 			}
 			const n = i.toLocaleString('en-US', {
