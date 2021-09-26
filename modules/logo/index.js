@@ -18,7 +18,6 @@ Main.add_module({
 		}
 		.logo.on_landing {
 			background-image: url('./modules/logo/graphic color.png');
-
 		}
 		.logo.on_scroll {
 			top: var(--space-00);
