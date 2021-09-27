@@ -185,10 +185,6 @@ Main.add_module({
 				if (load_check_counter++ < sequences) return
 				landing.classList.add('loaded')
 				Main.modules.loader.on_load()
-<<<<<<< HEAD
-=======
-				landing.classList.add('loaded')
->>>>>>> dev
 				on_resize()
 			}
 			const n = i.toLocaleString('en-US', {
