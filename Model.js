@@ -33,35 +33,35 @@ const Model = {
 			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
 
-		{
-			module: `product`,
-			app: 'context',
-			length: 5,
-		},
-
-		{
-			module: `product`,
-			app: 'spotify',
-			length: 6,
-		},
-
-		{
-			module: `product`,
-			app: 'mail',
-			length: 6,
-		},
-
-		{
-			module: `product`,
-			app: 'photoshop',
-			length: 4,
-		},
-
-		{
-			module: `product`,
-			app: 'live',
-			length: 1,
-		},
+		// {
+		// 	module: `product`,
+		// 	app: 'context',
+		// 	length: 5,
+		// },
+		//
+		// {
+		// 	module: `product`,
+		// 	app: 'spotify',
+		// 	length: 6,
+		// },
+		//
+		// {
+		// 	module: `product`,
+		// 	app: 'mail',
+		// 	length: 6,
+		// },
+		//
+		// {
+		// 	module: `product`,
+		// 	app: 'photoshop',
+		// 	length: 4,
+		// },
+		//
+		// {
+		// 	module: `product`,
+		// 	app: 'live',
+		// 	length: 1,
+		// },
 		{
 			module: `title`,
 			title: `People say about Touchboard`,
@@ -93,16 +93,16 @@ const Model = {
 				},
 			],
 		},
-		{
-			module: `title`,
-			title: `You like Touchboard?`,
-			sub: `Or you want to test the Prototype? Add yourself to the waitlist to tell us what you think, make an appointment or receive news!`,
-		},
-		{
-			module: `preorder`,
-			message: 'Join the Waitlist',
-			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
-		},
+		// {
+		// 	module: `title`,
+		// 	title: `You like Touchboard?`,
+		// 	sub: `Or you want to test the Prototype? Add yourself to the waitlist to tell us what you think, make an appointment or receive news!`,
+		// },
+		// {
+		// 	module: `preorder`,
+		// 	message: 'Join the Waitlist',
+		// 	url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
+		// },
 		{
 			module: `title`,
 			title: `You might ask...`,
