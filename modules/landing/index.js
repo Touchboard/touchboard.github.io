@@ -13,6 +13,7 @@ Main.add_module({
 		.landing:not(.loaded) {
 			background-size: cover;
 			background-repeat: no-repeat;
+			background-position: center;
 			background-image:
 				url('./modules/landing/sequence/sequence_0000.jpg');
 		}
@@ -20,7 +21,7 @@ Main.add_module({
 		.landing.loaded {
 			height : 500vh;
 			background-image : none;
-			margin-bottom : -30vh;
+			margin-bottom : -20vh;
 		}
 
 		.landing .typo {
@@ -97,7 +98,6 @@ Main.add_module({
 		.landing .product_about {
 			display: inline-block;
 			max-width: 24ch;
-			text-shadow: 0 0 50px black;
 		}
 		@media screen and (max-width: 815px) {
 			.landing .product_name {
