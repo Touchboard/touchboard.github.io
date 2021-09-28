@@ -62,11 +62,12 @@ const Model = {
 		// 	app: 'live',
 		// 	length: 1,
 		// },
-		{
-			module: `title`,
-			title: `People say about Touchboard`,
-			sub: `These people tested our prototype and were thrilled.`,
-		},
+
+		// {
+		// 	module: `title`,
+		// 	title: `People say about Touchboard`,
+		// 	sub: `These people tested our prototype and were thrilled.`,
+		// },
 
 		{
 			module: `quotes`,

@@ -41,7 +41,7 @@ Main.add_module({
 		document.body.classList.add('show_loader')
 		return `
 			<div class="loader">
-				<img src="./modules/logo/graphic color.png"/>
+				<img class="dark" src="./modules/logo/graphic black.png"/>
 			</div>
 		`
 	},

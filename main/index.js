@@ -120,7 +120,7 @@ const Main = {
 			this.modules[module.type] = module
 	},
 
-	router(url, style) {
+	router(url, style = '') {
 		if (url) {
 			let go = ''
 			if (url[0] == '/') {

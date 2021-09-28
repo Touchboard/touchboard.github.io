@@ -21,18 +21,40 @@ Main.add_module({
 		.landing.loaded {
 			height : 500vh;
 			background-image : none;
-			margin-bottom : -20vh;
 		}
 
 		.landing .typo {
 			position: absolute;
 			top: 0; left: 0;
-			width: 100vw;
-			height: 100vh;
+			width: 100%;
 			text-align: center;
-			display: grid;
-			grid-template-rows: 1fr 1fr;
-			align-items: center;
+		}
+
+		.landing .hint {
+			position: fixed;
+			text-align: center;
+			left: 50%;
+			bottom: var(--space-10);
+			background-image: url('./modules/landing/graphic/hint.png');
+			width: 69px;
+			height: 22px;
+			animation: .4s landing_hint alternate infinite;
+			transition: 1s;
+		}
+
+		.landing .hint.hide {
+			visible: hidden;
+			opacity: 0;
+		}
+
+		@keyframes landing_hint {
+			0% {transform: translate(-50%, 50%);}
+			100% {transform: translate(-50%, -50%);}
+		}
+
+		.landing .intro {
+			position: absolute;
+			display: none;
 		}
 
 		.landing .animation {
@@ -71,6 +93,14 @@ Main.add_module({
 			background: black;
 		}
 
+		.landing .play {
+			position: absolute;
+			bottom: -10vh;
+			left: 50%;
+			transform: translateX(-50%);
+			cursor: pointer;
+		}
+
 		@keyframes landing_pop_open {
 			0% {transform: translate(-50%, -50%) scale(0.5);}
 			25% {transform: translate(-50%, -50%) scale(1.01);}
@@ -79,16 +109,10 @@ Main.add_module({
 		}
 
 		@keyframes landing_pop_close {
-			0% {transform: scale(2);}
-			25% {transform: scale(0.98);}
-			60% {transform: scale(1.005);}
-			100% {transform: scale(1);}
-		}
-
-		.landing .play {
-			position: relative;
-			height: 15vh;
-			cursor: pointer;
+			0% {transform: translateX(-50%) scale(2);}
+			25% {transform: translateX(-50%) scale(0.98);}
+			60% {transform: translateX(-50%) scale(1.005);}
+			100% {transform: translateX(-50%) scale(1);}
 		}
 
 		.landing .product_name {
@@ -97,18 +121,16 @@ Main.add_module({
 		}
 		.landing .product_about {
 			display: inline-block;
-			max-width: 24ch;
+			max-width: 30ch;
 		}
 		@media screen and (max-width: 815px) {
-			.landing .product_name {
-				margin: var(--space-00) 0 var(--space-00);
-			}
+			.landing {margin-bottom: var(--space-10);}
+			.landing .typo {margin-top: var(--space-10);}
 			.landing .video {height: calc(80vw / 9 * 16);}
 		}
 		@media screen and (min-width: 815px) {
-			.landing .product_name {
-				margin: var(--space-10) 0 var(--space-10);
-			}
+			.landing {margin-bottom: var(--space-30);}
+			.landing .typo {margin-top: var(--space-00);}
 			.landing .video {height: calc(80vw / 16 * 9);}
 		}
 	`,
@@ -118,23 +140,18 @@ Main.add_module({
 		return `
 			<div class="landing">
 				<div class="typo responsive">
-					<div style="align-self: start;">
-						<img
-							class="product_name"
-							src="./modules/landing/graphic/touchboard.png"
-						/>
-						<br/>
-						<div class="product_about typo_10">${about}</div>
-					</div>
-					<div>
-						<img
-							onclick="${handler}(true)"
-							src="./modules/landing/graphic/play.png"
-							class="play"
-						/>
-					</div>
+					<div class="typo_30">Touchboard</div><br/>
+					<div class="product_about">${about}</div>
 				</div>
 
+
+				<img
+					onclick="${handler}(true)"
+					src="./modules/landing/graphic/play.png"
+					class="play"
+				/>
+
+				<div class="hint dark"></div>
 				<canvas	class="animation"></canvas>
 
 				<div
@@ -174,6 +191,7 @@ Main.add_module({
 	on_start() {
 		const sequences = 128
 		const landing = document.querySelector('.landing')
+		const hint = landing.querySelector('.hint')
 		const cnv = landing.querySelector('.animation')
 		const ctx = cnv.getContext('2d')
 		let current = 0
@@ -231,6 +249,7 @@ Main.add_module({
 				Math.min(Math.max(a, 0), 1) * sequences
 			)
 			draw()
+			hint.classList[a > 0.01 ? 'add' : 'remove']('hide')
 		})
 	},
 })

@@ -17,7 +17,7 @@ Main.add_module({
 			transition: 1s;
 		}
 		.logo.on_landing {
-			background-image: url('./modules/logo/graphic color.png');
+			background-image: url('./modules/logo/graphic black.png');
 		}
 		.logo.on_scroll {
 			top: var(--space-00);
@@ -28,6 +28,7 @@ Main.add_module({
 				top: var(--space-00);
 			}
 			.logo.on_landing {
+				top: var(--space-10);
 				transform: translateX(-50%) scale(1);
 			}
 		}
@@ -55,7 +56,6 @@ Main.add_module({
 		const change_logo = state => {
 			if (current_page == 'landing') {
 				dom.classList[!state ? 'add' : 'remove']('on_landing')
-				dom.classList[state ? 'add' : 'remove']('dark')
 			}
 			dom.classList[state ? 'add' : 'remove']('on_scroll')
 		}
