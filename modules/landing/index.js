@@ -95,7 +95,6 @@ Main.add_module({
 
 		.landing .play {
 			position: absolute;
-			bottom: -10vh;
 			left: 50%;
 			transform: translateX(-50%);
 			cursor: pointer;
@@ -125,11 +124,13 @@ Main.add_module({
 		}
 		@media screen and (max-width: 815px) {
 			.landing {margin-bottom: var(--space-10);}
+			.landing .play {bottom: calc(-1 * var(--space-10));}
 			.landing .typo {margin-top: var(--space-10);}
 			.landing .video {height: calc(80vw / 9 * 16);}
 		}
 		@media screen and (min-width: 815px) {
 			.landing {margin-bottom: var(--space-30);}
+			.landing .play {bottom: calc(-1 * var(--space-30));}
 			.landing .typo {margin-top: var(--space-00);}
 			.landing .video {height: calc(80vw / 16 * 9);}
 		}
