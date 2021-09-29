@@ -19,7 +19,7 @@ Main.add_module({
 		}
 
 		.landing.loaded {
-			height : 500vh;
+			height : 400vh;
 			background-image : none;
 		}
 
