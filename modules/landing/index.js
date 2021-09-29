@@ -124,6 +124,7 @@ Main.add_module({
 		}
 		@media screen and (max-width: 815px) {
 			.landing {margin-bottom: var(--space-10);}
+			.landing .typo_30 {font-size: 58px;}
 			.landing .play {bottom: calc(-1 * var(--space-10));}
 			.landing .typo {margin-top: var(--space-10);}
 			.landing .video {height: calc(80vw / 9 * 16);}
