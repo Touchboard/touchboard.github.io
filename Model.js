@@ -107,6 +107,7 @@ const Model = {
 						`ergonomy.adjust`,
 						`ergonomy.mouse`,
 						`ergonomy.graphic`,
+						`ergonomy.music`,
 					],
 				},
 			],
