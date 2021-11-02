@@ -33,42 +33,6 @@ const Model = {
 			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
 
-		// {
-		// 	module: `product`,
-		// 	app: 'context',
-		// 	length: 5,
-		// },
-		//
-		// {
-		// 	module: `product`,
-		// 	app: 'spotify',
-		// 	length: 6,
-		// },
-		//
-		// {
-		// 	module: `product`,
-		// 	app: 'mail',
-		// 	length: 6,
-		// },
-		//
-		// {
-		// 	module: `product`,
-		// 	app: 'photoshop',
-		// 	length: 4,
-		// },
-		//
-		// {
-		// 	module: `product`,
-		// 	app: 'live',
-		// 	length: 1,
-		// },
-
-		// {
-		// 	module: `title`,
-		// 	title: `People say about Touchboard`,
-		// 	sub: `These people tested our prototype and were thrilled.`,
-		// },
-
 		{
 			module: `quotes`,
 			list: [
@@ -94,16 +58,60 @@ const Model = {
 				},
 			],
 		},
-		// {
-		// 	module: `title`,
-		// 	title: `You like Touchboard?`,
-		// 	sub: `Or you want to test the Prototype? Add yourself to the waitlist to tell us what you think, make an appointment or receive news!`,
-		// },
-		// {
-		// 	module: `preorder`,
-		// 	message: 'Join the Waitlist',
-		// 	url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
-		// },
+
+		{
+			module: `features`,
+			list: [
+				{
+					title: `Context Aware like Chameleon`,
+					notes: `Touchboard automatically adapts to the frontmost Application providing most relevant controls to your fingertips`,
+					slides: [
+						`smart.photoshop`,
+						`smart.ableton`,
+						`smart.safari`,
+						`smart.zoom`,
+						`smart.spotify`,
+					],
+				},
+				{
+					title: `Navigate with multitouch`,
+					notes: `Use your thump to turn Touchboard into a trackpad in milliseconds. Move cursor, zoom, swipe...`,
+					slides: [`touchpad`],
+				},
+				{
+					title: `Invisible Shortcuts? Visible Macros!`,
+					notes: `Touchboard's displays represent all the neccessary functions. No need to google or doing finger yoga!`,
+					slides: [`macros`],
+				},
+				{
+					title: `Intuitive UI with haptic feedback.`,
+					notes: `Colorgrade your video or mix your next audio track with haptic sliders, knobs and expressive drum-pads. Touchbaord provides analog and intuitive control of parameters.`,
+					slides: [`haptic.slider`, `haptic.drumpad`],
+				},
+				{
+					title: `Made for Touchtyping in any language.`,
+					notes: `English? Korean? Russian? Doesn't matter! And regardless your language, all symbols and parentheses will stay on the same spot!`,
+					slides: [
+						`text.japanese`,
+						`text.russian`,
+						`text.symbols`,
+						`text.emojis`,
+					],
+				},
+				{
+					title: `Designed for human hands`,
+					notes: `Adjust your wrist angles or combine with other tools like mouse, drawing pad or midi keyboard.`,
+					slides: [
+						`ergonomy.merged`,
+						`ergonomy.split`,
+						`ergonomy.adjust`,
+						`ergonomy.mouse`,
+						`ergonomy.graphic`,
+					],
+				},
+			],
+		},
+
 		{
 			module: `title`,
 			title: `You might ask...`,
