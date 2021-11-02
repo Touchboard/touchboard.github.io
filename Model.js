@@ -96,13 +96,13 @@ const Model = {
 						`text.russian`,
 						`text.symbols`,
 						`text.emojis`,
+						`text.english`,
 					],
 				},
 				{
 					title: `Designed for human hands`,
 					notes: `Adjust your wrist angles or combine with other tools like drawing tablets, mouse or midi keyboard.`,
 					slides: [
-						`ergonomy.merged`,
 						`ergonomy.split`,
 						`ergonomy.adjust`,
 						`ergonomy.mouse`,
