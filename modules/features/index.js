@@ -13,7 +13,12 @@ Main.add_module({
 		}
 
 		.features .title.current {
-			background-image: linear-gradient(45deg, #eb00ff, #ff0000);
+			background-image: linear-gradient(
+				0.4turn,
+				#ff6172,
+				#ec2cd9 50%,
+				#5606ef
+			);
 			-webkit-background-clip: text;
 			-moz-background-clip: text;
 			-webkit-text-fill-color: transparent;

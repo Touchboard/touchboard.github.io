@@ -100,7 +100,7 @@ const Model = {
 					],
 				},
 				{
-					title: `Designed for human hands`,
+					title: `Designed for human hands. Without compromises.`,
 					notes: `Adjust your wrist angles or combine with other tools like drawing tablets, mouse or midi keyboard.`,
 					slides: [
 						`ergonomy.split`,

@@ -117,7 +117,12 @@ a {
 }
 
 .accent {
-	background-image: linear-gradient(45deg, #eb00ff, #ff0000);
+	background-image: linear-gradient(
+		45deg,
+		#ff6172,
+		#ec2cd9 50%,
+		#5606ef
+	);
 	font-weight: bold;
 	-webkit-background-clip: text;
 	-moz-background-clip: text;
@@ -185,7 +190,12 @@ button.big {
 	font-size: 28px;
 	padding: var(--space-10) var(--space-10);
 	border-radius: var(--space-00);
-	background: linear-gradient(0.4turn, #eb00ff, #ff0000);
+	background: linear-gradient(
+		0.4turn,
+		#ff6172,
+		#ec2cd9 50%,
+		#5606ef
+	);
 	box-shadow: none;
 	color: white;
 	font-weight: bold;
