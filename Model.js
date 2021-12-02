@@ -96,13 +96,18 @@ const Model = {
 						`text.russian`,
 						`text.symbols`,
 						`text.emojis`,
+						`text.english`,
 					],
 				},
+				// {
+				// 	title: `Pressure sensitive for capitalization.`,
+				// 	notes: `No more Shift pressing for capitalization. Just push hard on a letter to capitalize it.`,
+				// 	slides: [	],
+				// },
 				{
-					title: `Designed for human hands`,
-					notes: `Adjust your wrist angles or combine with other tools like drawing tablets, mouse, or midi keyboard.`,
+					title: `Designed for human hands. Without compromise.`,
+					notes: `Adjust your wrist angles or combine with other tools like drawing tablets, mouse or midi keyboard.`,
 					slides: [
-						`ergonomy.merged`,
 						`ergonomy.split`,
 						`ergonomy.adjust`,
 						`ergonomy.mouse`,
@@ -123,7 +128,7 @@ const Model = {
 			list: [
 				[
 					`Why can't I just use my iPad instead?`,
-					`With iPad you cannot feel where you type and your fingers will press keys if you just rest them on the surface. Touchboards ergonomic surface allows you to find all the keys blindly and you can feel the keystroke due to the haptic feedback.`,
+					`With iPad you cannot feel where you type and your fingers will press keys if you just rest them on the surface. Touchboards ergonomic surface allows you to find all the keys blindly and you can feel the keystroke due to the haptic feedback. Touchboard can also easily be configured, the ipad has limited options.`,
 				],
 				[
 					`But I already own a keyboard?`,
