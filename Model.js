@@ -365,7 +365,7 @@ const Model = {
 					],
 					[
 						'YouTube',
-						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+						`https://www.youtube.com/watch?v=TA_t3FcigRw&ab_channel=ButterflyCompany`,
 					],
 				],
 				Education: [
