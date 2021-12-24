@@ -297,7 +297,7 @@ const Model = {
 					date: `now`,
 					marked: true,
 					note: `<b>Looking for Investors! </br> Click here to write us!</b>`,
-					onclick: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+					onclick: `mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`tech`}`,
 				},
 			],
 		},
@@ -333,7 +333,7 @@ const Model = {
 						`https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 					],
 					['Investor Relations', '/relations'],
-					['News', 'https://twitter.com/btouchboard'],
+					['News', 'https://twitter.com/Butterfly_Comp'],
 					['Impressum', '/impressum'],
 				],
 				// News: [
@@ -347,7 +347,7 @@ const Model = {
 				Contact: [
 					[
 						'E-Mail',
-						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`tech`}`,
 					],
 					[
 						'Feedback',
@@ -371,11 +371,11 @@ const Model = {
 				Education: [
 					[
 						'Concept Video',
-						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+						`https://www.youtube.com/watch?v=TA_t3FcigRw`,
 					],
 					[
 						'Tutorials',
-						`https://www.youtube.com/channel/UCiD0hQn301SiPhWJ1WZNQ0A/featured`,
+						`https://www.youtube.com/watch?v=TA_t3FcigRw`,
 					],
 					[
 						'Shortcuts',
@@ -385,11 +385,11 @@ const Model = {
 				Career: [
 					[
 						'Full-Time',
-						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`tech`}`,
 					],
 					[
 						'Internship',
-						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`io`}`,
+						`mailto:${`hello`}${`@`}${`touchboard`}${`.`}${`tech`}`,
 					],
 				],
 				Copyright: [
