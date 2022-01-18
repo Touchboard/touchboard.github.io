@@ -24,12 +24,12 @@ const Model = {
 		{
 			module: `title`,
 			title: `You like Touchboard?`,
-			sub: `Or you want to test the Prototype? Add yourself to the waitlist to tell us what you think, make an appointment or receive news!`,
+			// sub: `Or you want to test the Prototype? Add yourself to the waitlist to tell us what you think, make an appointment or receive news!`,
 		},
 
 		{
 			module: `preorder`,
-			message: 'Join the Waitlist',
+			message: 'Preorder Now for 500€',
 			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
 
