@@ -29,7 +29,7 @@ const Model = {
 
 		{
 			module: `preorder`,
-			message: 'Preorder Now for 500€',
+			message: 'Preorder now for 500€',
 			url: `https://docs.google.com/forms/d/e/1FAIpQLSff-NAfUUdyCItetuKiIK4aBEf5LOWDTUZkuwCjOo5Bd0mo1A/viewform?usp=sf_link`,
 		},
 
